@@ -98,7 +98,7 @@
 			<img src="<?php echo base_url('assets/images/venDiagram.png'); ?>" width="300" height="200">
 		</td>
 	    <td width="600">
-			<b>Ayuda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
+			<i><b>Ayuda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br></i>
 		</td>
     </tr>
 	</table>
@@ -122,7 +122,7 @@
 						<b>VOLUNTEERS</b>
 						</font>
 						
-						<br><br>There are hundreds of volunteer opportunities that are constantly being added on a weekly basis from different organizations serving different causes. We can help you find the perfect volunteer opportunities that match your schedule, your interest and your location
+						<i><br><br>There are hundreds of volunteer opportunities that are constantly being added on a weekly basis from different organizations serving different causes. We can help you find the perfect volunteer opportunities that match your schedule, your interest and your location.</i>
 					</td>
 
 					<td>&nbsp;
@@ -136,7 +136,7 @@
 						<b>NON PROFITS</b>
 						</font>
 		
-						<br><br>The Filipino people are always eager to lend a hand. If your organization wants to share in the Bayanihan spirit with passionate individuals who believe in what you do, we can help you reach them. Build a partnership with us and maximize your social impact!
+						<i><br><br>The Filipino people are always eager to lend a hand. If your organization wants to share in the Bayanihan spirit with passionate individuals who believe in what you do, we can help you reach them. Build a partnership with us and maximize your social impact!</i>
 					</td>
 					
 				</tr>

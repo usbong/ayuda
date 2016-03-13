@@ -28,14 +28,14 @@
 		<table width="80%" cellspacing="30">
   			<tr>
 				<td>
-					<font color="#FFFFFF"><b>Ayunda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
-					825 A SM Blue Residences.
+					<font color="#FFFFFF"><i><b>Ayunda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
+					825 A SM Blue Residences.</i>
 				</td>
     			<td width="200"><br>
-					<font color="#FFFFFF">Ayuda Pilipinas<br>
+					<i><font color="#FFFFFF">Ayuda Pilipinas<br>
 					+63917 327 8462<br>
 					Loyola Heights Subdivision<br>
-					Quezon City, Philippines
+					Quezon City, Philippines</i>
 				</td>
   			</tr>
    

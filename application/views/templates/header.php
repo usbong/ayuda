@@ -113,7 +113,7 @@
 			<tr>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('index', 'HOME'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('about', 'ABOUT'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('Contact', 'CONTACT'); ?></b><br><br></td>
+				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('volunteers', 'VOLUNTEERS'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('nonprofits', 'NONPROFITS'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('stories', 'STORIES'); ?></b><br><br></td>
