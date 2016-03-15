@@ -1,10 +1,10 @@
 <?php 
-class Pages_Model extends CI_Model
+class Volunteers_Model extends CI_Model
 {
 	//---------------------------------------------------------
 	// Volunteers Page
 	//---------------------------------------------------------
-	public function getStory()
+	public function getVolunteerStories()
 	{
 		$this->db->join('account', 'stories.userid = account.id');
 		$this->db->where('storyid','1');
