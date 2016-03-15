@@ -22,6 +22,9 @@ class Pages extends CI_Controller {
 		else if ($data['title'] == 'Nonprofits') {
 			$this->viewNonprofitsStories();
 		}
+		else if ($data['title'] == 'Stories') {
+			$this->viewStories();
+		}
 		else {
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/'.$page, $data);
@@ -48,6 +51,17 @@ class Pages extends CI_Controller {
 		$data['content'] = 'pages/Nonprofits';
 		$this->load->model('Nonprofits_Model');
 		$data['story'] = $this->Nonprofits_Model->getNonprofitsStories();
+		$this->load->view('templates/general_template',$data);
+	}	
+
+	//---------------------------------------------------------
+	// Stories Page
+	//---------------------------------------------------------
+	public function viewStories()
+	{
+		$data['content'] = 'pages/Stories';
+		$this->load->model('Stories_Model');
+		$data['story'] = $this->Stories_Model->getStories();
 		$this->load->view('templates/general_template',$data);
 	}	
 	
