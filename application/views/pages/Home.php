@@ -78,7 +78,7 @@
 		
 		div.content
 			{
-			background-color:#C6E5DD;
+			background-color:#F2F2F2;
 			text-align: center;
 			}
 			
