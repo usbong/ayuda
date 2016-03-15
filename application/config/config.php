@@ -26,11 +26,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 $config['base_url'] = '';
 */
-$config['base_url'] = 'http://localhost/ayuda';
+$config['base_url'] = 'http://192.168.1.35:80/ayuda';
 
 /*
-$config['base_url'] = 'http://ec2-52-77-213-108.ap-southeast-1.compute.amazonaws.com/ayuda';
+$config['base_url'] = 'http://ec2-54-255-133-114.ap-southeast-1.compute.amazonaws.com/ayuda';
 $config['base_url'] = 'http://localhost/ayuda';
+$config['base_url'] = 'http://192.168.1.35:80/ayuda';
 $config['base_url'] = 'http://moscpas.dyndns.biz:80/ayuda';
 */
 

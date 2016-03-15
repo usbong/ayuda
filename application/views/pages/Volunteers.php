@@ -193,7 +193,7 @@
 	<table align="center" width="800" cellspacing="10">
 				<tr>
 					<td cellspacing="30"><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="200"></td>
-					<td><b><?php echo $viewStory['firstname'];?> <?php echo $viewStory['lastname'];?></b><br>
+					<td><b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
 					<p align="justify">
 					<i>
 					<br>"<?php echo $story['description'];?>"</i></p></td>
