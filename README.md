@@ -1,9 +1,9 @@
 # Ayuda
 Ayuda Pilipinas is the Philippines's premier volunteering matching website. We bring people closer to the causes they care about, and we bring organizations the helping hands they need to create better communities and improve lives from all over the country.
-<br>
-Proponent: Quina Baterna
-Core Developer: Michael Syson, Usbong (www.usbong.ph)
-Acknowledgment: Ronnel Pangyarihan
+<br><br>
+<b>Proponent:</b> Quina Baterna<br>
+<b>Core Developer:</b> Michael Syson, Usbong (www.usbong.ph)<br>
+<b>Acknowledgment:</b> Ronnel Pangyarihan
 
 # Open Source Software License
 Copyright 2016 Usbong Social Systems, Inc.
