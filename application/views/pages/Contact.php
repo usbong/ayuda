@@ -15,11 +15,11 @@
 		filter: alpha(opacity=100); /* For IE8 and earlier */
 		}
 		
-		div.contentcontact{
-			margin: 20px 250px 0px 250px;
+		div.content{
+			margin: 20px 20px 0px 20px;
 			text-align: left;
 			background-color:#e62e2e;
-			}
+		}
 			
 		p.description1{
 				margin: 20px 100px 0px 100px;
@@ -27,10 +27,17 @@
 			}
 		.message{
 			height:250px;
-			width:610px;
+			width:310px;
 		}
-		
-	
+		label {
+			color: #ffffff; /* makes the text white */
+		}
+		form {
+			font-style:italic;
+		}
+		btn btn-default sbmt {
+			color: #217abd;
+		}
 	</style>
 </head>
 
@@ -78,40 +85,44 @@
 		working days!</i>
 		<br>
 		<br>
-		
-		<?php
-		echo form_open('homepage/contactForm');
-        echo'<div class="form-group">';
-        echo '<label class="control-label">Name:</label>';
-        echo form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
-        echo'</div>';
-       
-        echo'<div class="form-group">';
-        echo '<label class="control-label">Contact Number:</label>';
-        echo form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
-        echo'</div>';
-        echo'<div class="form-group">';
-         echo '<label class="control-label">Email Address:</label>';
-        echo form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
-        echo'</div>'; 
-		echo'<div class="form-group">';
-         echo '<label class="control-label">Subject:</label>';
-        echo form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
-        echo'</div>';
-		echo'<div class="form-group">';
-         echo '<label class="control-label">Subject:</label>';
-        echo form_input(array('name' => 'message', 'type'=>'textarea','class'=>'form-control','placeholder'=>'Message'));
-        echo'</div>';
-        echo'<div class="form-group" align ="center">';
-        echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default sbmt','value'=>'SEND MESSAGE'));
-        echo'</div>';
-        echo form_close();
-        ?>
-		
+		<center>
+			<div id="selection"style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;>		
+				<?php
+				echo form_open('homepage/contactForm');
+				echo '<div class="form-horizontal">';
+				echo '<br><div class="form-group"><div class="col-lg-3">';
+				echo '<label class="control-label">NAME:</label></div>';
+				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
+				echo '</i></div></div>';			   
+				echo '<div class="form-group"><div class="col-lg-3">';
+				echo '<label class="control-label" >CONTACT NUMBER:</label></div>';
+				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
+				echo '</i></div></div>';			   
+				echo '<div class="form-group"><div class="col-lg-3">';
+				echo '<label class="control-label" >EMAIL ADDRESS:</label></div>';
+				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
+				echo '</i></div></div>';			   
+				echo '<div class="form-group"><div class="col-lg-3">';
+				echo '<label class="control-label" >SUBJECT:</label></div>';
+				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
+				echo'</i></div></div>';			   
+				echo '<div class="form-group"><div class="col-lg-3">';
+				echo '<label class="control-label" >MESSAGE:</label></div>';
+				echo '<div class="col-lg-6"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
+				echo'</textarea></i></div></div>';			   
+				echo'<div class="form-group" align ="center">';
+				echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default sbmt','value'=>'SEND MESSAGE'));
+				echo'</div>';
+				echo'</div>';
+				echo form_close();
+				?>
+			</div>
+		</center>
 	</div>
 	<div class="col-md-2"> </div>
 	
 
+<br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
