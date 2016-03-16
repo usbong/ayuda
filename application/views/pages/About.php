@@ -182,14 +182,20 @@
 <div class = "calendar">
 <table>
 <tr>
-	<th><a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "prev"><img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Left_Red.png");?> width="50"></a></th>
-	<th colspan="5"><FONT FACE="Geneva, Arial" SIZE=6 COLOR="#2C345B" style="text-transform:uppercase"><?php echo date('F',strtotime($date)) . ' ' . $year;?></FONT></th>
-	<th><a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "next"><img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Right_Red.png");?> width="50"></a></th>
+	<th></th>
+	<th colspan="5" height="10">
+	<a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "prev">
+	<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Left_Red.png");?> width="50"></a>
+	<FONT FACE="Geneva, Arial" SIZE=6 COLOR="#2C345B" style="text-transform:uppercase"><?php echo date('F',strtotime($date)) . ' ' . $year;?></FONT>
+	
+	<a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "next">
+	<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Right_Red.png");?> width="50"></a></th>
+	<th></th>
 </tr>	
 <tr>
 	<?php 
 	foreach ($headings as $headings) {
-		echo'<th>'.$headings.'</th>';
+		echo'<th><FONT style="text-transform:uppercase">'.$headings.'</FONT></th>';
 	}
 	?>
 </tr>
@@ -339,25 +345,63 @@ foreach($typeofwork as $typeofwork)
 				
 				
 		</div>		
-				
-				
-				
 				<br><br>
-	
+			<br><br>
+			<table align="center" style="width: 100%;">
+				<tr><td bgcolor="#f2f2f2">
+				<div align="center">
+				<br><br>
+				<font size="6" color="#e62e2e"><b>DO YOU HAVE VOLUNTEER STORIES TO SHARE?</b></font><br>
+				<i><p class="description">
+				We’re always excited to hear about people talking about their volunteer experiences! If you have a great story about your personal volunteer experience through our site or have some great photos you want to share, leave us a message and you can be featured on our website!<br><br>
+				</p></i><?php
+						echo anchor('homepage/signupview','CLICK HERE TO SHARE YOUR STORY',array('class'=>'normalButtonRed'));
+					?>				
+				<br><br><br><br>
+				</div>
+				</td></tr>
+			</table>
 			
-	
 			<br><br>
 				<div align="center">
-					<font size="6" color="#e62e2e"><b>WHERE CAN YOU FIND US?</b></font><br>
-					<p class="description">We make it point to spread the joys of volunteerism as much as we can all over the country! Check out our volunteer map that shows which places our volunteers have reached using our website! Hover over the map area to see which opportunities are already accessible in your region, or simply click from the list of places on the left side of the map.<br><br>
+					<font size="6" color="#2C345B"><b>WHERE CAN YOU FIND US?</b></font><br>
+					<i><p class="description">We make it point to spread the joys of volunteerism as much as we can all over the country! Check out our volunteer map that shows which places our volunteers have reached using our website! Hover over the map area to see which opportunities are already accessible in your region, or simply click from the list of places on the left side of the map.<br><br>
 					Don't forget, we're constantly updating! So if you haven't found the perfect opportunity for you just yet, don't lose hope! If you know of a volunteer opportunity in your area that you want to share with us, feel free to contact us and let us know about it!<br>
-					</p>
+					</p></i>
 				</div>
-	
-
-
+			<table align="center">
+			<td>
+				<div align="left">
+				<br><br>
+				  <b>LUZON</b><br>
+				  <i>Manila (21)<br>
+					Cagayan Valley (5)<br>
+					Ilocos Norte (11)<br>
+					Cavite (10)<br>
+					Laguna (6)<br><br><br>
+					<b>VISAYAS</b><br>
+					Iloilo (17)<br>
+					Cebu (15)<br>
+					Aklan (9)<br>
+					Leyte (4)<br>
+					Bacolod (7)<br><br><br>
+					<b>MINDANAO</b><br>
+					Zamboanga Del Sur (6)<br>
+					Zamboanga Del Norte (4)<br>
+					Misamis Occidental (9)<br>
+					Misamis Oriental (12)<br>
+					Davao (16)<br>
+				</div>
+			</td>
+			<td width="200px">
+			</td>
+			<td>
+				<div align="center">
+					<img src= <?php echo base_url("assets/images/PhilippineMap.png");?>>
+				</div>
+			</td>
+			</table>
 </body>
-
 
 <script type="text/javascript">
     $(document).ready(function() {
