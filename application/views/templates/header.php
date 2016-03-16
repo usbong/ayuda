@@ -51,7 +51,7 @@
  a {
 	color:white;
  }
- 
+  
  a.sign-up-login {
 	color: #2c345b;
  }
@@ -107,15 +107,61 @@
 			</div>
 		</div>
 		
+		<?php
+			$menu_tab_colors = array(0 => '#e62e2e', 1 => '#e62e2e', 2 => '#e62e2e', 3 => '#e62e2e', 4 => '#e62e2e', 5 => '#e62e2e', 6 => '#e62e2e');
+			$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+			if (strpos($url,'Home') != false) {
+				$menu_tab_colors[0] = '#c12925';
+			}
+			else if (strpos($url,'About') != false) {
+				$menu_tab_colors[1] = '#c12925';
+			}
+			else if (strpos($url,'Contact') != false) {
+				$menu_tab_colors[2] = '#c12925';
+			}
+			else if (strpos($url,'Volunteers') != false) {
+				$menu_tab_colors[3] = '#c12925';
+			}
+			else if (strpos($url,'Nonprofits') != false) {
+				$menu_tab_colors[4] = '#c12925';
+			}
+			else if (strpos($url,'Stories') != false) {
+				$menu_tab_colors[5] = '#c12925';
+			}
+			else if (strpos($url,'Projects') != false) {
+				$menu_tab_colors[6] = '#c12925';
+			}
+		?>
 		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="15">
 			<tr>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Home', 'HOME'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/About', 'ABOUT'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Stories', 'STORIES'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); ?></b><br><br></td>
+				<td style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Home', 'HOME'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[1]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/About', 'ABOUT'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[3]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[4]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[5]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Stories', 'STORIES'); 
+					?></b><br><br>
+				</td>
+				<td style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
+					<br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+					?></b><br><br>
+				</td>
 			</tr>
 		</table>
 
