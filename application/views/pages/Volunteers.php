@@ -78,7 +78,7 @@
 		
 		
 		div.contentleft{
-		background-color:#C6E5DD;
+		background-color:#f2f2f2;
 		text-align: left;
 		}
 			
