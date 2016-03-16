@@ -25,6 +25,9 @@ class Pages extends CI_Controller {
 		else if ($data['title'] == 'Stories') {
 			$this->viewStories();
 		}
+		else if ($data['title'] == 'About') {
+			$this->viewAbout();
+		}
 		else {
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/'.$page, $data);
@@ -89,6 +92,44 @@ class Pages extends CI_Controller {
 		$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
 		$data['categorytype'] = $this->Projects_Model->getCategorytype();
 		$this->load->view('templates/general_template',$data);
+	}
+
+	//---------------------------------------------------------
+	// About Page
+	//---------------------------------------------------------
+	public function viewAbout()
+	{
+		date_default_timezone_set('Etc/GMT-8');
+		$data['content'] = 'pages/About';
+		$this->load->model('About_Model');
+        $data['headings'] = array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+        if($this->input->post('year') != null)
+        {
+			$data['date'] = date("Y-m-d",strtotime($this->input->post('year').'-'.$this->input->post('month').'-01'));
+        }
+        else
+        {
+        	$data['date'] = date("Y-m-d");
+        }
+		$data['year'] = date("Y",strtotime($data['date']));
+		$data['month'] = date("m",strtotime($data['date']));
+		$data['startday'] = date('w',strtotime($data['year'].'-'.$data['month'].'-'.'1'));
+		$data['endday'] = date('t',strtotime($data['year'].'-'.$data['month'].'-'.'1'));
+		$data['ctr'] = 0;
+		$data['daysctr'] = 1;
+		$data['query'] = $this->About_Model->getEvents();
+		$data['location'] = $this->About_Model->getLocationList();
+		$data['category'] = $this->About_Model->getCategoryType();
+		$data['typeofwork'] = $this->About_Model->getTypeOfWork();
+		$data['value'] = $this->input->post('loc');
+		if($this->input->post('loc') != null)
+		{
+		$this->load->view('calendar',$data);
+		}
+		else
+		{
+		$this->load->view('templates/general_template',$data);
+		}		
 	}
 
 }

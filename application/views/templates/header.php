@@ -107,12 +107,10 @@
 			</div>
 		</div>
 		
-		<div align="center" width="100%">
-
 		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="15">
 			<tr>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Home', 'HOME'); ?></b><br><br></td>
-				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('about', 'ABOUT'); ?></b><br><br></td>
+				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/About', 'ABOUT'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); ?></b><br><br></td>
 				<td bgcolor="e62e2e" align="center"><br><b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); ?></b><br><br></td>
@@ -121,7 +119,6 @@
 			</tr>
 		</table>
 
-	</div>
 	</body>
 </html>
 
