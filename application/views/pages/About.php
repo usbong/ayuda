@@ -46,12 +46,15 @@
 			margin: 20px 250px 0px 800px;
    			text-align: left;
    			width: 500px;
-			text-align: left;
 			background-color:#F2F2F2;
 			padding: 20px 20px 20px 20px;
 			}
-
-
+			
+			div.socialNetworks
+			{
+				margin-left: 412px;
+			}
+			
 			.normalButtonRed {
 			background-color:#e62e2e;
 			display:inline-block;
@@ -86,7 +89,6 @@
 			text-decoration:none;
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
-
 
 			.normalButtonBlue:hover {
 			background-color:#2c3a78;
@@ -298,12 +300,10 @@ while($endday >= $daysctr)
 				<i>Arts & Culture</i>
 			</td>
 			<td>
-				<br>
 				<img src= <?php echo base_url("assets/images/Icons_and_Logos_Calendar_Icon_(Community_Building).png");?> width="50">
 				<i>Community Building</i>
 			</td>
 			<td>
-				<br>
 				<img src= <?php echo base_url("assets/images/Icons_and_Logos_Calendar_Icon_(Health_&_Healthcare).png");?> width="50">
 				<i>Health & Hospitals</i>
 			</td>
@@ -329,7 +329,7 @@ while($endday >= $daysctr)
 				<br><br>
 		
 						<div  class="volunteercontent">
-						
+						<div>
 						<form class="inline">
 								<div class="form-group" >
 									<label class = "exampleInputEmail1" for="exampleInputEmail1">LOCATION</label><br>
@@ -347,8 +347,7 @@ foreach($location as $location)
 </select>
 									
 									</label>
-								</div>
-							
+								</div>							
 							<form class="inline">
 								<div class="form-group">
 									<label class = "exampleInputEmail1" for="exampleInputEmail1">SEARCH</label><br>
@@ -384,8 +383,9 @@ foreach($typeofwork as $typeofwork)
 							
 							<br>
 							<b class = "exampleInputEmail1">VOLUNTEER DETAILS</b><br>
-		
+					<div>
 						<div class="calendarContact">
+							<i>
 							<b>Event Name:</b><br><br>
 							<b>Organizer:</b><br><br>
 							<b>Venue:</b><br><br>
@@ -395,21 +395,55 @@ foreach($typeofwork as $typeofwork)
 							<b>Preferred Skills:</b><br><br>
 							<b>Other Comments:</b><br>
 							<br>
-							
-			
+							</i>			
 						</form>	
-						
-						
-						<div align="center">
-								<?php
-								echo anchor('homepage/signupview','CLICK HERE TO SIGNUP',array('class'=>'redShortButton'));
-								?>
+							<div align="center">
+									<?php
+									echo anchor('homepage/signupview','CLICK HERE TO SIGNUP',array('class'=>'redShortButton'));
+									?>
 							</div><br>
-			
 						</div>
-				
-				
-		</div>		
+						<div class="socialNetworks" align="right" style="background-color:#ffffff;border: 0px solid black;">
+						<table>
+							<tr>
+								<td align="center" style="background-color:#2C345B">									
+									<br>
+									&nbsp;
+									<img src=" <?php  echo base_url('assets/images/Icons and Logos_FB Icon (White).png');?>" width="40">
+									<br>
+									<center><b><font color="#ffffff"><i>Share</i></font></b><center>
+									&nbsp;
+									<br>
+								</td>
+								<td>
+								&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="center" style="background-color:#2C345B">
+									<br>
+									&nbsp;
+									<img src=" <?php  echo base_url('assets/images/Icons and Logos_Twitter Icon (White).png');?>" width="40">
+									<br>
+									<center><b><font color="#ffffff"><i>Tweet</i></font></b><center>
+									&nbsp;
+									<br>
+								</td>
+								<td>
+								&nbsp;&nbsp;&nbsp;
+								</td>
+								<td align="center" style="background-color:#2C345B">
+									<br>
+									&nbsp;
+									<img src=" <?php  echo base_url('assets/images/Icons and Logos_Email Icon (White).png');?>" width="40">
+									<br>
+									<center><b><font color="#ffffff"><i>Email</i></font></b><center>
+									&nbsp;
+									<br>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>				
+			</div>		
 				<br><br>
 			<br><br>
 			<table align="center" style="width: 100%;">
