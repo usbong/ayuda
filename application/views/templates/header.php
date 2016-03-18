@@ -206,7 +206,6 @@
 							echo'<div class="form-group">';
 							echo '<label class="control-label" for="email">Username:</label>';
 							echo form_input(array('name' => 'username', 'type'=>'text','class'=>'form-control','placeholder'=>'Username','value' => set_value('username'), 'autocomplete' => 'off'));
-							echo 'post'.$this->input->post('username');
 							echo $this->session->set_userdata('username',$this->input->post('username'));
 							echo'</div>';
 							echo'<div class="form-group">';
