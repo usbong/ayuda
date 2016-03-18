@@ -266,7 +266,7 @@ Our team will then verify the submitted application subject to approval within a
 			<table align="center" width="800" cellspacing="">
 				<tr>
 					<td><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="200"></td>
-					<td><b><?php echo $story['firstname'];?>&nbsp;<?php echo $story['lastname'];?></b><br><br><?php echo $story['description'];?></td>
+					<td><b><?php echo $story['firstname'];?>&nbsp;<?php echo $story['lastname'];?></b><br><br><i><?php echo $story['description'];?></i></td>
 				</tr>
 	
 				<tr>

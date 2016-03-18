@@ -40,10 +40,21 @@
 			background-color: #ffffff;
 			}
 		.sbmt
-			{
+		{
 			margin-right: 3%;
-			}
-					
+			border-radius: 0px;
+			background-color: #e52e2e;		
+			color: #ffffff;
+		}
+		.FBsbmt
+		{
+			margin-right: 3%;
+			border-radius: 0px;
+			background-color: #5c75b7;		
+			color: #ffffff;
+		}
+
+							
  a:hover {
   cursor:pointer;
  }
@@ -74,6 +85,10 @@
 		</style>
 </head>
 <body>
+<?php		
+  $currTab="Home";
+?>
+
 <div align="center">
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
 </div>
@@ -99,37 +114,43 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div align="right">
-					<a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">
-					  <font size="3" face="Arial">Sign up</a> / <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</font>
-					  
-					</a>
+					<font size="3" face="Arial">
+					   <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</a> / <a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">Register</a>					  
+					</font>
 				</div>	
 			</div>
 		</div>
 		
-		<?php
+		<?php		
 			$menu_tab_colors = array(0 => '#e62e2e', 1 => '#e62e2e', 2 => '#e62e2e', 3 => '#e62e2e', 4 => '#e62e2e', 5 => '#e62e2e', 6 => '#e62e2e');
 			$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 			if (strpos($url,'Home') != false) {
 				$menu_tab_colors[0] = '#c12925';
+				$currTab = "Home";
 			}
 			else if (strpos($url,'About') != false) {
 				$menu_tab_colors[1] = '#c12925';
+				$currTab = "About";
 			}
 			else if (strpos($url,'Contact') != false) {
 				$menu_tab_colors[2] = '#c12925';
+				$currTab = "Contact";
 			}
 			else if (strpos($url,'Volunteers') != false) {
 				$menu_tab_colors[3] = '#c12925';
+				$currTab = "Volunteers";
 			}
 			else if (strpos($url,'Nonprofits') != false) {
 				$menu_tab_colors[4] = '#c12925';
+				$currTab = "Nonprofits";
 			}
 			else if (strpos($url,'Stories') != false) {
 				$menu_tab_colors[5] = '#c12925';
+				$currTab = "Stories";
 			}
 			else if (strpos($url,'Projects') != false) {
 				$menu_tab_colors[6] = '#c12925';
+				$currTab = "Projects";
 			}
 		?>
 		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="15">
@@ -177,14 +198,16 @@
   
       			<br/>
       			<div class="clearfix"></div>
-      			<div id='social-icons-conatainer'>
+      			<div id='social-icons-container'>
 	        		<div class="form-group col-md-6">
 					<b><h6 align="center">ARE YOU A MEMBER?</h6><span align="center" style="font-size:3em; margin-left:33%;">LOG IN</span></b>
 						<?php
-							echo form_open('logAccount');
+							echo form_open('Form/data_submitted');
 							echo'<div class="form-group">';
 							echo '<label class="control-label" for="email">Username:</label>';
-							echo form_input(array('name' => 'username', 'type'=>'text','class'=>'form-control','placeholder'=>'Username','value' => set_value('username'), 'autocompelte' => 'off'));
+							echo form_input(array('name' => 'username', 'type'=>'text','class'=>'form-control','placeholder'=>'Username','value' => set_value('username'), 'autocomplete' => 'off'));
+							echo 'post'.$this->input->post('username');
+							echo $this->session->set_userdata('username',$this->input->post('username'));
 							echo'</div>';
 							echo'<div class="form-group">';
 							echo '<label class="control-label" for="email">Password:</label>';
@@ -193,18 +216,10 @@
 							echo'<div class="form-group col-md-3"></div>';
 							echo'<div class="checkbox">'; 
 							echo'<label><input type="checkbox" value="">Remember this password</label>'; 
-							echo'</div>'; 
-							
+							echo'</div>'; 							
 							echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'LOGIN'));
-							echo'<div class="form-group col-md-4"></div>';
-							echo' <a href="">Forgot your password?</a>';
-							 echo '<div class="row">';
-							echo'<div class="form-group col-md-6"></div>';
-							echo'OR';
-							echo'</div>';
-							echo '<div class="row">';
-							echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-primary btn-lg btn-block sbmt','value'=>'LOGIN WITH FACEBOOK'));
-							echo'</div>';
+							echo '<div class="row"><br><center><i>Forgot your password?</i><br><b>OR</b><br><br></center></div>';
+							echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-primary btn-lg btn-block FBsbmt','value'=>'LOGIN WITH FACEBOOK'));
 							echo'</div>';
 							echo form_close();
 							echo validation_errors();
@@ -258,8 +273,8 @@
 		echo'<div class="checkbox">'; 
 		echo'<label><input type="checkbox" value="">I want to receive email notifications from Ayuda Pilipinas and its partners</label>'; 
 		echo'</div>';
-       echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'REGISTER'));
-        echo anchor('homepage','Cancel',array('class'=>'btn btn-default btn-lg btn-block sbmt'));
+       echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default btn-lg btn-block sbmt','value'=>'REGISTER'));
+        echo anchor('pages/view/'.$currTab,'CANCEL',array('class'=>'btn btn-default btn-lg btn-block sbmt'));
         echo'</div>';
         echo form_close();
         ?>

@@ -28,6 +28,9 @@ class Pages extends CI_Controller {
 		else if ($data['title'] == 'About') {
 			$this->viewAbout();
 		}
+		else if ($data['title'] == 'Dashboard') {
+			$this->viewDashboard();
+		}
 		else {
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/'.$page, $data);
@@ -132,4 +135,14 @@ class Pages extends CI_Controller {
 		}		
 	}
 
+	//---------------------------------------------------------
+	// Dashboard Page
+	//---------------------------------------------------------	
+	public function viewDashboard()
+	{
+		$data['content'] = 'pages/Dashboard';
+		$this->load->model('Dashboard_Model');
+		$data['account'] = $this->Dashboard_Model->getAccount();		
+		$this->load->view('templates/dashboard_template',$data);
+	}
 }
