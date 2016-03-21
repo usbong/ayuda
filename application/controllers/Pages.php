@@ -140,9 +140,12 @@ class Pages extends CI_Controller {
 	//---------------------------------------------------------	
 	public function viewDashboard()
 	{
+		//$username = $this->input->post('username');
+		$username = $this->session->userdata('username');
+ 
 		$data['content'] = 'pages/Dashboard';
 		$this->load->model('Dashboard_Model');
-		$data['account'] = $this->Dashboard_Model->getAccount();		
+		$data['account'] = $this->Dashboard_Model->getAccount($username);		
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

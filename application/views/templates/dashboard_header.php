@@ -115,7 +115,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div align="right">
-						<b>Hi, <?php echo $account['firstname'];?>! | <a href="dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <?php echo anchor('mainpage/logOut', 'Log Out'); ?></b>
+						<b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <?php echo anchor('mainpage/logOut', 'Log Out'); ?></b>
 				</div>	
 			</div>
 		</div>

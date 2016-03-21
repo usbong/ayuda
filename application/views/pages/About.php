@@ -118,7 +118,7 @@
 			background-color:#f01d1d;
 			}
 
-			.form-control,.exampleInputEmail1
+			.form-control-AboutPage,.exampleInputEmail1
 			{
 				margin-left: 200px;
 			}
@@ -334,7 +334,7 @@ while($endday >= $daysctr)
 								<div class="form-group" >
 									<label class = "exampleInputEmail1" for="exampleInputEmail1">LOCATION</label><br>
 									<label>
-											<select name="" class="form-control loc" style="background-color:#f2f2f2">
+											<select name="" class="form-control-AboutPage loc" style="background-color:#f2f2f2">
 											<option selected value="All">All</option>
 <?php
 foreach($location as $location)
@@ -351,7 +351,7 @@ foreach($location as $location)
 							<form class="inline">
 								<div class="form-group">
 									<label class = "exampleInputEmail1" for="exampleInputEmail1">SEARCH</label><br>
-									<label><select class="form-control cat" style="background-color:#f2f2f2">
+									<label><select class="form-control-AboutPage cat" style="background-color:#f2f2f2">
 										<option value="All">All</option>
 <?php
 foreach($category as $category)
@@ -367,7 +367,7 @@ foreach($category as $category)
 							
 								<div class="form-group">
 									<label class = "exampleInputEmail1" for="exampleInputEmail1">SELECT YOUR TYPE OF WORK</label><br>
-									<label><select class="form-control work" style="background-color:#f2f2f2">
+									<label><select class="form-control-AboutPage work" style="background-color:#f2f2f2">
 									<option value="All">All</option>
 <?php
 foreach($typeofwork as $typeofwork)
