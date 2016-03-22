@@ -1,7 +1,7 @@
 <?php 
 class Projects_Model extends CI_Model
 {
-	public function getCategoryType()
+	public function getCategoryArray()
 	{
 		$query = $this->db->get('category');
 		return $query->result_array();

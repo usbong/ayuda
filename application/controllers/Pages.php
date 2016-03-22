@@ -93,7 +93,7 @@ class Pages extends CI_Controller {
 		$data['query'] = $this->Projects_Model->getProjectEvents();
 		$data['count'] = $this->Projects_Model->getProjectEventsCount();
 		$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
-		$data['categorytype'] = $this->Projects_Model->getCategorytype();
+		$data['categoryArray'] = $this->Projects_Model->getCategoryArray();
 		$this->load->view('templates/general_template',$data);
 	}
 
@@ -146,6 +146,9 @@ class Pages extends CI_Controller {
 		$data['content'] = 'pages/Dashboard';
 		$this->load->model('Dashboard_Model');
 		$data['account'] = $this->Dashboard_Model->getAccount($username);		
+		$data['events'] = $this->Dashboard_Model->getEvents($username);		
+		$data['category'] = $this->Dashboard_Model->getCategoryName($username);		
+//		$data['volunteerHistory'] = $this->Dashboard_Model->getVolunteeringHistory($username);		
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

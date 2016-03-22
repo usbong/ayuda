@@ -236,7 +236,7 @@ while($endday >= $daysctr)
 	foreach($query as $row)
 	{
 
-	if(date('Y-m-d',strtotime($year.'-'.$month.'-'.$daysctr)) == $row['datestart'])
+	if(date('Y-m-d',strtotime($year.'-'.$month.'-'.$daysctr)) == $row['dateStart'])
 	{ 
 		$img = $img . '<a href = "#" data-content = "'.$row['eventid'].'" class = "eventclick"><img class = "image" src="data:image/jpeg;base64,'.base64_encode( $row['icon']) .'"/></a>';
 	$image = true;

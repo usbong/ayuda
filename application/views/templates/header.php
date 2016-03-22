@@ -29,11 +29,11 @@
 			}
 		.pad
 			{
-			padding-top: 10%;
+			padding-top: 0%;
 			}
 		.pad1
 			{
-			padding-top: 5%;
+			padding-top: 0%;
 			}
 		.jumbotron
 			{
@@ -111,10 +111,10 @@
 	
 	<body>
 		
-		<div class="container-fluid">
+		<div class="container-fluid" style="margin-bottom: 0px;">
 			<div class="row">
 				<div align="right">
-					<font size="3" face="Arial">
+					<font size="3" face="Arial" style="font-style:italic">
 					   <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</a> / <a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">Register</a>					  
 					</font>
 				</div>	
@@ -153,7 +153,7 @@
 				$currTab = "Projects";
 			}
 		?>
-		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="15">
+		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="0">
 			<tr>
 				<td style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
 					<br><b><?php echo anchor('pages/view/Home', 'HOME'); 

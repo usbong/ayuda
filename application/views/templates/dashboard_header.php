@@ -29,11 +29,11 @@
 			}
 		.pad
 			{
-			padding-top: 10%;
+			padding-top: 0%;
 			}
 		.pad1
 			{
-			padding-top: 5%;
+			padding-top: 0%;
 			}
 		.jumbotron
 			{
@@ -111,18 +111,11 @@
 	<!--<![endif]-->
 	
 	<body>
-		
-		<div class="container-fluid">
-			<div class="row">
-				<div align="right">
-						<b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <?php echo anchor('mainpage/logOut', 'Log Out'); ?></b>
-				</div>	
-			</div>
-		</div>
-		
 		<?php		
 			$menu_tab_colors = array(0 => '#e62e2e', 1 => '#e62e2e', 2 => '#e62e2e', 3 => '#e62e2e', 4 => '#e62e2e', 5 => '#e62e2e', 6 => '#e62e2e');
+			$currTab = "Home";
 			$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+			
 			if (strpos($url,'Home') != false) {
 				$menu_tab_colors[0] = '#c12925';
 				$currTab = "Home";
@@ -152,7 +145,16 @@
 				$currTab = "Projects";
 			}
 		?>
-		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="15">
+		
+		<div class="container-fluid" style="margin-bottom: 0px;">
+			<div class="row">
+				<div align="right">
+						<i><b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <a href="/ayuda/index.php/pages/view/"<?php echo $currTab ?>><font color="#2c345b">Sign Out</font></a></b></i>
+				</div>	
+			</div>
+		</div>
+		
+		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="0">
 			<tr>
 				<td style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
 					<br><b><?php echo anchor('pages/view/Home', 'HOME'); 

@@ -146,8 +146,8 @@ margin: 20px 25px 10px 25px;
 			
 		<?php 
 		$ctr = 1;
-		foreach ($categorytype as $categorytype) {
-		echo '<a href = "#" class = "catclick" data-id = "'.$categorytype['categoryName'].'"><img width = "60" src="data:image/jpeg;base64,'.base64_encode( $categorytype['icon']) .'"/></a>';
+		foreach ($categoryArray as $categoryArray) {
+		echo '<a href = "#" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "60" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
 		if(($ctr % 3) == 0)
 		{
 			echo '<br><br>';
@@ -215,7 +215,7 @@ foreach ($query as $row) {
 			<b>Other Comments:</b>
 			<br>
 			<br>
-			<img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png'); ?>" width="60"> <?php echo date("F j, Y",strtotime($row['datestart']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png'); ?>" width="60"> <?php echo date("h:i A",strtotime($row['timestart'])) . '-' . date("h:i A",strtotime($row['timeend']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png'); ?>" width="60"> <?php echo $row['venue'] . ' , ' . $row['location']?> <br><br>
+			<img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png'); ?>" width="60"> <?php echo date("F j, Y",strtotime($row['dateStart']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png'); ?>" width="60"> <?php echo date("h:i A",strtotime($row['timeStart'])) . '-' . date("h:i A",strtotime($row['timeEnd']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png'); ?>" width="60"> <?php echo $row['venue'] . ' , ' . $row['location']?> <br><br>
 						<div align="center">
 							<?php
 								echo anchor('','CLICK HERE TO SIGNUP',array('class'=>'normalButtonRed','data-count'=>$count));

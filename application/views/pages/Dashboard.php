@@ -84,13 +84,13 @@
 			width:350px;
 			float:left;
 			padding:10px;
-margin: 20px 20px 80px 250px;	
+margin: 20px 20px 80px 20px;	
 text-align:center;		
 			}
 			
 			div.volunteerOpportunities
 			{
-			margin: 20px 200px 0px 620px;
+			margin: 20px 0px 0px 410px;
 			text-align: left;
 			background-color:#f2f2f2;
 			padding: 20px 20px 20px 20px;
@@ -110,7 +110,7 @@ text-align:center;
 			
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			
-			Your linked accounts: &nbsp;
+			<i>Your linked accounts:</i> &nbsp;
 
 
 						<a id='modal-launcher' data-toggle="modal" data-target="#modalFacebook">
@@ -137,45 +137,37 @@ text-align:center;
 				<br><br>
 					<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="250"><br>
 					<b><?php echo $account['firstname'] . ' ' . $account['lastname'];?></B><br>
-					<?php echo $account['display'];?> <br>
+					<?php echo $account['description'];?> <br>
 					
 					<a id='modal-launcher' data-toggle="modal" data-target="#myModal">
-					  <font size="2" color="gray">Edit</font></a>
+					  <font size="2" color="red">Edit</font></a>
 				</div>
 				
-				<br><br>
-		
-						
+				<br><br>		
+						<b>YOUR UPCOMING VOLUNTEER OPPORTUNITIES</b>			
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
-						<b>YOUR UPCOMING VOLUNTEER OPPORTUNITIES</b><br><br>
-							<img src=" <?php  echo base_url('assets/images/icon1.png');?>" width="100"><b>SESSION EVENTS</b>
+							<?php 
+							$counter=0;
+							foreach ($events as $row) {
+							?>						
+
+							<img src=" <?php
+											echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100"><b><?php echo strtoupper($row['eventname'])?></b>
 							<br><br>
-								<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;January 8-10,2015
+								<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">&nbsp;<?php echo date("F j, Y",strtotime($row['dateStart'])); ?> - <?php echo date("F j, Y",strtotime($row['dateEnd'])); ?>
 							
-							<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;8:00AM-5:00PM
+							<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">&nbsp;<?php echo substr($row['timeStart'],0,5); ?> - <?php echo substr($row['timeEnd'],0,5); ?>
 							
-							<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;Marikina City.
-							
-							<br>
-							<hr color="black">
-							<img src=" <?php  echo base_url('assets/images/icon1.png');?>" width="100"><b>SESSION EVENTS</b>
-							<br><br>
-								<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;January 8-10,2015
-							
-							<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;8:00AM-5:00PM
-							
-							<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="40">&nbsp;Marikina City.
-							
+							<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>							
 							<br>
 							<br>
+								<?php $counter++;}?>
 
 							<div align="center">
 							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
 							<br>
 							</div>
-
-							</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
+							</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
 						
 	
 	
@@ -208,13 +200,11 @@ text-align:center;
 						</tr>
 					
 					</table>
-				</div>
+	</div>
 				
-			
-		
-						
+						<br><br>	
+						<b>YOUR PAST VOLUNTEER EXPERIENCES</b>					
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
-							<b>YOUR PAST VOLUNTEER EXPERIENCES</b><br><br>
 							<b>Session month year</b><br>
 								<img src="<?php echo base_url('assets/images/icon1.png'); ?>" width="80">	&nbsp;&nbsp;
 								<img src="<?php echo base_url('assets/images/icon2.png'); ?>" width="80">
@@ -224,29 +214,18 @@ text-align:center;
 							<br>
 							</div>
 
-						</div>
-			
-							<br><br><br>
-	
-	
+						</div>	
 						
-					<div class="volunteerOpportunities" style="border-radius: 25px;"> 
-						<b>YOUR PERSONAL STATS</b><br><br>
-						<b>No. of people You've Helped:</b> 1,034<br>
-						<b>Top Personal Causes:</b> Sports, Animal Welfare, Community Building<br>
-						<b>Top Volunteer Organizations You've Worked With:</b> PAWS, CARA, Gawad Kalinga<br>
-						<b>No. of Volunteer Opportunities Accessed:</b> 30<br>
-						<b>Locations Volunteered At:</b> Metro Manila, Iloilo, Batangas<br>
-						<b>Member Since:</b> <?php echo $account['DateJoined']; ?><br>
-					</div>
-			
-	
-	
-	
-	
-	
-
-
+						<br><br>	
+						<div style="margin-left: 620px;"><b>YOUR PERSONAL VOLUNTEER STATISTICS</b></div>
+						<div class="volunteerOpportunities" style="border-radius: 25px;"> 
+							<b>No. of people You've Helped:</b> 1,034<br>
+							<b>Top Personal Causes:</b> Sports, Animal Welfare, Community Building<br>
+							<b>Top Volunteer Organizations You've Worked With:</b> PAWS, CARA, Gawad Kalinga<br>
+							<b>No. of Volunteer Opportunities Accessed:</b> 30<br>
+							<b>Locations Volunteered At:</b> Metro Manila, Iloilo, Batangas<br>
+							<b>Member Since:</b> <?php echo $account['dateJoined']; ?><br>
+						</div>
 </body>
 
 
