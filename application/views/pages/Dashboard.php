@@ -94,47 +94,25 @@ text-align:center;
 			text-align: left;
 			background-color:#f2f2f2;
 			padding: 20px 20px 20px 20px;
-			}
+			}			
 	</style>
 </head>
 
-<body>
+<body>	
+		<br>
 
-	<br>
-	<br>
-	<br>
-	
-	
-		<div align="right">
+		<div align="center" style="margin-right: 200px">
 			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b>HI <?php echo $account['firstname'];?>!</b></font>
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			<i>Your linked accounts:</i> &nbsp;
-
-
-						<a id='modal-launcher' data-toggle="modal" data-target="#modalFacebook">
-						<img src=" <?php  echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40">
-						</a>
-
-						<a id='modal-launcher' data-toggle="modal" data-target="#modalTwitter">
-						<img src=" <?php  echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40">
-						</a>
-
-						<a id='modal-launcher' data-toggle="modal" data-target="#modalEmail">
-						<img src=" <?php  echo base_url('assets/images/Icons and Logos_Email Icon (Blue).png');?>" width="40">
-						</a>
-
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<br>
 		</div>
-	
-	
-	
-	
-	
+			<div align="right" style="margin-right: 80px">
+				<i>Your linked accounts:</i>&nbsp;
+				<a href id='modal-launcher' data-toggle="modal" data-target="#modalFacebook"><img src=" <?php echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40"></a>
+				<a href id='modal-launcher' data-toggle="modal" data-target="#modalTwitter"><img src=" <?php echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40"></a>
+				<a href id='modal-launcher' data-toggle="modal" data-target="#modalEmail"><img src=" <?php echo base_url('assets/images/Icons and Logos_Email Icon (Blue).png');?>" width="40"></a>
+			</div>
+
 				<div  id="nav">
-				<br><br>
+				<br>
 					<?php
 						echo '<img src="data:image/jpeg;base64,'.base64_encode( $account['profilePic']).'" width="250"/>';
 					?>
@@ -145,7 +123,7 @@ text-align:center;
 					  <font size="2" color="red">Edit</font></a>
 				</div>
 				
-				<br><br>		
+				<br>		
 						<b>YOUR UPCOMING VOLUNTEER OPPORTUNITIES</b>			
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
 							<?php 
