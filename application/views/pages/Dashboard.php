@@ -150,10 +150,12 @@ text-align:center;
 							$counter=0;
 							foreach ($events as $row) {
 							?>						
-
-							<img src=" <?php
-											echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100"><b><?php echo strtoupper($row['eventname'])?></b>
-							<br><br>
+							<i>
+							<img src=" <?php echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100">
+							<b><?php echo strtoupper($row['eventname'])?></b><br>
+							<?php echo $eventsOrganizerUsername[$counter];?>
+							<br>							
+							<br>
 								<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">&nbsp;<?php echo date("F j, Y",strtotime($row['dateStart'])); ?> - <?php echo date("F j, Y",strtotime($row['dateEnd'])); ?>
 							
 							<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">&nbsp;<?php echo substr($row['timeStart'],0,5); ?> - <?php echo substr($row['timeEnd'],0,5); ?>
@@ -166,6 +168,7 @@ text-align:center;
 							<div align="center">
 							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
 							<br>
+							</i>
 							</div>
 							</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
 						

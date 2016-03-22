@@ -147,7 +147,8 @@ class Pages extends CI_Controller {
 		$this->load->model('Dashboard_Model');
 		$data['account'] = $this->Dashboard_Model->getAccount($username);		
 		$data['events'] = $this->Dashboard_Model->getEvents($username);		
-		$data['category'] = $this->Dashboard_Model->getCategoryName($username);		
+		$data['category'] = $this->Dashboard_Model->getCategoryName($username);	
+		$data['eventsOrganizerUsername'] = $this->Dashboard_Model->getEventsOrganizerUsername($username);		
 //		$data['volunteerHistory'] = $this->Dashboard_Model->getVolunteeringHistory($username);		
 		$this->load->view('templates/dashboard_template',$data);
 	}

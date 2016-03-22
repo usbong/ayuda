@@ -41,5 +41,26 @@ class Dashboard_Model extends CI_Model
 //		return $query->row_array();
 		return $query->result_array();
 	}		
+	
+	public function getEventsOrganizerUsername($username)
+	{
+		$this->db->select('events.*');
+		$this->db->from('events');
+		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'inner');
+		$this->db->join('account', 'volunteeringhistory.userid = account.id', 'left');
+		$this->db->where('account.username',$username);
+		$this->db->limit(2);		
+		$query = $this->db->get();	
+		$result = $query->result_array();
+
+		$myArray = array();
+		foreach ($result as $row) {
+			$this->db->where('id',$row['userid']);
+			$query2 = $this->db->get('account');			
+			array_push($myArray,''.$query2->row_array()['fullname']);
+		}
+		return $myArray;
+//		return $query->result_array();
+	}		
 }
 ?>
