@@ -135,8 +135,10 @@ text-align:center;
 	
 				<div  id="nav">
 				<br><br>
-					<img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="250"><br>
-					<b><?php echo $account['firstname'] . ' ' . $account['lastname'];?></B><br>
+					<?php
+						echo '<img src="data:image/jpeg;base64,'.base64_encode( $account['profilePic']).'" width="250"/>';
+					?>
+					<br><b><?php echo $account['firstname'] . ' ' . $account['lastname'];?></B><br>
 					<?php echo $account['description'];?> <br>
 					
 					<a id='modal-launcher' data-toggle="modal" data-target="#myModal">
