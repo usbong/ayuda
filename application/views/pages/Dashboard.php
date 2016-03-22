@@ -90,7 +90,7 @@ text-align:center;
 			
 			div.volunteerOpportunities
 			{
-			margin: 20px 0px 0px 410px;
+			margin: 20px 60px 0px 410px;
 			text-align: left;
 			background-color:#f2f2f2;
 			padding: 20px 20px 20px 20px;
@@ -151,16 +151,37 @@ text-align:center;
 							foreach ($events as $row) {
 							?>						
 							<i>
-							<img src=" <?php echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100">
-							<b><?php echo strtoupper($row['eventname'])?></b><br>
-							<?php echo $eventsOrganizerUsername[$counter];?>
-							<br>							
-							<br>
-								<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">&nbsp;<?php echo date("F j, Y",strtotime($row['dateStart'])); ?> - <?php echo date("F j, Y",strtotime($row['dateEnd'])); ?>
-							
-							<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">&nbsp;<?php echo substr($row['timeStart'],0,5); ?> - <?php echo substr($row['timeEnd'],0,5); ?>
-							
-							<img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>							
+							<table>
+							<tr>
+								<td>
+									<img src=" <?php echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100">
+								</td>
+								<td>
+									<b><?php echo strtoupper($row['eventname'])?></b><br>
+									<?php echo $eventsOrganizerUsername[$counter];?>
+								</td>
+							</tr>
+							</table>
+							<table>
+								<tr>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">
+									</td>
+									<td width="28%">
+										&nbsp;<?php echo date("F j, Y",strtotime($row['dateStart'])); ?> -<br>&nbsp;<?php echo date("F j, Y",strtotime($row['dateEnd'])); ?>
+									</td>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">
+									</td>
+									<td width="28%">
+										&nbsp;<?php echo substr($row['timeStart'],0,5); ?> - <?php echo substr($row['timeEnd'],0,5); ?>
+									</td>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">							
+									</td>
+									<td width="28%">
+										&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>
+									</td>
+								</tr>
+							</table>
+							</i>
 							<br>
 							<br>
 								<?php $counter++;}?>
@@ -168,7 +189,6 @@ text-align:center;
 							<div align="center">
 							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
 							<br>
-							</i>
 							</div>
 							</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
 						
