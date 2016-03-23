@@ -272,8 +272,8 @@
 		echo'<div class="checkbox">'; 
 		echo'<label><input type="checkbox" value="">I want to receive email notifications from Ayuda Pilipinas and its partners</label>'; 
 		echo'</div>';
-       echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default btn-lg btn-block sbmt','value'=>'REGISTER'));
-        echo anchor('pages/view/'.$currTab,'CANCEL',array('class'=>'btn btn-default btn-lg btn-block sbmt'));
+		echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'REGISTER'));
+		echo anchor('pages/view/'.$currTab,'CANCEL',array('class'=>'btn btn-danger btn-lg btn-block sbmt'));
         echo'</div>';
         echo form_close();
         ?>

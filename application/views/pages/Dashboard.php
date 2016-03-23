@@ -84,7 +84,7 @@
 			width:350px;
 			float:left;
 			padding:10px;
-margin: 20px 20px 80px 20px;	
+margin: 20px 20px 20px 20px;	
 text-align:center;		
 			}
 			
@@ -94,7 +94,12 @@ text-align:center;
 			text-align: left;
 			background-color:#f2f2f2;
 			padding: 20px 20px 20px 20px;
-			}			
+			}		
+			
+			table.no-spacing {
+			  border-spacing:0; /* Removes the cell spacing via CSS */
+			  border-collapse: collapse;  /* Optional - if you don't want to have double border where cells touch */
+			}
 	</style>
 </head>
 
@@ -102,7 +107,7 @@ text-align:center;
 		<br>
 
 		<div align="center" style="margin-right: 200px">
-			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b>HI <?php echo $account['firstname'];?>!</b></font>
+			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b><?php if ($account['type']=='ngo') {echo 'WELCOME, ';} else {echo 'HI, ';} echo $account['firstname'];?>!</b></font>
 		</div>
 			<div align="right" style="margin-right: 80px">
 				<i>Your linked accounts:</i>&nbsp;
@@ -124,6 +129,24 @@ text-align:center;
 				</div>
 				
 				<br>		
+				<?php if ($account['type']=='ngo') {
+						echo '<table class="no-spacing" cellspacing="0">';
+						echo '<tr>';
+						echo '<td><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="180"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="180"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/yourStatisticsIcon.png");echo '" width="180"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/volunteerFeedbackIcon.png");echo '" width="180"></a></td>';
+						echo '</tr>';
+						echo '<tr>';
+						echo '<td valign="top"><center><b><font size="5">ADD EVENT</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="5">ADD BLOG</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="5">YOUR<br>STATISTICS</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="5">VOLUNTEER<br>FEEDBACK</font></b></center></td>';
+						echo '</tr>';
+						echo '</table>';
+					}
+				?>
+				<br>
 						<b>YOUR UPCOMING VOLUNTEER OPPORTUNITIES</b>			
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
 							<?php 
@@ -147,7 +170,13 @@ text-align:center;
 									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">
 									</td>
 									<td width="28%">
-										&nbsp;<?php echo date("F j, Y",strtotime($row['dateStart'])); ?> -<br>&nbsp;<?php echo date("F j, Y",strtotime($row['dateEnd'])); ?>
+										&nbsp;<?php if ($row['dateStart']!=$row['dateEnd']) {
+														echo date("F j, Y",strtotime($row['dateStart'])).'-<br>&nbsp;'.date("F j, Y",strtotime($row['dateEnd'])); 
+													}
+													else {
+														echo date("F j, Y",strtotime($row['dateStart']));
+													}
+											?>
 									</td>
 									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">
 									</td>
@@ -170,16 +199,11 @@ text-align:center;
 							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
 							<br>
 							</div>
-							</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
-						
-	
-	
-	
-	
-	
+							</div>			
+<!--						
 	<div  id="nav">
 				
-					<b>MESSAGES</B><br>
+					<b>MESSAGES</b><br>
 					<table>
 						<tr>
 							<td>Message
@@ -204,7 +228,7 @@ text-align:center;
 					
 					</table>
 	</div>
-				
+-->				
 						<br><br>	
 						<b>YOUR PAST VOLUNTEER EXPERIENCES</b>					
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
