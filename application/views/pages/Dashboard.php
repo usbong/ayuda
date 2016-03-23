@@ -132,16 +132,16 @@ text-align:center;
 				<?php if ($account['type']=='ngo') {
 						echo '<table class="no-spacing" cellspacing="0">';
 						echo '<tr>';
-						echo '<td><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="180"></a></td>';
-						echo '<td><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="180"></a></td>';
-						echo '<td><img src="';echo base_url("assets/images/yourStatisticsIcon.png");echo '" width="180"></a></td>';
-						echo '<td><img src="';echo base_url("assets/images/volunteerFeedbackIcon.png");echo '" width="180"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="150"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="150"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/yourStatisticsIcon.png");echo '" width="150"></a></td>';
+						echo '<td><img src="';echo base_url("assets/images/volunteerFeedbackIcon.png");echo '" width="150"></a></td>';
 						echo '</tr>';
 						echo '<tr>';
-						echo '<td valign="top"><center><b><font size="5">ADD EVENT</font></b></center></td>';
-						echo '<td valign="top"><center><b><font size="5">ADD BLOG</font></b></center></td>';
-						echo '<td valign="top"><center><b><font size="5">YOUR<br>STATISTICS</font></b></center></td>';
-						echo '<td valign="top"><center><b><font size="5">VOLUNTEER<br>FEEDBACK</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="3">ADD EVENT</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="3">ADD BLOG</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="3">YOUR<br>STATISTICS</font></b></center></td>';
+						echo '<td valign="top"><center><b><font size="3">VOLUNTEER<br>FEEDBACK</font></b></center></td>';
 						echo '</tr>';
 						echo '</table>';
 					}

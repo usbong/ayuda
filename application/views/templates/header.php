@@ -92,34 +92,18 @@
 <div align="center">
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
 </div>
-<nav>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <?php echo anchor('homepage', ' ', array('class' => 'navbar-brand')); ?>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-     
-		
-		
+<nav>    
 	
 	<!--<![endif]-->
 	
 	<body>
 		
-		<div class="container-fluid" style="margin-bottom: 0px;">
-			<div class="row">
-				<div align="right">
-					<font size="3" face="Arial" style="font-style:italic">
-					   <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</a> / <a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">Register</a>					  
-					</font>
-				</div>	
-			</div>
-		</div>
+		<div align="right">
+			<font size="3" face="Arial" style="font-style:italic">
+			   <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</a> / <a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">Register</a>					  
+			</font>
+			<br>
+		</div>	
 		
 		<?php		
 			$menu_tab_colors = array(0 => '#e62e2e', 1 => '#e62e2e', 2 => '#e62e2e', 3 => '#e62e2e', 4 => '#e62e2e', 5 => '#e62e2e', 6 => '#e62e2e');

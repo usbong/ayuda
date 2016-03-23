@@ -92,22 +92,6 @@
 <div align="center">
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
 </div>
-<nav>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <?php echo anchor('homepage', ' ', array('class' => 'navbar-brand')); ?>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-     
-		<body>
-		
-	</body>		
-	
 	<!--<![endif]-->
 	
 	<body>
@@ -146,13 +130,10 @@
 			}
 		?>
 		
-		<div class="container-fluid" style="margin-bottom: 0px;">
-			<div class="row">
-				<div align="right">
-						<i><b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <a href="/ayuda/index.php/pages/view/"<?php echo $currTab ?>><font color="#2c345b">Sign Out</font></a></b></i>
-				</div>	
-			</div>
-		</div>
+		<div align="right">
+				<i><b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <a href="/ayuda/index.php/pages/view/"<?php echo $currTab ?>><font color="#2c345b">Sign Out</font></a></b></i>
+			<br>
+		</div>	
 		
 		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="0">
 			<tr>
