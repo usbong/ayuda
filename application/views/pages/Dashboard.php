@@ -60,13 +60,13 @@
 		}
 		
 		hr {
-    display: block;
-    height: 3px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0; 
-}
+			display: block;
+			height: 3px;
+			border: 0;
+			border-top: 1px solid #ccc;
+			margin: 1em 0;
+			padding: 0; 
+		}
 			div.contentleft
 			{
 			background-color:#C6E5DD;
@@ -100,6 +100,10 @@ text-align:center;
 			  border-spacing:0; /* Removes the cell spacing via CSS */
 			  border-collapse: collapse;  /* Optional - if you don't want to have double border where cells touch */
 			}
+			
+			 a.add-event {
+				color: #333333;
+			 }			 
 	</style>
 </head>
 
@@ -111,9 +115,9 @@ text-align:center;
 		</div>
 			<div align="right" style="margin-right: 80px">
 				<i>Your linked accounts:</i>&nbsp;
-				<a href id='modal-launcher' data-toggle="modal" data-target="#modalFacebook"><img src=" <?php echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40"></a>
-				<a href id='modal-launcher' data-toggle="modal" data-target="#modalTwitter"><img src=" <?php echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40"></a>
-				<a href id='modal-launcher' data-toggle="modal" data-target="#modalEmail"><img src=" <?php echo base_url('assets/images/Icons and Logos_Email Icon (Blue).png');?>" width="40"></a>
+				<a id='modal-launcher' data-toggle="modal" data-target="#modalFacebook"><img src=" <?php echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40"></a>
+				<a id='modal-launcher' data-toggle="modal" data-target="#modalTwitter"><img src=" <?php echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40"></a>
+				<a id='modal-launcher' data-toggle="modal" data-target="#modalEmail"><img src=" <?php echo base_url('assets/images/Icons and Logos_Email Icon (Blue).png');?>" width="40"></a>
 			</div>
 
 				<div  id="nav">
@@ -132,13 +136,13 @@ text-align:center;
 				<?php if ($account['type']=='ngo') {
 						echo '<table class="no-spacing" cellspacing="0">';
 						echo '<tr>';
-						echo '<td><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="150"></a></td>';
+						echo '<td><a class="add-event" id="modal-launcher" data-toggle="modal" data-target="#add-event-modal"><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="150"></a></a></td>';
 						echo '<td><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="150"></a></td>';
 						echo '<td><img src="';echo base_url("assets/images/yourStatisticsIcon.png");echo '" width="150"></a></td>';
 						echo '<td><img src="';echo base_url("assets/images/volunteerFeedbackIcon.png");echo '" width="150"></a></td>';
 						echo '</tr>';
 						echo '<tr>';
-						echo '<td valign="top"><center><b><font size="3">ADD EVENT</font></b></center></td>';
+						echo '<td valign="top"><a class="add-event" id="modal-launcher" data-toggle="modal" data-target="#add-event-modal"><center><b><font size="3">ADD EVENT</font></b></center></a></td>';
 						echo '<td valign="top"><center><b><font size="3">ADD BLOG</font></b></center></td>';
 						echo '<td valign="top"><center><b><font size="3">YOUR<br>STATISTICS</font></b></center></td>';
 						echo '<td valign="top"><center><b><font size="3">VOLUNTEER<br>FEEDBACK</font></b></center></td>';
@@ -379,3 +383,96 @@ text-align:center;
   
 </body>
 </html>
+
+	<div class="modal inmodal fade" id="add-event-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+		<div class="modal-dialog  modal-md">
+			<div class="modal-content">
+				<div class="modal-body add-event-modal">	  
+					<div class="clearfix"></div>
+					<div id='social-icons-container'>
+						<div class="form-group">
+						<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>
+							<?php
+								echo form_open('Form/add_event_submitted');
+								echo'<i>';
+								echo'<div class="form-group">';
+								echo '<table>';
+								echo '<tr>';
+								echo '<td style="padding-right:10px"><center>';
+								echo '<label class="control-label" for="email">Select Volunteer Opportunity Category:<font color="red">*</font></label>';
+								echo '<br>';
+								$ctr = 1;
+								foreach ($categoryArray as $categoryArray) {
+								echo '<a href = "#" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
+								if(($ctr % 3) == 0)
+								{
+									echo '<br>';
+								}
+								$ctr++;
+								}
+								echo '<label>Select Type of Work:</label>';
+								echo '<select name="" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+								echo '<option value="None">None</option>';
+								foreach($typeOfWorkList as $eachTypeOfWorkList)
+								{
+									echo '<option value="'.$eachTypeOfWorkList->workname.'">'.$eachTypeOfWorkList->workname.'</option>';
+								}
+								echo '</select>';
+								echo '<br><br><font color="red">*</font> Required to be filled out.';
+								echo '</center></td>';
+								echo '<td>';
+									echo '<label class="control-label" for="email">Event Name:<font color="red">*</font></label>';
+									echo form_input(array('name' => 'eventname', 'type'=>'text','class'=>'form-control','placeholder'=>'Event Name','value' => set_value('eventname'), 'autocomplete' => 'off'));
+									echo $this->session->set_userdata('eventname',$this->input->post('eventname'));
+									echo '<table>';
+										echo '<tr>';
+										echo '<td>';
+										echo '<label class="control-label" for="email">Start Date:<font color="red">*</font></label>';
+										echo form_input(array('name' => 'dateStart', 'type'=>'date','class'=>'form-control','placeholder'=>'Start Date'));
+										echo $this->session->set_userdata('dateStart',$this->input->post('dateStart'));
+										echo '</td>';
+										echo '<td>';
+										echo '<label class="control-label" for="email">End Date:<font color="red">*</font></label>';
+										echo form_input(array('name' => 'dateEnd', 'type'=>'date','class'=>'form-control','placeholder'=>'End Date'));
+										echo $this->session->set_userdata('dateEnd',$this->input->post('dateEnd'));
+										echo '</td>';
+										echo '</tr>';
+
+										echo '<tr>';
+										echo '<td>';
+										echo '<label class="control-label" for="email">Start Time:<font color="red">*</font></label>';
+										echo form_input(array('name' => 'timeStart', 'type'=>'time','class'=>'form-control','placeholder'=>'Start Time'));
+										echo $this->session->set_userdata('timeStart',$this->input->post('timeStart'));
+										echo '</td>';
+										echo '<td>';
+										echo '<label class="control-label" for="email">End Time:<font color="red">*</font></label>';
+										echo form_input(array('name' => 'timeEnd', 'type'=>'time','class'=>'form-control','placeholder'=>'End Time'));
+										echo $this->session->set_userdata('timeEnd',$this->input->post('timeEnd'));
+										echo '</td>';
+										echo '</tr>';
+									echo '</table>';
+									echo '<label class="control-label" for="email">Venue:<font color="red">*</font></label>';
+									echo form_input(array('name' => 'venue', 'type'=>'text','class'=>'form-control','placeholder'=>'Venue','value' => set_value('venue'), 'autocomplete' => 'off'));
+									echo $this->session->set_userdata('venue',$this->input->post('venue'));
+									echo '<label class="control-label" for="email">Minimum Requirements:<font color="red">*</font></label>';
+									echo form_input(array('name' => 'minReq', 'type'=>'text','class'=>'form-control','placeholder'=>'Minimum Requirements','value' => set_value('minReq'), 'autocomplete' => 'off'));
+									echo $this->session->set_userdata('minReq',$this->input->post('minReq'));
+									echo '<label class="control-label" for="email">Preferred Skills:<font color="red">*</font></label>';
+									echo form_input(array('name' => 'preferredSkills', 'type'=>'text','class'=>'form-control','placeholder'=>'Preferred Skills','value' => set_value('preferredSkills'), 'autocomplete' => 'off'));
+									echo $this->session->set_userdata('preferredSkills',$this->input->post('preferredSkills'));
+									echo '</td>';									
+								echo '</tr>';									
+								echo '</table>';									
+								echo'</div>';
+								echo'</i>';								
+								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
+								echo form_close();
+								echo validation_errors();
+							?>						
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ </div>

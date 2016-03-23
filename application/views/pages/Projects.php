@@ -160,11 +160,10 @@ margin: 20px 25px 10px 25px;
 		<div class="form-group">
 			
 			<label for="exampleInputEmail1"><i>SELECT YOUR TYPE OF WORK:</i></label>
-				
 					<select name="" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">
-						<option value="All">All</option>
+						<option value="None">None</option>
 <?php
-foreach($rowtype as $each2)
+foreach($typeOfWorkList as $each2)
 {
     ?>
     <option value="<?php echo $each2->workname;?>"><?php echo $each2->workname; ?></option>
@@ -174,13 +173,11 @@ foreach($rowtype as $each2)
 </select>
 		</div>
 		<div class="form-group">
-			<label for="exampleInputEmail1"><i>SELECT YOUR LOCATION:</i></label>
-			<label>
-					
+			<label for="exampleInputEmail1"><i>SELECT YOUR LOCATION:</i></label>					
 					<select name="" class="form-control loc" style="background-color:#f2f2f2; font-style:italic;">
-					<option value="All">All</option>
+					<option value="None">None</option>
 <?php
-foreach($rowloc as $each1)
+foreach($rowLoc as $each1)
 {
     ?>
     <option value="<?php echo $each1->name;?>"><?php echo $each1->name; ?></option>
@@ -210,13 +207,13 @@ foreach ($query as $row) {
 			</p>
 			
 			<br><br>
-			<b>Type of Work:</b> <?php echo $row['typeofwork']?><br>
-			<b>Minimum Requirements:</b> <?php echo $row['minimumrequirements']?><br>
+			<b>Type of Work:</b> <?php echo $row['typeOfWork']?><br>
+			<b>Minimum Requirements:</b> <?php echo $row['minReq']?><br>
 			<b>Other Comments:</b>
 			<br>
 			<br>
 			<img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png'); ?>" width="60"> <?php echo date("F j, Y",strtotime($row['dateStart']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png'); ?>" width="60"> <?php echo date("h:i A",strtotime($row['timeStart'])) . '-' . date("h:i A",strtotime($row['timeEnd']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png'); ?>" width="60"> <?php echo $row['venue'] . ' , ' . $row['location']?> <br><br>
-						<div align="center">
+						<div align="center" style="font-style:normal">
 							<?php
 								echo anchor('','CLICK HERE TO SIGNUP',array('class'=>'normalButtonRed','data-count'=>$count));
 						

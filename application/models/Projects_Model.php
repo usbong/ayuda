@@ -13,15 +13,15 @@ class Projects_Model extends CI_Model
 		return $query->result();
 	}	
 
-	public function getListLocation()
+	public function getLocationList()
 	{
 		$query = $this->db->get('location');
-		return $query->result_array();
+		return $query->result();
 	}
 
-	public function getListType()
+	public function getTypeOfWorkList()
 	{
-		$query = $this->db->get('typeofwork');
+		$query = $this->db->get('typeOfWork');
 		return $query->result();
 	}
 	
@@ -45,7 +45,7 @@ class Projects_Model extends CI_Model
 			{
 				if($this->input->post('work') != 'All')
 				{
-					$this->db->where('events.typeofwork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('work'));
 				}
 			}
 			if($this->input->post('words') != null)
@@ -86,7 +86,7 @@ class Projects_Model extends CI_Model
 			{
 				if($this->input->post('work') != 'All')
 				{
-					$this->db->where('events.typeofwork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('work'));
 				}
 			}
 			if($this->input->post('words') != null)
@@ -127,7 +127,7 @@ class Projects_Model extends CI_Model
 			{
 				if($this->input->post('work') != 'All')
 				{
-					$this->db->where('events.typeofwork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('work'));
 				}
 			}
 			if($this->input->post('words') != null)
@@ -138,7 +138,6 @@ class Projects_Model extends CI_Model
 		  $this->db->order_by('events.datestart', 'asc');
 		  $query = $this->db->get();
 		  return $query->num_rows();
-	}
-	
+	}	
 }
 ?>

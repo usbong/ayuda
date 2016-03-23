@@ -15,6 +15,18 @@ class Dashboard_Model extends CI_Model
 		return $query->row_array();
 	}		
 */
+	public function getTypeOfWorkList()
+	{
+		$query = $this->db->get('typeOfWork');
+		return $query->result();
+	}
+
+	public function getCategoryArray()
+	{
+		$query = $this->db->get('category');
+		return $query->result_array();
+	}
+
 	public function getCategoryName($username)
 	{
 		$this->db->select('categoryName');
@@ -62,5 +74,9 @@ class Dashboard_Model extends CI_Model
 		return $myArray;
 //		return $query->result_array();
 	}		
+	
+	public function insertEvent($data) {
+		$this->db->insert('events',$data);
+	}
 }
 ?>

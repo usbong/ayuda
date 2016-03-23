@@ -88,8 +88,8 @@ class Pages extends CI_Controller {
 		$data['content'] = 'pages/Projects';
 		$this->load->model('Projects_Model');
 		$data['limit'] = 2;
-		$data['rowloc'] = $this->Projects_Model->getListLocation();
-		$data['rowtype'] = $this->Projects_Model->getListType();
+		$data['rowLoc'] = $this->Projects_Model->getLocationList();
+		$data['typeOfWorkList'] = $this->Projects_Model->getTypeOfWorkList();
 		$data['query'] = $this->Projects_Model->getProjectEvents();
 		$data['count'] = $this->Projects_Model->getProjectEventsCount();
 		$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
@@ -150,6 +150,8 @@ class Pages extends CI_Controller {
 		$data['category'] = $this->Dashboard_Model->getCategoryName($username);	
 		$data['eventsOrganizerUsername'] = $this->Dashboard_Model->getEventsOrganizerUsername($username);		
 //		$data['volunteerHistory'] = $this->Dashboard_Model->getVolunteeringHistory($username);		
+		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
+		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

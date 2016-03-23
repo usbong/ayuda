@@ -5,18 +5,39 @@ class Form extends CI_Controller {
 	public function __construct() {
 	parent::__construct();
 	}
-
+/*
 	// Show form in view page i.e view_page.php
 	public function form_show() {
 	$this->load->view("view_form");
 	}
-
-	// When user submit data on view page, Then this function store data in array.
+*/
+	// When user submits data on view page...
 	public function data_submitted() {
 		$data = array(
-		'username' => $this->input->post('username'),
-//		'user_email_id' => $this->input->post('u_email')
+		'username' => $this->input->post('username')
 		);
+
+		$this->viewDashboard($data['username']);
+	}
+
+	// When user submits add event data on view page...
+	public function add_event_submitted() {
+		$data = array(
+			'eventname' => $this->input->post('eventname'),
+			'dateStart' => $this->input->post('dateStart'),
+			'dateEnd' => $this->input->post('dateEnd'),
+			'timeStart' => $this->input->post('timeStart'),
+			'timeEnd' => $this->input->post('timeEnd'),
+			'venue' => $this->input->post('venue'),
+			'location' => $this->input->post('location'),
+			'minReq' => $this->input->post('minReq'),
+			'preferredSkills' => $this->input->post('preferredSkills'),
+			'category' => $this->input->post('category'),
+			'typeOfWork' => $this->input->post('typeOfWork')
+		);
+
+		$this->load->model('Dashboard_Model');
+		$this->Dashboard_Model->insertEvent($data);		
 
 		$this->viewDashboard($data['username']);
 	}
@@ -33,6 +54,8 @@ class Form extends CI_Controller {
 		$data['category'] = $this->Dashboard_Model->getCategoryName($username);		
 		$data['eventsOrganizerUsername'] = $this->Dashboard_Model->getEventsOrganizerUsername($username);
 //		$data['volunteerHistory'] = $this->Dashboard_Model->getVolunteeringHistory($username);		
+		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
+		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }
