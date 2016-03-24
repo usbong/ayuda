@@ -32,7 +32,7 @@ class Form extends CI_Controller {
 			'location' => $this->input->post('location'),
 			'minReq' => $this->input->post('minReq'),
 			'preferredSkills' => $this->input->post('preferredSkills'),
-			'category' => $this->input->post('category'),
+			'eventcategory' => $this->input->post('eventcategory'),
 			'typeOfWork' => $this->input->post('typeOfWork')
 		);
 

@@ -259,33 +259,7 @@ text-align:center;
 						</div>
 </body>
 
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Display</h4>
-        </div>
-        <?php  echo '<div class="modal-body">';
-          echo '<p>Change your display.</p>';
-		echo form_open('homepage/changeDisplay');
-        echo'<div class="form-group">';
-        echo '<label class="control-label">New Display:</label>';
-        echo form_input(array('name' => 'newdisplay', 'type'=>'text','class'=>'form-control','placeholder'=>'New display.'));
-        echo'</div>';		  
-        echo'</div>';		  
-		?>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>      
-    </div>
-  </div> 
+ 
 </body>
 </html>
 
@@ -308,22 +282,22 @@ text-align:center;
 								echo '<br>';
 								$ctr = 1;
 								foreach ($categoryArray as $categoryArray) {
-								echo '<a href = "#" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
+								echo '<a href = "#" name="eventcategory" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
 								if(($ctr % 3) == 0)
 								{
 									echo '<br>';
 								}
 								$ctr++;
 								}
+								echo $this->session->set_userdata('eventcategory',$this->input->post('eventcategory'));
 								echo '<label>Select Type of Work:</label>';
-								echo '<select name="typeOfWorkOption" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+								echo '<select name="typeOfWork" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
 								echo '<option value="None">None</option>';
 								foreach($typeOfWorkList as $eachTypeOfWorkList)
 								{
-									echo '<option value="'.$eachTypeOfWorkList->workname.'">'.$eachTypeOfWorkList->workname.'</option>';
+									echo '<option value="'.$eachTypeOfWorkList->workname.'" '.set_select('typeOfWork', $eachTypeOfWorkList->workname).'>'.$eachTypeOfWorkList->workname.'</option>';
 								}
 								echo '</select>';
-								echo $this->session->set_userdata('typeOfWork',$this->input->post('typeoOfWorkOption'));
 								echo '<br><br><font color="red">*</font> Required to be filled out.';
 								echo '</center></td>';
 								echo '<td>';
@@ -360,14 +334,13 @@ text-align:center;
 									echo form_input(array('name' => 'venue', 'type'=>'text','class'=>'form-control','placeholder'=>'Venue','value' => set_value('venue'), 'autocomplete' => 'off'));
 									echo $this->session->set_userdata('venue',$this->input->post('venue'));
 									echo '<label>Location:</label>';
-									echo '<select name="locationOption" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+									echo '<select name="location" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
 									echo '<option value="None">None</option>';
 									foreach($locationList as $eachLocationList)
 									{
-										echo '<option value="'.$eachLocationList->name.'">'.$eachLocationList->name.'</option>';
+										echo '<option value="'.$eachLocationList->name.'" '.set_select('location', $eachLocationList->name).'>'.$eachLocationList->name.'</option>';
 									}
 									echo '</select>';
-									echo $this->session->set_userdata('location',$this->input->post('locationOption'));
 									echo '<label class="control-label" for="email">Minimum Requirements:<font color="red">*</font></label>';
 									echo form_input(array('name' => 'minReq', 'type'=>'text','class'=>'form-control','placeholder'=>'Minimum Requirements','value' => set_value('minReq'), 'autocomplete' => 'off'));
 									echo $this->session->set_userdata('minReq',$this->input->post('minReq'));
@@ -377,6 +350,7 @@ text-align:center;
 									echo '</td>';									
 								echo '</tr>';									
 								echo '</table>';									
+								echo '<br>';																	
 								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
 								echo'</div>';
 								echo'</i>';								

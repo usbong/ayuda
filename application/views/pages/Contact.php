@@ -20,7 +20,7 @@
 			text-align: left;
 			background-color:#e62e2e;
 		}
-			
+						
 		p.description1{
 				margin: 20px 100px 0px 100px;
 				text-align:left;
@@ -29,11 +29,8 @@
 			height:250px;
 			width:310px;
 		}
-		label {
-			color: #ffffff; /* makes the text white */
-		}
 		form {
-			font-style:italic;
+			vertical-align: top;
 		}
 		btn btn-default sbmt {
 			color: #217abd;
@@ -45,11 +42,7 @@
 
 
 	<br>
-	<br>
-	<br>
-	
-	
-	<div class="col-md-2"> </div>
+	<div class="col-md-2"> </div>		
 	<div class="col-md-8">
 	
 		<b>CONTACT INFORMATION</b><br>
@@ -86,29 +79,29 @@
 		<br>
 		<br>
 		<center>
-			<div id="selection" style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;>		
-				<?php
+			<div id="selection" style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;display:inline-block;vertical-align:top;color: #ffffff;">		
+			<?php
 				echo form_open('homepage/contactForm');
 				echo '<div class="form-horizontal">';
 				echo '<br><div class="form-group"><div class="col-lg-3">';
 				echo '<label class="control-label">NAME:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
+				echo '<div class="col-lg-8"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
 				echo '<label class="control-label" >CONTACT NUMBER:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
+				echo '<div class="col-lg-8"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
 				echo '<label class="control-label" >EMAIL ADDRESS:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
+				echo '<div class="col-lg-8"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
 				echo '<label class="control-label" >SUBJECT:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
+				echo '<div class="col-lg-8"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
 				echo'</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
 				echo '<label class="control-label" >MESSAGE:</label></div>';
-				echo '<div class="col-lg-6"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
+				echo '<div class="col-lg-8"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
 				echo'</textarea></i></div></div>';			   
 				echo'<div class="form-group" align ="center">';
 				echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default sbmt','value'=>'SEND MESSAGE'));
