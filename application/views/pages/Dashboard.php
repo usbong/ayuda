@@ -203,7 +203,7 @@ text-align:center;
 							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
 							<br>
 							</div>
-							</div>			
+						</div>			
 <!--						
 	<div  id="nav">
 				
@@ -271,116 +271,21 @@ text-align:center;
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Display</h4>
         </div>
-        <div class="modal-body">
-          <p>Change your display.</p>
-		<?php  echo form_open('homepage/changeDisplay');
+        <?php  echo '<div class="modal-body">';
+          echo '<p>Change your display.</p>';
+		echo form_open('homepage/changeDisplay');
         echo'<div class="form-group">';
         echo '<label class="control-label">New Display:</label>';
         echo form_input(array('name' => 'newdisplay', 'type'=>'text','class'=>'form-control','placeholder'=>'New display.'));
-        echo'</div>';
-		  
-		  ?>
-        </div>
+        echo'</div>';		  
+        echo'</div>';		  
+		?>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-      </div>
-      
+      </div>      
     </div>
-  </div>
-
-
-
-
-
-	  	<!-- Link Facebook -->
-	  <div class="modal fade" id="modalFacebook" role="dialog">
-	    	<div class="modal-dialog">
-	    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Link Facebook Account</h4>
-		        </div>
-			        <div class="modal-body">
-			          <p>Your linked Facebook account.</p>
-						<?php  echo form_open('homepage/changeDisplayNGO');
-				        echo'<div class="form-group">';
-				        ?>
-				       	<text class="form-control"><?php echo $account['facebook']; ?></text>
-			        </div>
-				
-		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Link Facebook Account</button>
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        </div>
-	      	</div>
-	      
-	   </div>
-	   </div>
-
-
-		<!-- Twitter Email -->
-	 <div class="modal fade" id="modalTwitter" role="dialog">
-	    <div class="modal-dialog">
-	    
-	      <!-- Modal content-->
-	      	<div class="modal-content">
-	        	<div class="modal-header">
-	       			<button type="button" class="close" data-dismiss="modal">&times;</button>
-	        		<h4 class="modal-title">Link Twitter Account</h4>
-	        	</div>
-		        <div class="modal-body">
-		          <p>Your linked Twitter account.</p>
-					<?php  echo form_open('homepage/changeDisplayNGO');
-			        echo'<div class="form-group">';
-			        ?>
-			       	<text class="form-control">
-			       	<?php 
-			       	echo $account['twitter']; 
-			       	?></text>
-		        </div>
-	        </div>
-	        <div class="modal-footer">
-	         	<button type="button" class="btn btn-default" data-dismiss="modal">Link Twitter Account</button>
-	         	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-	      
-	  </div>
-	  </div>
-	
-
-	<!-- Link Email -->
-	  <div class="modal fade" id="modalEmail" role="dialog">
-	    <div class="modal-dialog">
-	    
-	      <!-- Modal content-->
-	      	<div class="modal-content">
-	        	<div class="modal-header">
-	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
-	         		<h4 class="modal-title">E-mail Address</h4>
-	        	</div>
-		        <div class="modal-body">
-		          	<p>You have linked your E-mail Address</p>
-					<?php  echo form_open('homepage/changeDisplayNGO');
-			        echo'<div class="form-group">';
-			        ?>
-			       	<text class="form-control"><?php echo $account['email']; ?></text>
-		        </div>
-			
-	        </div>
-	        <div class="modal-footer">
-	          	<button type="button" class="btn btn-default" data-dismiss="modal">Change E-mail Address</button>
-	         	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	      </div>
-	      
-	    </div>
-	  </div>
-  
+  </div> 
 </body>
 </html>
 
@@ -411,13 +316,14 @@ text-align:center;
 								$ctr++;
 								}
 								echo '<label>Select Type of Work:</label>';
-								echo '<select name="" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+								echo '<select name="typeOfWorkOption" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
 								echo '<option value="None">None</option>';
 								foreach($typeOfWorkList as $eachTypeOfWorkList)
 								{
 									echo '<option value="'.$eachTypeOfWorkList->workname.'">'.$eachTypeOfWorkList->workname.'</option>';
 								}
 								echo '</select>';
+								echo $this->session->set_userdata('typeOfWork',$this->input->post('typeoOfWorkOption'));
 								echo '<br><br><font color="red">*</font> Required to be filled out.';
 								echo '</center></td>';
 								echo '<td>';
@@ -437,7 +343,6 @@ text-align:center;
 										echo $this->session->set_userdata('dateEnd',$this->input->post('dateEnd'));
 										echo '</td>';
 										echo '</tr>';
-
 										echo '<tr>';
 										echo '<td>';
 										echo '<label class="control-label" for="email">Start Time:<font color="red">*</font></label>';
@@ -454,6 +359,15 @@ text-align:center;
 									echo '<label class="control-label" for="email">Venue:<font color="red">*</font></label>';
 									echo form_input(array('name' => 'venue', 'type'=>'text','class'=>'form-control','placeholder'=>'Venue','value' => set_value('venue'), 'autocomplete' => 'off'));
 									echo $this->session->set_userdata('venue',$this->input->post('venue'));
+									echo '<label>Location:</label>';
+									echo '<select name="locationOption" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+									echo '<option value="None">None</option>';
+									foreach($locationList as $eachLocationList)
+									{
+										echo '<option value="'.$eachLocationList->name.'">'.$eachLocationList->name.'</option>';
+									}
+									echo '</select>';
+									echo $this->session->set_userdata('location',$this->input->post('locationOption'));
 									echo '<label class="control-label" for="email">Minimum Requirements:<font color="red">*</font></label>';
 									echo form_input(array('name' => 'minReq', 'type'=>'text','class'=>'form-control','placeholder'=>'Minimum Requirements','value' => set_value('minReq'), 'autocomplete' => 'off'));
 									echo $this->session->set_userdata('minReq',$this->input->post('minReq'));
@@ -463,9 +377,9 @@ text-align:center;
 									echo '</td>';									
 								echo '</tr>';									
 								echo '</table>';									
+								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
 								echo'</div>';
 								echo'</i>';								
-								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
 								echo form_close();
 								echo validation_errors();
 							?>						

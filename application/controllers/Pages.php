@@ -152,6 +152,7 @@ class Pages extends CI_Controller {
 //		$data['volunteerHistory'] = $this->Dashboard_Model->getVolunteeringHistory($username);		
 		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
+		$data['locationList'] = $this->Dashboard_Model->getLocationList();
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

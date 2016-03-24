@@ -86,7 +86,7 @@
 		<br>
 		<br>
 		<center>
-			<div id="selection"style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;>		
+			<div id="selection" style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;>		
 				<?php
 				echo form_open('homepage/contactForm');
 				echo '<div class="form-horizontal">';
@@ -118,10 +118,8 @@
 				?>
 			</div>
 		</center>
-	</div>
-	<div class="col-md-2"> </div>
-	
-
+	</div>	
+<br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
@@ -134,5 +132,3 @@
 <br><br><br><br>
 
 </body>
-
-

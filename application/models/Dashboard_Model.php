@@ -15,6 +15,12 @@ class Dashboard_Model extends CI_Model
 		return $query->row_array();
 	}		
 */
+	public function getLocationList()
+	{
+		$query = $this->db->get('location');
+		return $query->result();
+	}
+
 	public function getTypeOfWorkList()
 	{
 		$query = $this->db->get('typeOfWork');
