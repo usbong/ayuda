@@ -34,6 +34,7 @@
     			<td width="200"><br>
 					<i><font color="#FFFFFF">Ayuda Pilipinas<br>
 					+63917 327 8462<br>
+					825 A SM Blue Residences Katipunan Avenue<br>
 					Loyola Heights Subdivision<br>
 					Quezon City, Philippines</i>
 				</td>
