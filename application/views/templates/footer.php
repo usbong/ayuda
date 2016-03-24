@@ -40,16 +40,40 @@
   			</tr>
    
   			<tr>
-   
-
-				<td align="left">
-					<b><font color="#FFFFFF">HOME &nbsp;&nbsp;&nbsp;&nbsp; ABOUT &nbsp;&nbsp;&nbsp;&nbsp; CONTACT &nbsp;&nbsp;&nbsp;&nbsp; VOLUNTEERS &nbsp;&nbsp;&nbsp;&nbsp; NONPROFITS &nbsp;&nbsp;&nbsp;&nbsp; STORIES &nbsp;&nbsp;&nbsp;&nbsp; PROJECTS
-					</b>
-				</td>
-	
-				<td align="left">
-					&nbsp;&nbsp;
-				</td>
+				<td>
+				<table border="0" style="table-layout: fixed;" cellspacing="" cellpadding="">
+					<tr>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Home', 'HOME'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/About', 'ABOUT'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Stories', 'STORIES'); 
+							?></b>
+						</td>
+						<td align="left" style="padding-right:30px">
+							<b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+							?></b>
+						</td>
+					</tr>
+				</table>
+				</td>				
  			</tr>
   
      		<tr>
