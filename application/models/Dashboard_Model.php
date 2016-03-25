@@ -82,6 +82,7 @@ class Dashboard_Model extends CI_Model
 	}		
 	
 	public function insertEvent($data) {
+//		array_splice($data, 0, 1);
 		$this->db->insert('events',$data);
 	}
 }

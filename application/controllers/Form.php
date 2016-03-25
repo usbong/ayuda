@@ -23,6 +23,7 @@ class Form extends CI_Controller {
 	// When user submits add event data on view page...
 	public function add_event_submitted() {
 		$data = array(
+//			'account' => $this->input->post('account'),
 			'eventname' => $this->input->post('eventname'),
 			'dateStart' => $this->input->post('dateStart'),
 			'dateEnd' => $this->input->post('dateEnd'),
@@ -32,14 +33,14 @@ class Form extends CI_Controller {
 			'location' => $this->input->post('location'),
 			'minReq' => $this->input->post('minReq'),
 			'preferredSkills' => $this->input->post('preferredSkills'),
-			'eventcategory' => $this->input->post('eventcategory'),
+			'eventCategory' => $this->input->post('eventCategory'),
 			'typeOfWork' => $this->input->post('typeOfWork')
 		);
 
 		$this->load->model('Dashboard_Model');
 		$this->Dashboard_Model->insertEvent($data);		
 
-		$this->viewDashboard($data['username']);
+		$this->viewDashboard($this->session->userdata('username'));
 	}
 	
 	//---------------------------------------------------------

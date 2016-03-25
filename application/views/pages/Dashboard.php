@@ -4,7 +4,20 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
-
+<!--	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">			
+		window.onload = function() {
+			$("#category a").click(function(event) {
+			  //alert("hello:");
+			  alert(event.target.id);
+//			  $this->session->set_userdata('eventcategory',event.target.id);
+			  set_select('eventcategory',event.target.id);
+			  return false;
+			});
+		};
+	</script>
+-->
 	<style>
 
 			.normalButtonBlue {
@@ -137,7 +150,7 @@ text-align:center;
 						echo '<table class="no-spacing" cellspacing="0">';
 						echo '<tr>';
 						echo '<td><a class="add-event" id="modal-launcher" data-toggle="modal" data-target="#add-event-modal"><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="150"></a></a></td>';
-						echo '<td><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="150"></a></td>';
+						echo '<td><a target="_blank" href="https://www.blogger.com/"><img src="';echo base_url("assets/images/addBlogIcon.png");echo '" width="150"></a></a></td>';
 						echo '<td><img src="';echo base_url("assets/images/yourStatisticsIcon.png");echo '" width="150"></a></td>';
 						echo '<td><img src="';echo base_url("assets/images/volunteerFeedbackIcon.png");echo '" width="150"></a></td>';
 						echo '</tr>';
@@ -262,7 +275,7 @@ text-align:center;
  
 </body>
 </html>
-
+	
 	<div class="modal inmodal fade" id="add-event-modal" tabindex="-1" role="dialog"  aria-hidden="true">
 		<div class="modal-dialog  modal-md">
 			<div class="modal-content">
@@ -273,6 +286,8 @@ text-align:center;
 						<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>
 							<?php
 								echo form_open('Form/add_event_submitted');
+								echo $this->session->set_userdata('username',$account['username']);
+								echo 'username: '.$account['username'];
 								echo'<i>';
 								echo'<div class="form-group">';
 								echo '<table>';
@@ -281,15 +296,18 @@ text-align:center;
 								echo '<label class="control-label" for="email">Select Volunteer Opportunity Category:<font color="red">*</font></label>';
 								echo '<br>';
 								$ctr = 1;
+//								echo form_fieldset('category');
 								foreach ($categoryArray as $categoryArray) {
-								echo '<a href = "#" name="eventcategory" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
+								echo '<label>';
+								echo '<input type="radio" name="eventCategory" value="'.$categoryArray['categoryName'].'" '.set_radio('eventCategory', $categoryArray['categoryName']).'/>';
+								echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
+								echo '</label>';
 								if(($ctr % 3) == 0)
 								{
 									echo '<br>';
 								}
 								$ctr++;
 								}
-								echo $this->session->set_userdata('eventcategory',$this->input->post('eventcategory'));
 								echo '<label>Select Type of Work:</label>';
 								echo '<select name="typeOfWork" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
 								echo '<option value="None">None</option>';
@@ -351,9 +369,9 @@ text-align:center;
 								echo '</tr>';									
 								echo '</table>';									
 								echo '<br>';																	
+								echo'</i>';								
 								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
 								echo'</div>';
-								echo'</i>';								
 								echo form_close();
 								echo validation_errors();
 							?>						
