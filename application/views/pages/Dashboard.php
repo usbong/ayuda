@@ -286,8 +286,8 @@ text-align:center;
 						<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>
 							<?php
 								echo form_open('Form/add_event_submitted');
-								echo $this->session->set_userdata('username',$account['username']);
-								echo 'username: '.$account['username'];
+//								echo $this->session->set_userdata('username',$account['username']);
+								echo $this->session->set_userdata('account',$account);
 								echo'<i>';
 								echo'<div class="form-group">';
 								echo '<table>';
@@ -299,7 +299,7 @@ text-align:center;
 //								echo form_fieldset('category');
 								foreach ($categoryArray as $categoryArray) {
 								echo '<label>';
-								echo '<input type="radio" name="eventCategory" value="'.$categoryArray['categoryName'].'" '.set_radio('eventCategory', $categoryArray['categoryName']).'/>';
+								echo '<input type="radio" name="categoryId" value="'.$categoryArray['id'].'" '.set_radio('eventCategory', $categoryArray['id']).'/>';
 								echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
 								echo '</label>';
 								if(($ctr % 3) == 0)
