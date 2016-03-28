@@ -4,6 +4,8 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+ 
 <!--	
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript">			
@@ -273,10 +275,41 @@ text-align:center;
 							<b>Locations Volunteered At:</b> Metro Manila, Iloilo, Batangas<br>
 							<b>Member Since:</b> <?php echo $account['dateJoined']; ?><br>
 						</div>
-</body>
+<br><br><center>Sample Line Chart
+	<div name="chart">
+	<canvas id="myChart" width="400" height="400"></canvas>
+	</div>
+</center>
+	<script>
+var data = {
+  labels: ["January", "February", "March", "April", "May", "June", "July","August", "November", "December"],
+  datasets: [
+      {
+          label: "Sodium intake",
+          fillColor: "rgba(220,220,220,0.2)",
+          strokeColor: "rgba(220,220,220,1)",
+          pointColor: "rgba(220,220,220,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: [165, 159, 180, 181, 156, 155, 140]
+      },
+      {
+          label: "Sugar intake",
+          fillColor: "rgba(151,187,205,0.2)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [128, 148, 140, 119, 186, 127, 190]
+      }
+  ]
+}
 
- 
-</body>
+var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(data);	</script>
+						
+</body> 
 </html>
 	
 	<div class="modal inmodal fade" id="add-event-modal" tabindex="-1" role="dialog"  aria-hidden="true">

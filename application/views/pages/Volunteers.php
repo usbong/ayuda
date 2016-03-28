@@ -2,7 +2,6 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
-
 	<style>
 
 
@@ -215,8 +214,6 @@
 	
 	<br><br>
 	</div>
-
-
 
 </body>
 
