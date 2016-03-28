@@ -39,7 +39,7 @@ class Dashboard_Model extends CI_Model
 		$this->db->from('category');
 		$this->db->join('events', 'events.categoryId = category.id', 'inner');
 		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'left');
-		$this->db->join('account', 'volunteeringhistory.userid = account.id', 'right');
+		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'right');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		
 		$query = $this->db->get();
@@ -52,7 +52,7 @@ class Dashboard_Model extends CI_Model
 		$this->db->select('events.*, account.*, volunteeringhistory.*');
 		$this->db->from('events');
 		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'inner');
-		$this->db->join('account', 'volunteeringhistory.userid = account.id', 'left');
+		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'left');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		
 		$query = $this->db->get();
@@ -65,7 +65,7 @@ class Dashboard_Model extends CI_Model
 		$this->db->select('events.*');
 		$this->db->from('events');
 		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'inner');
-		$this->db->join('account', 'volunteeringhistory.userid = account.id', 'left');
+		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'left');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		
 		$query = $this->db->get();	
@@ -73,7 +73,7 @@ class Dashboard_Model extends CI_Model
 
 		$myArray = array();
 		foreach ($result as $row) {
-			$this->db->where('id',$row['userid']);
+			$this->db->where('id',$row['userId']);
 			$query2 = $this->db->get('account');			
 			array_push($myArray,''.$query2->row_array()['fullname']);
 		}

@@ -275,7 +275,9 @@ text-align:center;
 							<b>Locations Volunteered At:</b> Metro Manila, Iloilo, Batangas<br>
 							<b>Member Since:</b> <?php echo $account['dateJoined']; ?><br>
 						</div>
-<br><br><center>Sample Line Chart
+<br>
+<?php if ($account['type']=='ngo') { ?>
+<br><center>Sample Line Chart
 	<div name="chart">
 	<canvas id="myChart" width="400" height="400"></canvas>
 	</div>
@@ -308,7 +310,7 @@ var data = {
 }
 
 var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(data);	</script>
-						
+<?php } ?>						
 </body> 
 </html>
 	
