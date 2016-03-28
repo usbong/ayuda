@@ -17,7 +17,7 @@ class Form extends CI_Controller {
 		'username' => $this->input->post('username')
 		);
 
-		$this->viewDashboard($data['username']);
+		$this->viewDashboard($data['username'], FALSE);
 	}
 
 	// When user submits add event data on view page...
@@ -39,18 +39,40 @@ class Form extends CI_Controller {
 			'categoryId' => $this->input->post('categoryId'),
 			'typeOfWork' => $this->input->post('typeOfWork')
 		);
+		
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		$this->form_validation->set_message('required', 'Please fill out all the <font color="red">required</font> fields.');
+		$this->form_validation->set_rules('categoryId', 'Select Volunteer Opportunity Category:', 'trim|required');
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+//			$this->load->view('myform');
+			$this->viewDashboard($username, TRUE);
+		}
+		else
+		{
+//			$this->load->view('formsuccess');
+			$this->load->model('Dashboard_Model');
+			$this->Dashboard_Model->insertEvent($data);		
 
-		$this->load->model('Dashboard_Model');
-		$this->Dashboard_Model->insertEvent($data);		
-
-		$this->viewDashboard($username);
+			$this->viewDashboard($username, FALSE);
+		}
 	}
 	
 	//---------------------------------------------------------
 	// Dashboard Page
 	//---------------------------------------------------------	
-	public function viewDashboard($username)
+	public function viewDashboard($username, $hasError)
 	{
+		if ($hasError==TRUE) {
+			$data['hasError'] = TRUE;
+		}
+		else {
+			unset($_POST);
+			$data['hasError'] = FALSE;
+		}
+	
 		$data['content'] = 'pages/Dashboard';
 		$this->load->model('Dashboard_Model');
 		$data['account'] = $this->Dashboard_Model->getAccount($username);		
@@ -61,6 +83,7 @@ class Form extends CI_Controller {
 		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$data['locationList'] = $this->Dashboard_Model->getLocationList();
+
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

@@ -122,8 +122,11 @@ text-align:center;
 
 <body>	
 		<br>
-
 		<div align="center" style="margin-right: 200px">
+			<?php if ($hasError==TRUE) { //after add event 
+					echo '<font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to add the event. Please make sure to fill out all the <font color="red">required</font> fields.<br><br>';
+				}
+			?>
 			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b><?php if ($account['type']=='ngo') {echo 'WELCOME, ';} else {echo 'HI, ';} echo $account['firstname'];?>!</b></font>
 		</div>
 			<div align="right" style="margin-right: 80px">
@@ -285,7 +288,9 @@ text-align:center;
 						<div class="form-group">
 						<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>
 							<?php
-								echo form_open('Form/add_event_submitted');
+								$attributes = array('id' => 'addEventForm');
+								echo validation_errors();
+								echo form_open('Form/add_event_submitted',$attributes);
 //								echo $this->session->set_userdata('username',$account['username']);
 								echo $this->session->set_userdata('account',$account);
 								echo'<i>';
@@ -294,6 +299,7 @@ text-align:center;
 								echo '<tr>';
 								echo '<td style="padding-right:10px"><center>';
 								echo '<label class="control-label" for="email">Select Volunteer Opportunity Category:<font color="red">*</font></label>';
+//								echo form_error('categoryId');
 								echo '<br>';
 								$ctr = 1;
 //								echo form_fieldset('category');
@@ -373,7 +379,6 @@ text-align:center;
 								echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'CONFIRM EVENT'));
 								echo'</div>';
 								echo form_close();
-								echo validation_errors();
 							?>						
 							</center>
 						</div>

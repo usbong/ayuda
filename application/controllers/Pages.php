@@ -127,11 +127,11 @@ class Pages extends CI_Controller {
 		$data['value'] = $this->input->post('loc');
 		if($this->input->post('loc') != null)
 		{
-		$this->load->view('calendar',$data);
+			$this->load->view('calendar',$data);
 		}
 		else
 		{
-		$this->load->view('templates/general_template',$data);
+			$this->load->view('templates/general_template',$data);
 		}		
 	}
 
