@@ -57,6 +57,7 @@
 							
  a:hover {
   cursor:pointer;
+  text-decoration: none;
  }
  
  a {

@@ -111,11 +111,10 @@ are amazing people like them in your midst!If you have a great volunteer story t
 		</div>
 	
 	
-	
-<div class="col-md-12" align="center" >
+<div class="col-md-12" align="center" style="margin-left:60px">
 	<div class="col-md-2"> </div>
 	
-	<div class="col-md-4" style="background-color:#f2f2f2;border-radius:25px;"><br>
+	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
 	<table width="300">
 	<tr>
 	<td>
@@ -131,7 +130,7 @@ are amazing people like them in your midst!If you have a great volunteer story t
 	<br></td></tr></table>
 	</div>
 	<div class="col-md-1"> </div>
-	<div class="col-md-4" style="background-color:#f2f2f2;border-radius:25px;"><br>
+	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
 	
 	<table width="300">
 	<tr>
@@ -149,14 +148,7 @@ are amazing people like them in your midst!If you have a great volunteer story t
 	</div>
 	
 	<div class="col-md-1"> </div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
+	</div>	
 	
 	
 	<div class="col-md-12" align="center" >
@@ -173,14 +165,12 @@ are amazing people like them in your midst!If you have a great volunteer story t
 	
 	<div class="col-md-1"> </div>
 	</div>
-	
-	
-	
-	
-	<div class="col-md-12" align="center" >
+
+
+	<div class="col-md-12" align="center" style="margin-left:60px">
 	<div class="col-md-2"> </div>
 	
-	<div class="col-md-4" style="background-color:#f2f2f2;border-radius:25px;"><br>
+	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
 	<table width="300">
 	<tr>
 	<td>
@@ -195,7 +185,7 @@ are amazing people like them in your midst!If you have a great volunteer story t
 		<h5><i><?php echo $story['description']; ?></h5></i><br>
 	<br></td></tr></table></div>
 	<div class="col-md-1"> </div>
-	<div class="col-md-4" style="background-color:#f2f2f2;border-radius:25px;"><br>
+	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
 	
 	<table width="300">
 	<tr>
@@ -214,7 +204,6 @@ are amazing people like them in your midst!If you have a great volunteer story t
 	
 	<div class="col-md-1"> </div>
 	</div>
-
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
@@ -229,8 +218,6 @@ are amazing people like them in your midst!If you have a great volunteer story t
 
 <br><br><br><br>
 <br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>	
 <br>
 </body>
 

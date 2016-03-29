@@ -106,9 +106,11 @@ class Pages extends CI_Controller {
 		$data['content'] = 'pages/About';
 		$this->load->model('About_Model');
         $data['headings'] = array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
-        if($this->input->post('year') != null)
+//        if($this->input->post('year') != null)
+		if ($this->session->userdata('date') != null)
         {
-			$data['date'] = date("Y-m-d",strtotime($this->input->post('year').'-'.$this->input->post('month').'-01'));
+			$data['date'] = $this->session->userdata('date');
+//			$data['date'] = date("Y-m-d",strtotime($this->session->userdata('year').'-'.$this->session->userdata('month').'-01'));
         }
         else
         {
@@ -154,5 +156,12 @@ class Pages extends CI_Controller {
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$data['locationList'] = $this->Dashboard_Model->getLocationList();
 		$this->load->view('templates/dashboard_template',$data);
+	}
+
+	//---------------------------------------------------------
+	// Misc
+	//---------------------------------------------------------		
+	public function session_set_userdata($name, $value){
+	   $this->session->set_userdata($name, $value);
 	}
 }

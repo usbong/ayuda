@@ -43,16 +43,17 @@
 			
 			div.calendarContact
 			{
-			margin: 20px 250px 0px 800px;
-   			text-align: left;
-   			width: 500px;
-			background-color:#F2F2F2;
-			padding: 20px 20px 20px 20px;
+				margin: 20px 250px 0px 800px;
+				text-align: left;
+				width: 400px;
+				background-color:#F2F2F2;
+				padding: 20px 20px 20px 20px;
+				border-radius: 25px;
 			}
 			
 			div.socialNetworks
 			{
-				margin-left: 412px;
+				margin-left: 482px;
 			}
 			
 			.normalButtonRed {
@@ -196,14 +197,29 @@
 		
 					<br><br><br>
 <div class = "calendar">
+<script>
+	var d = new Date("Y-m-d");
+	function processNextMonth() {
+		d.setMonth(d.getMonth()+1);
+		$.ajax({
+		  type: "POST",
+		  url: "Pages/session_set_userdata",
+		  data: { name: date
+				  value: d
+				}
+	   }).done(function( msg ) {
+		  alert( "Data Saved: " + msg );
+	   });
+	}
+</script>
 <table>
 <tr>
 	<th></th>
 	<th colspan="5" height="10">
-	<a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "prev">
+	<a href = "javascript:void(0)" onclick="processPrevMonth();">
 	<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Left_Red.png");?> width="50"></a>
 	<FONT FACE="Geneva, Arial" SIZE=6 COLOR="#2C345B" style="text-transform:uppercase"><?php echo date('F',strtotime($date)) . ' ' . $year;?></FONT>	
-	<a href = "#" data-month="<?php echo $month;?>" data-year = "<?php echo $year;?>" class = "next">
+	<a href = "javascript:void(0)" onclick="processNextMonth();">
 	<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Right_Red.png");?> width="50"></a></th>
 	<th></th>
 </tr>	
