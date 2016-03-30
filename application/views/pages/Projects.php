@@ -13,7 +13,7 @@
 			width:250px;
 			float:left;
 			padding:5px;	 
-margin: 20px 20px 10px 250px;			
+margin: 20px 20px 10px 150px;			
 			}
 			#section {
 				background-color:#F2F2F2;
@@ -47,7 +47,7 @@ margin: 20px 25px 10px 25px;
 			
 				p.description
 			{
-				margin: 20px 250px 10px 250px;
+				margin: 20px 250px 10px 150px;
 				text-align:left;
 			}
 
@@ -193,7 +193,7 @@ foreach($rowLoc as $each1)
 <?php 
 foreach ($query as $row) {
 ?>
-		<div  id="selection" style="background-color:#f2f2f2;margin:10px 30px 30px 550px;padding: 10px 10px 10px 10px;border-radius: 25px;font-style:italic">
+		<div  id="selection" style="background-color:#f2f2f2;margin:10px 100px 30px 450px;padding: 20px 20px 20px 20px;border-radius: 25px;font-style:italic">
 		<img class = "image" src="data:image/jpeg;base64,<?php echo base64_encode( $row['icon']) ?>"/>
 		<div class = "contentdesc">
 		<b><?php echo $row['eventname']?></b>
@@ -212,14 +212,41 @@ foreach ($query as $row) {
 			<b>Other Comments:</b>
 			<br>
 			<br>
-			<img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png'); ?>" width="60"> <?php echo date("F j, Y",strtotime($row['dateStart']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png'); ?>" width="60"> <?php echo date("h:i A",strtotime($row['timeStart'])) . '-' . date("h:i A",strtotime($row['timeEnd']))?> <img src="<?php echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png'); ?>" width="60"> <?php echo $row['venue'] . ' , ' . $row['location']?> <br><br>
-						<div align="center" style="font-style:normal">
+							<table>
+								<tr>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Calendar).png');?>" width="40">
+									</td>
+									<td width="28%">
+										&nbsp;<?php if ($row['dateStart']!=$row['dateEnd']) {
+														echo date("F j, Y",strtotime($row['dateStart'])).'-<br>&nbsp;'.date("F j, Y",strtotime($row['dateEnd'])); 
+													}
+													else {
+														echo date("F j, Y",strtotime($row['dateStart']));
+													}
+											?>
+									</td>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Time).png');?>" width="40">
+									</td>
+									<td width="28%">
+										&nbsp;<?php echo substr($row['timeStart'],0,5); ?> - <?php echo substr($row['timeEnd'],0,5); ?>
+									</td>
+									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">							
+									</td>
+									<td width="28%">
+										&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>
+									</td>
+								</tr>
+							</table>
+				<br>
+
+
+				<div align="center" style="font-style:normal">
 							<?php
 								echo anchor('','CLICK HERE TO SIGNUP',array('class'=>'normalButtonRed','data-count'=>$count));
 						
 							?>
-						</div>
-			<br><br>
+				</div>
+			<br>
 		</div>		
 <?php 
 }
@@ -227,10 +254,7 @@ if($rcount > $limit)
 {
 	?>
 		<br><br>
-		
-		<div id="nav">
-		</div>
-		
+				
 		<div id="selection">
 			<div  align="center">
 		<?php

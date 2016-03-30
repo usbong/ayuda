@@ -20,7 +20,7 @@
 			text-align: left;
 			background-color:#e62e2e;
 		}
-		label {
+		label.contact {
 			color: #ffffff;
 		}
 						
@@ -86,23 +86,23 @@
 				echo form_open('homepage/contactForm');
 				echo '<div class="form-horizontal">';
 				echo '<br><div class="form-group"><div class="col-lg-3">';
-				echo '<label class="control-label">NAME:</label></div>';
+				echo '<label class="contact">NAME:</label></div>';
 				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="control-label" >CONTACT NUMBER:</label></div>';
+				echo '<label class="contact" >CONTACT NUMBER:</label></div>';
 				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="control-label" >EMAIL ADDRESS:</label></div>';
+				echo '<label class="contact" >EMAIL ADDRESS:</label></div>';
 				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
 				echo '</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="control-label" >SUBJECT:</label></div>';
+				echo '<label class="contact" >SUBJECT:</label></div>';
 				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
 				echo'</i></div></div>';			   
 				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="control-label" >MESSAGE:</label></div>';
+				echo '<label class="contact" >MESSAGE:</label></div>';
 				echo '<div class="col-lg-6"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
 				echo'</textarea></i></div></div>';			   
 				echo'<div class="form-group" align ="center">';

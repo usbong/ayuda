@@ -100,17 +100,63 @@ class Pages extends CI_Controller {
 	//---------------------------------------------------------
 	// About Page
 	//---------------------------------------------------------
+	public function increase_by_one_month_calendar_in_about_page(){
+	  $date = $this->session->userdata('date');//date('Y-m-d');		  
+	  $newdate = strtotime ( '+1 month' , strtotime ( $date ) ) ;	  
+	  $newdate = date ( 'Y-m-d' , $newdate );	      
+	  $this->session->set_userdata('date', $newdate);	  
+
+	  /*
+	  if ($newdate != date('Y-m-d')) {
+		$this->session->set_userdata('date', $newdate);	  
+		$this->session->set_userdata('doNotResetDate', TRUE);	  	  
+	  }
+	  else {
+	  	$this->session->set_userdata('doNotResetDate', FALSE);	  	  
+	  }
+	  */
+	  $this->viewAbout();
+	}
+
+	public function decrease_by_one_month_calendar_in_about_page(){
+	  $date = $this->session->userdata('date'); //date('Y-m-d');	
+	  $newdate = strtotime ( '-1 month' , strtotime ( $date ) ) ;	  
+	  $newdate = date ( 'Y-m-d' , $newdate );	      
+	  $this->session->set_userdata('date', $newdate);	  
+
+	  /*	  
+	  if ($newdate != date('Y-m-d')) {
+		$this->session->set_userdata('date', $newdate);	  
+		$this->session->set_userdata('doNotResetDate', TRUE);	  	  
+	  }
+	  else {
+	  	$this->session->set_userdata('doNotResetDate', FALSE);	  	  
+	  }
+	  */
+	  $this->viewAbout();
+	}
+		
 	public function viewAbout()
-	{
+	{	
 		date_default_timezone_set('Etc/GMT-8');
 		$data['content'] = 'pages/About';
 		$this->load->model('About_Model');
         $data['headings'] = array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
-//        if($this->input->post('year') != null)
+/*
+		if ($this->session->userdata('doNotResetDate')==TRUE) {
+			$data['date'] = $this->session->userdata('date');
+
+		}
+        else
+        {
+		    $data['date'] = date("Y-m-d");
+        }
+		$this->session->set_userdata('doNotResetDate', FALSE);	  
+*/
+
 		if ($this->session->userdata('date') != null)
         {
 			$data['date'] = $this->session->userdata('date');
-//			$data['date'] = date("Y-m-d",strtotime($this->session->userdata('year').'-'.$this->session->userdata('month').'-01'));
         }
         else
         {
@@ -127,6 +173,9 @@ class Pages extends CI_Controller {
 		$data['category'] = $this->About_Model->getCategoryType();
 		$data['typeofwork'] = $this->About_Model->getTypeOfWork();
 		$data['value'] = $this->input->post('loc');
+
+		//unset($_POST); //reset session data
+		
 		if($this->input->post('loc') != null)
 		{
 			$this->load->view('calendar',$data);
@@ -156,12 +205,5 @@ class Pages extends CI_Controller {
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$data['locationList'] = $this->Dashboard_Model->getLocationList();
 		$this->load->view('templates/dashboard_template',$data);
-	}
-
-	//---------------------------------------------------------
-	// Misc
-	//---------------------------------------------------------		
-	public function session_set_userdata($name, $value){
-	   $this->session->set_userdata($name, $value);
 	}
 }
