@@ -50,7 +50,7 @@ class Projects_Model extends CI_Model
 			}
 			if($this->input->post('words') != null)
 			{
-					$this->db->like('events.eventname',$this->input->post('words'));
+					$this->db->like('events.eventName',$this->input->post('words'));
 					$this->db->or_like('events.fullname',$this->input->post('words'));
 			}
 		  $this->db->order_by('events.datestart', 'asc');
@@ -91,7 +91,7 @@ class Projects_Model extends CI_Model
 			}
 			if($this->input->post('words') != null)
 			{
-					$this->db->like('events.eventname',$this->input->post('words'));
+					$this->db->like('events.eventName',$this->input->post('words'));
 					$this->db->or_like('events.fullname',$this->input->post('words'));
 			}
 		  $this->db->order_by('events.datestart', 'asc');
@@ -132,7 +132,7 @@ class Projects_Model extends CI_Model
 			}
 			if($this->input->post('words') != null)
 			{
-					$this->db->like('events.eventname',$this->input->post('words'));
+					$this->db->like('events.eventName',$this->input->post('words'));
 					$this->db->or_like('events.fullname',$this->input->post('words'));
 			}
 		  $this->db->order_by('events.datestart', 'asc');

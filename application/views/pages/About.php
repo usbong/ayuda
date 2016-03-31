@@ -43,7 +43,7 @@
 			
 			div.calendarContact
 			{
-				margin: 20px 250px 0px 800px;
+				margin: 4px 250px 0px 800px;
 				text-align: left;
 				width: 400px;
 				background-color:#F2F2F2;
@@ -53,7 +53,7 @@
 			
 			div.socialNetworks
 			{
-				margin-left: 482px;
+				margin-left: 472px;
 			}
 			
 			.normalButtonRed {
@@ -126,7 +126,7 @@
 			.calendar
 			{
 			    margin-left: -200px;
-			    margin-top:  -50px;
+			    margin-top:  0px;
 			}			
 			.calendar table
 			{
@@ -241,11 +241,12 @@ while($endday >= $daysctr)
 	foreach($query as $row)
 	{
 
-	if(date('Y-m-d',strtotime($year.'-'.$month.'-'.$daysctr)) == $row['dateStart'])
-	{ 
-		$img = $img . '<a href = "#" data-content = "'.$row['eventid'].'" class = "eventclick"><img class = "image" src="data:image/jpeg;base64,'.base64_encode( $row['icon']) .'"/></a>';
-	$image = true;
-	}
+		if(date('Y-m-d',strtotime($year.'-'.$month.'-'.$daysctr)) == $row['dateStart'])
+		{ 
+			//$img = $img . '<a href = "#" data-content = "'.$row['eventId'].'" class = "eventclick"><img class = "image" src="data:image/jpeg;base64,'.base64_encode( $row['icon']) .'"/></a>';
+			$img = $img . '<a href = "'.base_url().'index.php/Pages/get_selected_event_details_in_about_page/'.$row['eventId'].'" data-content = "'.$row['eventId'].'"><img class = "image" src="data:image/jpeg;base64,'.base64_encode( $row['icon']) .'"/></a>';
+			$image = true;
+		}
 	}
 	if(!$image)
 	{
@@ -387,20 +388,64 @@ foreach($typeofwork as $typeofwork)
 								</div>
 							
 							<br>
-							<b class = "exampleInputEmail1">VOLUNTEER DETAILS</b><br>
+							<b class = "exampleInputEmail1">VOLUNTEER DETAILS</b>
 					<div>
 						<div class="calendarContact">
 							<i>
-							<b>Event Name:</b><br><br>
-							<b>Organizer:</b><br><br>
-							<b>Venue:</b><br><br>
-							<b>Date & Time:</b><br><br>
-							<b>Type of Work:</b><br><br>
-							<b>Minimum Requirements:</b><br><br>
-							<b>Preferred Skills:</b><br><br>
-							<b>Other Comments:</b><br>
-							<br>
+							<table>
+							<tr>
+								<td><b>Event Name:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['eventName']; }?></td>
+							</tr>
+							<tr>
+								<td><b>Organizer:</b></td>
+								<td>&nbsp;<?php if (isset($organizer_of_selected_event)) { echo $organizer_of_selected_event['fullname']; }?></td>
+							</tr>							
+							<tr>
+								<td><b>Venue:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['venue']; }?></td>
+							</tr>							
+							<tr>
+								<td><b>Date:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { 
+										if ($selected_event['dateStart']!=$selected_event['dateEnd']) {
+											echo date("F j, Y",strtotime($selected_event['dateStart'])).'&nbsp;-&nbsp;'.date("F j, Y",strtotime($selected_event['dateEnd']));
+										}
+										else {
+											echo date("F j, Y",strtotime($selected_event['dateStart']));
+										}
+									}?></td>
+							</tr>							
+							<tr>
+								<td><b>Time:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { 
+										if ($selected_event['timeStart']!=$selected_event['timeEnd']) {
+											echo substr($selected_event['timeStart'],0,5); ?> - <?php echo substr($selected_event['timeEnd'],0,5);
+										}
+										else {
+											echo substr($selected_event['timeStart'],0,5);
+										}
+									}?></td>
+							</tr>							
+							<tr>
+								<td><b>Type of Work:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['typeOfWork']; }?></td>
+							</tr>							
+							<tr>
+								<td><b>Minimum Requirements:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['minReq']; }?></td>
+							</tr>							
+							<tr>
+								<td><b>Preferred Skills:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['preferredSkills']; }?></td>
+							</tr>							
+							<tr>
+								<td><b>Other Comments:</b></td>
+								<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['otherComments']; }?></td>
+							</tr>							
+							</table>
 							</i>			
+							<br>
 						</form>	
 							<div align="center">
 									<?php

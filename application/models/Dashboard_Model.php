@@ -38,7 +38,7 @@ class Dashboard_Model extends CI_Model
 		$this->db->select('categoryName');
 		$this->db->from('category');
 		$this->db->join('events', 'events.categoryId = category.id', 'inner');
-		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'left');
+		$this->db->join('volunteeringhistory', 'events.eventId = volunteeringhistory.eventId', 'left');
 		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'right');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		
@@ -51,7 +51,7 @@ class Dashboard_Model extends CI_Model
 	{
 		$this->db->select('events.*, account.*, volunteeringhistory.*');
 		$this->db->from('events');
-		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'inner');
+		$this->db->join('volunteeringhistory', 'events.eventId = volunteeringhistory.eventId', 'inner');
 		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'left');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		
@@ -64,7 +64,7 @@ class Dashboard_Model extends CI_Model
 	{
 		$this->db->select('events.*');
 		$this->db->from('events');
-		$this->db->join('volunteeringhistory', 'events.eventid = volunteeringhistory.eventid', 'inner');
+		$this->db->join('volunteeringhistory', 'events.eventId = volunteeringhistory.eventId', 'inner');
 		$this->db->join('account', 'volunteeringhistory.userId = account.id', 'left');
 		$this->db->where('account.username',$username);
 		$this->db->limit(2);		

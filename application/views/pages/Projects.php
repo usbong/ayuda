@@ -196,7 +196,7 @@ foreach ($query as $row) {
 		<div  id="selection" style="background-color:#f2f2f2;margin:10px 100px 30px 450px;padding: 20px 20px 20px 20px;border-radius: 25px;font-style:italic">
 		<img class = "image" src="data:image/jpeg;base64,<?php echo base64_encode( $row['icon']) ?>"/>
 		<div class = "contentdesc">
-		<b><?php echo $row['eventname']?></b>
+		<b><?php echo $row['eventName']?></b>
 		<br>
 		<?php echo $row['fullname']?>
 		</div>	

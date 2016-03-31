@@ -26,7 +26,7 @@ class Form extends CI_Controller {
 	
 		$data = array(
 			'userId' => $this->session->userdata('account')['id'],
-			'eventname' => $this->input->post('eventname'),
+			'eventName' => $this->input->post('eventName'),
 			'dateStart' => $this->input->post('dateStart'),
 			'dateEnd' => $this->input->post('dateEnd'),
 			'timeStart' => $this->input->post('timeStart'),

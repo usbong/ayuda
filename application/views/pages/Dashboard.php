@@ -182,7 +182,7 @@ text-align:center;
 									<img src=" <?php echo base_url('assets/images/Icons_and_Logos_Category_Icon_('.str_replace(' ','_',$category[$counter]['categoryName']).').png');?>" width="100">
 								</td>
 								<td>
-									<b><?php echo strtoupper($row['eventname'])?></b><br>
+									<b><?php echo strtoupper($row['eventName'])?></b><br>
 									<?php echo $eventsOrganizerUsername[$counter];?>
 								</td>
 							</tr>
@@ -361,8 +361,8 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 								echo '</center></td>';
 								echo '<td>';
 									echo '<label class="control-label" for="email">Event Name:<font color="red">*</font></label>';
-									echo form_input(array('name' => 'eventname', 'type'=>'text','class'=>'form-control','placeholder'=>'Event Name','value' => set_value('eventname'), 'autocomplete' => 'off'));
-									echo $this->session->set_userdata('eventname',$this->input->post('eventname'));
+									echo form_input(array('name' => 'eventName', 'type'=>'text','class'=>'form-control','placeholder'=>'Event Name','value' => set_value('eventName'), 'autocomplete' => 'off'));
+									echo $this->session->set_userdata('eventName',$this->input->post('eventName'));
 									echo '<table>';
 										echo '<tr>';
 										echo '<td>';

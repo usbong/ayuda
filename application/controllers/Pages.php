@@ -99,7 +99,15 @@ class Pages extends CI_Controller {
 
 	//---------------------------------------------------------
 	// About Page
-	//---------------------------------------------------------
+	//---------------------------------------------------------	
+	public function get_selected_event_details_in_about_page($eventId) {
+		$this->load->model('About_Model');				
+		$this->session->set_userdata('selected_event', $this->About_Model->getSelectedEvent($eventId));	  
+		$this->session->set_userdata('organizer_of_selected_event', $this->About_Model->getFullnameOfUser($eventId));	  
+				
+		$this->viewAbout();
+	}
+	
 	public function increase_by_one_month_calendar_in_about_page(){
 	  $date = $this->session->userdata('date');//date('Y-m-d');		  
 	  $newdate = strtotime ( '+1 month' , strtotime ( $date ) ) ;	  
@@ -174,8 +182,17 @@ class Pages extends CI_Controller {
 		$data['typeofwork'] = $this->About_Model->getTypeOfWork();
 		$data['value'] = $this->input->post('loc');
 
-		//unset($_POST); //reset session data
+		if ($this->session->userdata('selected_event') != null)
+        {
+			$data['selected_event'] = $this->session->userdata('selected_event');
+		}
+
+		if ($this->session->userdata('organizer_of_selected_event') != null)
+        {
+			$data['organizer_of_selected_event'] = $this->session->userdata('organizer_of_selected_event');
+		}
 		
+		//unset($_POST); //reset session data		
 		if($this->input->post('loc') != null)
 		{
 			$this->load->view('calendar',$data);

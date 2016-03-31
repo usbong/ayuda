@@ -7,6 +7,24 @@ class About_Model extends CI_Model
 		return $query->result_array();
 	}
 	
+	public function getSelectedEvent($eventId)
+	{
+		$this->db->where('eventId',$eventId);
+		$query = $this->db->get('events');
+		return $query->row_array();
+	}
+	
+	public function getFullnameOfUser($eventId)
+	{
+		$this->db->select('fullname');
+		$this->db->from('account');
+		$this->db->join('events', 'events.userId = account.id', 'inner');
+		$this->db->where('events.eventId',$eventId);
+
+		$query = $this->db->get();
+		return $query->row_array();
+	}	
+	
 	public function getEvents()
 	{
 		if($this->input->post('loc')!=null)
@@ -24,7 +42,7 @@ class About_Model extends CI_Model
                 }
              if($this->input->post('work') != 'All')
                 {
-              	$this->db->where('events.typeofwork',$this->input->post('work'));
+              	$this->db->where('events.typeOfWork',$this->input->post('work'));
                 }
             $query = $this->db->get();
 		}
