@@ -116,10 +116,11 @@
 }
 
 .ayuda_tabs .row .col {
-  min-width: 177px;
+  min-width: 197px;
   margin: auto;
   overflow:hidden;
   float: left;
+  align: center;
   margin: 0;
   padding: 0;
 }

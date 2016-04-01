@@ -193,7 +193,7 @@
 	</style>
 </head>
 <body>
-	<div class="content" style="width:1250px">				
+	<div class="content" style="width:1350px">				
 		<br><br>
 		<font size="6" color="#e62e2e"><b>VOLUNTEER WITH US TODAY!</b></font><br>
 		<i><p class="description">Check our calendar for more details on available opportunities that fit your schedule. Select the category of the volunteer opportunity you wish to access for more details on organization behind it and the event itself. Or, you can check out our volunteer map and see which opportunities are near you!<br><br>
