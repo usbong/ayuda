@@ -21,14 +21,38 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+	function resizeToMinimum(){
+	  var minimum    = [640, 480];
+	  var current    = [window.outerWidth, window.outerHeight];
+	  var restricted = [];
+	  var i          = 2;
 
+	  while(i-- > 0){
+		restricted[i] = mimimum[i] > current[i] ? minimum[i] : current[i];
+	  }
+
+	  window.resizeTo(current[0], current[1]);
+	}
+
+	window.addEventListener('resize', resizeToMinimum, false)
+</script>
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<style>
-		body
-			{
+		#head {
+			display:flex;
+			// Direction of the items, can be row or column
+			flex-direction: row;
+			overflow-y: scroll;
+			overflow-x: hidden;
 			font-family: 'Lato', sans-serif;
 			background-color: #ffffff;
-			}
+		}
+		#body
+		{
+			font-family: 'Lato', sans-serif;
+			background-color: #ffffff;
+		}
 		.pad
 			{
 			padding-top: 0%;
@@ -85,9 +109,23 @@
 .row.vertical-divider div[class^="col-"]:last-child {
   border-right: none;
 }
+
+#ayuda_tabs {
+  width: 100%;
+  align: center;
+}
+
+.ayuda_tabs .row .col {
+  min-width: 177px;
+  margin: auto;
+  overflow:hidden;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
 		</style>
-</head>
-<body>
+		
 <?php		
   $currTab="Home";
 ?>
@@ -99,7 +137,6 @@
 	
 	<!--<![endif]-->
 	
-	<body>
 		
 		<div align="right">
 			<font size="3" face="Arial" style="font-style:italic">
@@ -140,40 +177,47 @@
 				$currTab = "Projects";
 			}
 		?>
-		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="0">
-			<tr>
-				<td style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Home', 'HOME'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[1]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/About', 'ABOUT'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[3]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[4]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[5]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Stories', 'STORIES'); 
-					?></b><br><br>
-				</td>
-				<td style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
-					<br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
-					?></b><br><br>
-				</td>
-			</tr>
-		</table>
+		<div class="ayuda_tabs">
+			<div class="row">
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Home', 'HOME'); 
+				?></b><br><br>
+			  </div>
 
-	</body>
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[1]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/About', 'ABOUT'); 
+				?></b><br><br>
+			  </div>
+
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+				?></b><br><br>
+			  </div>
+
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[3]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
+				?></b><br><br>
+			  </div>
+
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[4]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Nonprofits', 'NONPROFITS'); 
+				?></b><br><br>
+			  </div>
+
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[5]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Stories', 'STORIES'); 
+				?></b><br><br>
+			  </div>
+
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+				?></b><br><br>
+			  </div>
+			</div>
+		</div>
+</head>
+<body>
+</body>
 </html>
 
 
