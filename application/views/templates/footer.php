@@ -12,8 +12,9 @@
 				}
 			
 				div.footer{			
-				background-color:#2C345B;
-				align: center;
+					background-color:#2C345B;
+					align: center;
+					width:1350px
 				}
 				
 				p.description{
@@ -32,7 +33,7 @@
 						<font color="#FFFFFF"><i><b>Ayunda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
 						825 A SM Blue Residences.</i>
 					</td>
-					<td width="200"><br>
+					<td width="180"><br>
 						<i><font color="#FFFFFF">Ayuda Pilipinas<br>
 						+63917 327 8462<br>
 						825 A SM Blue Residences Katipunan Avenue<br>

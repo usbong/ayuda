@@ -14,16 +14,17 @@
 		
 			div.content
 			{
-			background-color:#F2F2F2;
-			text-align: center;		
+				background-color:#F2F2F2;
+				text-align: center;
 			}
 			
 			p.description
 			{
-			margin: 20px 20px 10px 20px;
-			padding-right: 200px;
-			padding-left: 200px;
-			text-align:center;
+				margin: 20px 20px 10px 20px;
+				padding-right: 200px;
+				padding-left: 200px;
+				text-align:center;
+				font-size:15px;
 			}
 			
 			
@@ -43,24 +44,26 @@
 			
 			div.calendarContact
 			{
-				margin: 4px 20px 0px 20px;
+				margin: 4px 80px 0px 20px;
 				text-align: left;
 				width: 400px;
 				background-color:#F2F2F2;
 				padding: 20px 20px 20px 20px;
 				border-radius: 25px;
+				font-style: italic;
 			}
 
 			div.volunteerLabels {
-				margin: 4px 20px 0px 20px;
+				margin: 0px 80px 0px 20px;
 				text-align: left;
 				width: 400px;
-				padding: 0px 0px 0px 0px;
+				padding: 0px 0px 0px 0px;				
+				font-style: italic;
 			}
 			
 			div.socialNetworks
 			{
-				margin: 0px 20px 0px 20px;
+				margin: 0px 80px 0px 20px;
 				text-align: left;
 				width: 400px;
 				align: center
@@ -159,6 +162,7 @@
 				font-style: italic;
 				font-weight: bold;
 			}
+			
 			.image
 			{
 				width: 20px;
@@ -193,7 +197,7 @@
 	</style>
 </head>
 <body>
-	<div class="content" style="width:1350px">				
+	<div class="content">				
 		<br><br>
 		<font size="6" color="#e62e2e"><b>VOLUNTEER WITH US TODAY!</b></font><br>
 		<i><p class="description">Check our calendar for more details on available opportunities that fit your schedule. Select the category of the volunteer opportunity you wish to access for more details on organization behind it and the event itself. Or, you can check out our volunteer map and see which opportunities are near you!<br><br>
@@ -203,7 +207,6 @@
 	</div>
 		
 	<div  id="nav">		
-		<br><br><br>
 		<div class = "calendar">
 		<?php	  
 			 $this->session->set_userdata('date', $date);	  
@@ -396,60 +399,58 @@
 		</div>
 
 		<div class="calendarContact">
-			<i>
 			<table>
 			<tr>
-				<td><b>Event Name:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['eventName']; }?></td>
+				<td><i><b>Event Name:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['eventName']; }?></i></td>
 			</tr>
 			<tr>
-				<td><b>Organizer:</b></td>
-				<td>&nbsp;<?php if (isset($organizer_of_selected_event)) { echo $organizer_of_selected_event['fullname']; }?></td>
+				<td><i><b>Organizer:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($organizer_of_selected_event)) { echo $organizer_of_selected_event['fullname']; }?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Venue:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['venue']; }?></td>
+				<td><i><b>Venue:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['venue']; }?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Date:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { 
+				<td><i><b>Date:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { 
 						if ($selected_event['dateStart']!=$selected_event['dateEnd']) {
 							echo date("F j, Y",strtotime($selected_event['dateStart'])).'&nbsp;-&nbsp;'.date("F j, Y",strtotime($selected_event['dateEnd']));
 						}
 						else {
 							echo date("F j, Y",strtotime($selected_event['dateStart']));
 						}
-					}?></td>
+					}?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Time:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { 
+				<td><i><b>Time:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { 
 						if ($selected_event['timeStart']!=$selected_event['timeEnd']) {
 							echo substr($selected_event['timeStart'],0,5); ?> - <?php echo substr($selected_event['timeEnd'],0,5);
 						}
 						else {
 							echo substr($selected_event['timeStart'],0,5);
 						}
-					}?></td>
+					}?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Type of Work:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['typeOfWork']; }?></td>
+				<td><i><b>Type of Work:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['typeOfWork']; }?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Minimum Requirements:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['minReq']; }?></td>
+				<td><i><b>Minimum Requirements:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['minReq']; }?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Preferred Skills:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['preferredSkills']; }?></td>
+				<td><i><b>Preferred Skills:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['preferredSkills']; }?></i></td>
 			</tr>							
 			<tr>
-				<td><b>Other Comments:</b></td>
-				<td>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['otherComments']; }?></td>
+				<td><i><b>Other Comments:</b></i></td>
+				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['otherComments']; }?></i></td>
 			</tr>							
 			</table>
-			</i>			
 			<br>
 			<div align="center">
 					<?php

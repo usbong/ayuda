@@ -133,9 +133,7 @@
 
 <div align="center">
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
-</div>
-<nav>    
-	
+</div>	
 	<!--<![endif]-->
 	
 		
@@ -225,10 +223,8 @@
 	<div class="modal inmodal fade" id="login-modal" tabindex="-1" role="dialog"  aria-hidden="true">
 		<div class="modal-dialog  modal-lg">
 			<div class="modal-content">
-
       		<div class="modal-body login-modal">
-  
-      			<br/>
+      			<br>
       			<div class="clearfix"></div>
       			<div id='social-icons-container'>
 	        		<div class="form-group col-md-6">
@@ -259,67 +255,57 @@
 						</center>
 					</div>							
 	        	</div>
-					
-					
-					
-					
 	        	
-	        		<div class='modal-body-right'>
-	        			<div class="modal-social-icons">
-	        			<b><i><center>NOT A MEMBER YET?</center></i><span style="font-size:3em; margin-left:13%;">REGISTER</SPAN></b>
-						<div class="form-group col-md-6" style="border-left-style: groove;border-width: 2px;">
+				<div class='modal-body-right'>
+					<div class="modal-social-icons">
+					<b><i><center>NOT A MEMBER YET?</center></i><span style="font-size:3em; margin-left:13%;">REGISTER</SPAN></b>
+					<div class="form-group col-md-6" style="border-left-style: groove;border-width: 2px;">
 						<?php			
-		echo form_open('regAccount');
-		echo '<i>';
-		echo '<div class="row">';
-        echo'<div class="form-group col-md-6">';
-        echo '<label class="control-label">First Name:</label>';
-        echo form_input(array('name' => 'firstname', 'type'=>'text','class'=>'form-control','placeholder'=>'First Name','value' => set_value('firstname'), 'autocompelte' => 'off'));
-		echo'</div>'; 
-		echo'<div class="form-group col-md-6">';
-         echo '<label class="control-label">Last Name:</label>';
-        echo form_input(array('name' => 'lastname', 'type'=>'text','class'=>'form-control','placeholder'=>'Last Name','value' => set_value('lastname'), 'autocompelte' => 'off'));
-        echo'</div>'; 
-        echo'</div>'; 
-		 echo '<div class="row">';
-        echo'<div class="form-group col-md-12">';
-        echo '<label class="control-label">Email:</label>';
-        echo form_input(array('name' => 'username', 'type'=>'text','class'=>'form-control','placeholder'=>'Username','value' => set_value('username'), 'autocompelte' => 'off'));
-        echo'</div>';
-        echo'</div>';
-		echo '<div class="row" style="padding:0px">';
-        echo'<div class="form-group col-md-6">';
-         echo '<label class="control-label">Password:</label>';
-        echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password'));
-        echo'</div>';
-		 echo'<div class="form-group col-md-6">';
-         echo '<label class="control-label">Confirm password:</label>';
-        echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password'));
-        echo'</div>';
-        echo'</div>';
-		echo'<div class="checkbox">'; 
-		echo'<label><input type="checkbox" value="">I agree to the Terms and Service & Privacy Policy</label>'; 
-		echo'</div>';				
-		echo'<div class="checkbox">'; 
-		echo'<label><input type="checkbox" value="">I want to receive email notifications from Ayuda Pilipinas and its partners</label>'; 
-		echo'</div>';
-		echo '</i>';
-		echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'REGISTER'));
-		echo anchor('pages/view/'.$currTab,'CANCEL',array('class'=>'btn btn-danger btn-lg btn-block sbmt'));
-        echo form_close();
-        echo'</div>';
-        ?>
-						</div>	
-						
-	        		
+						echo form_open('regAccount');
+						echo '<i>';
+						echo '<div class="row">';
+						echo'<div class="form-group col-md-6">';
+						echo '<label class="control-label">First Name:</label>';
+						echo form_input(array('name' => 'firstname', 'type'=>'text','class'=>'form-control','placeholder'=>'First Name','value' => set_value('firstname'), 'autocompelte' => 'off'));
+						echo'</div>'; 
+						echo'<div class="form-group col-md-6">';
+						 echo '<label class="control-label">Last Name:</label>';
+						echo form_input(array('name' => 'lastname', 'type'=>'text','class'=>'form-control','placeholder'=>'Last Name','value' => set_value('lastname'), 'autocompelte' => 'off'));
+						echo'</div>'; 
+						echo'</div>'; 
+						 echo '<div class="row">';
+						echo'<div class="form-group col-md-12">';
+						echo '<label class="control-label">Email:</label>';
+						echo form_input(array('name' => 'username', 'type'=>'text','class'=>'form-control','placeholder'=>'Username','value' => set_value('username'), 'autocompelte' => 'off'));
+						echo'</div>';
+						echo'</div>';
+						echo '<div class="row" style="padding:0px">';
+						echo'<div class="form-group col-md-6">';
+						 echo '<label class="control-label">Password:</label>';
+						echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password'));
+						echo'</div>';
+						 echo'<div class="form-group col-md-6">';
+						 echo '<label class="control-label">Confirm password:</label>';
+						echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password'));
+						echo'</div>';
+						echo'</div>';
+						echo'<div class="checkbox">'; 
+						echo'<label><input type="checkbox" value="">I agree to the Terms and Service & Privacy Policy</label>'; 
+						echo'</div>';				
+						echo'<div class="checkbox">'; 
+						echo'<label><input type="checkbox" value="">I want to receive email notifications from Ayuda Pilipinas and its partners</label>'; 
+						echo'</div>';
+						echo '</i>';
+						echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'REGISTER'));
+						echo anchor('pages/view/'.$currTab,'CANCEL',array('class'=>'btn btn-danger btn-lg btn-block sbmt'));
+						echo form_close();
+						echo'</div>';
+						?>
+					</div>	
 	        	</div>																												
         		<div class="clearfix"></div>
       		</div>
-      		<div class="clearfix"></div>
-      	
+			</div>
+      		<div class="clearfix"></div>      	
     	</div>
   	</div>
-</div>
-    </div>
-  </div>	
-</nav>

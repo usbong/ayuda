@@ -92,12 +92,12 @@
 	<br>
 	<br>
 	
-	<table width="800" cellspacing="30" align="center">
+	<table width="60%" cellspacing="0" align="center">
 	<tr>
-		<td>
+		<td width="20%">
 			<img src="<?php echo base_url('assets/images/venDiagram.png'); ?>" width="300" height="200">
 		</td>
-	    <td width="600">
+	    <td width="60%">
 			<i><b>Ayuda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br></i>
 		</td>
     </tr>

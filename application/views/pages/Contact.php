@@ -1,9 +1,4 @@
-
 <head>
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<link rel="stylesheet" href="css/boostrap.css">
-	<link rel="stylesheet" href="css/boostrap.min.css">
-	<link rel="stylesheet" href="css/boostrap-theme.css">
 	<style>
 		img {
 		opacity: 1.0;
@@ -24,10 +19,15 @@
 			color: #ffffff;
 		}
 						
-		p.description1{
-				margin: 20px 100px 0px 100px;
-				text-align:left;
-			}
+		p.description
+		{
+			margin: 20px 20px 10px 20px;
+			padding-right: 20%;
+			padding-left: 20%;
+			text-align:center;
+			font-size:15px;
+		}
+						
 		.message{
 			height:250px;
 			width:310px;
@@ -41,89 +41,79 @@
 </head>
 
 <body>
-
-
 	<br>
-	<div class="col-md-2"> </div>		
-	<div class="col-md-8">
-	
-		<b>CONTACT INFORMATION</b><br>
-		<i>We are interested to know more about you and your experience with us, and the organizations that we have partnered with. We’d
-		love it if you give us suggestions on how to improve our service or how else you think you can be involved with our cause.</i>
-		<center> <br>		
-		<table border="0" width="100%" style="table-layout: fixed;" cellspacing="0" cellpadding="0">
-			<tr>
-				<td></td>
-				<td align="left"><i><img src="<?php echo base_url('assets/images/phone-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;+&nbsp;63 917 327 8642</font></i></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td align="left"><i><img src="<?php echo base_url('assets/images/email-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;info@ayudapilipinas.com</font></i></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td align="left"><i><img src="<?php echo base_url('assets/images/facebook-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;http://fb.com/AyudaPilipinas</font></i></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td align="left"><i><img src="<?php echo base_url('assets/images/twitter-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;@ayudapilipinas</font></i></td>
-				<td></td>
-			</tr>
-		</table>
-		</center> <br><br>
-		
-		<b>CONTACT FORM</b><br>
-		<i>Do you want to get in touch with us now? Leave us a quick message regarding your concern and we’ll get back to you within 3-5
-		working days!</i>
-		<br>
-		<br>
-		<center>
-			<div id="selection" style="background-color:#e62e2e;margin:10px 10px 10px 10px;padding: 10px 10px 10px 10px;border-radius: 25px;>		
-				<?php
-				echo form_open('homepage/contactForm');
-				echo '<div class="form-horizontal">';
-				echo '<br><div class="form-group"><div class="col-lg-3">';
-				echo '<label class="contact">NAME:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
-				echo '</i></div></div>';			   
-				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="contact" >CONTACT NUMBER:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
-				echo '</i></div></div>';			   
-				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="contact" >EMAIL ADDRESS:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
-				echo '</i></div></div>';			   
-				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="contact" >SUBJECT:</label></div>';
-				echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
-				echo'</i></div></div>';			   
-				echo '<div class="form-group"><div class="col-lg-3">';
-				echo '<label class="contact" >MESSAGE:</label></div>';
-				echo '<div class="col-lg-6"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
-				echo'</textarea></i></div></div>';			   
-				echo'<div class="form-group" align ="center">';
-				echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default sbmt','value'=>'SEND MESSAGE', 'style'=>'background-color:#ffffff;color:#218bda'));
-				echo'</div>';
-				echo'</div>';
-				echo form_close();
-				?>
-			</div>
-		</center>
-	</div>	
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-
+	<div style="background-color:#ffffff" align="center">
+		<div>
+			<b>CONTACT INFORMATION</b><br>
+			<p class="description">
+				<i>We are interested to know more about you and your experience with us, and the organizations that we have partnered with. We'd
+				love it if you give us suggestions on how to improve our service or how else you think you can be involved with our cause.</i>
+			</p>
+			<br>		
+			<table style="margin-left:30%" border="0" width="50%" cellspacing="0" cellpadding="0">
+				<tr>
+					<td></td>
+					<td align="left"><i><img src="<?php echo base_url('assets/images/phone-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;+&nbsp;63 917 327 8642</font></i></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left"><i><img src="<?php echo base_url('assets/images/email-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;info@ayudapilipinas.com</font></i></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left"><i><img src="<?php echo base_url('assets/images/facebook-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;http://fb.com/AyudaPilipinas</font></i></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left"><i><img src="<?php echo base_url('assets/images/twitter-icon.png'); ?>" height="30px"><font color="#2c345b">&nbsp;@ayudapilipinas</font></i></td>
+					<td></td>
+				</tr>
+			</table>
+			<br><br>
+			
+			<b>CONTACT FORM</b><br>
+			<i>Do you want to get in touch with us now? Leave us a quick message regarding your concern and we’ll get back to you within 3-5
+			working days!</i>
+			<br>
+			<br>
+			<p class="description">
+				<center>
+					<div id="selection" style="background-color:#e62e2e;margin:1% 20% 1% 20%;padding: 10px 10px 10px 10px;border-radius: 25px;">		
+						<?php
+						echo form_open('homepage/contactForm');
+						echo '<div class="form-horizontal">';
+						echo '<br><div class="form-group"><div class="col-lg-3">';
+						echo '<label class="contact">NAME:</label></div>';
+						echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'name', 'type'=>'text','class'=>'form-control','placeholder'=>'Full Name','value' => set_value('name'), 'autocompelte' => 'off'));
+						echo '</i></div></div>';			   
+						echo '<div class="form-group"><div class="col-lg-3">';
+						echo '<label class="contact" >CONTACT NUMBER:</label></div>';
+						echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'contactno', 'type'=>'text','class'=>'form-control','placeholder'=>'Contact No.','value' => set_value('contactno'), 'autocompelte' => 'off'));
+						echo '</i></div></div>';			   
+						echo '<div class="form-group"><div class="col-lg-3">';
+						echo '<label class="contact" >EMAIL ADDRESS:</label></div>';
+						echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'Email Address','value' => set_value('email'), 'autocompelte' => 'off'));
+						echo '</i></div></div>';			   
+						echo '<div class="form-group"><div class="col-lg-3">';
+						echo '<label class="contact" >SUBJECT:</label></div>';
+						echo '<div class="col-lg-6"><i>'.form_input(array('name' => 'subject', 'type'=>'text','class'=>'form-control','placeholder'=>'Subject'));
+						echo'</i></div></div>';			   
+						echo '<div class="form-group"><div class="col-lg-3">';
+						echo '<label class="contact" >MESSAGE:</label></div>';
+						echo '<div class="col-lg-6"><i><textarea name="message" class="form-control" text="Message" rows="8" style="color:gray;resize:none">Message';
+						echo'</textarea></i></div></div>';			   
+						echo'<div class="form-group" align ="center">';
+						echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-default sbmt','value'=>'SEND MESSAGE', 'style'=>'background-color:#ffffff;color:#218bda'));
+						echo'</div>';
+						echo'</div>';
+						echo form_close();
+						?>
+					</div>
+				</center>
+			</p>
+		</div>
+	</div>
 </body>
