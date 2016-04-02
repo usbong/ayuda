@@ -16,14 +16,12 @@
 			{
 			background-color:#f2f2f2;
 			text-align: center;
-			}
-			
-				p.description
-			{
-				margin: 20px 250px 10px 250px;
-				text-align:left;
-			}
-
+			font-size:15px;
+		}
+		div.content table 
+		{
+			font-style:italic;
+		}
 
 			.normalButtonRed {
 			background-color:#e62e2e;
@@ -84,11 +82,25 @@
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
 
+		p.description
+		{
+			margin: 20px 20px 10px 20px;
+			padding-right: 20%;
+			padding-left: 20%;
+			text-align:center;
+			font-size:15px;
+		}
+
+		p.descriptionVolunteeringStories
+		{
+			text-align:center;
+			font-size:15px;
+		}			
+
 	</style>
 </head>
 
 <body>
-	<br>
 	<br>
 	<br>
 	
@@ -114,7 +126,7 @@
 	</p>
 	<div align="center">
 	
-	<table align="center" width="800" style="font-style:italic">
+	<table align="center" width="70%" style="font-style:italic">
 			<tr>
 				<td><b>Download the Application form</b><br>Click here to download it.
 				</td>
@@ -263,26 +275,30 @@ Our team will then verify the submitted application subject to approval within a
 		<div align="center">
 			<font size="6" color="#2c345b"><b>NONPROFIT STORIES</b></font><br><br>
 	
-			<table align="center" width="800" cellspacing="">
+			<table align="center" cellspacing="0">
 				<tr>
-					<td><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="200"></td>
-					<td><b><?php echo $story['firstname'];?>&nbsp;<?php echo $story['lastname'];?></b><br><br><i><?php echo $story['description'];?></i></td>
-				</tr>
-	
-				<tr>
-					<td colspan="2"><br>
-					
-					<div align="center">
-						<?php
-			echo anchor('homepage/loginview','CLICK HERE TO READ MORE NONPROFIT STORIES',array('class'=>'normalButtonBlue'));
-		?>
-			</div>		</td>
-				</tr>
-	
-			</table>
-	</div>
-		
+					<td align="right"><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="35%"></td>
+					<td width="35%" align="left">
+						<b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
+						<p class="descriptionVolunteeringStories">
+							<i><br>"<?php echo $story['description'];?>"</i>
+						</p>
+					</td>
+					<td width="30%" align="left"></td>
 
+				</tr>	
+			</table>
+									
+			<table align="center">
+				<tr>
+					<td><br>
+						<?php
+			echo anchor('homepage/login','CLICK HERE TO READ MORE NONPROFIT STORIES',array('class'=>'normalButtonBlue'));
+		?>
+					</td>
+				</tr>
+			</table>	
+	</div>		
 
 </body>
 

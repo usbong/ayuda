@@ -80,12 +80,21 @@
 		background-color:#f2f2f2;
 		text-align: left;
 		}
-			
-		p.description{
-		margin: 20px 250px 10px 250px;
-		text-align:left;
+		
+		p.description
+		{
+			margin: 20px 20px 10px 20px;
+			padding-right: 20%;
+			padding-left: 20%;
+			text-align:center;
+			font-size:15px;
 		}
 			
+		p.descriptionVolunteeringStories
+		{
+			text-align:center;
+			font-size:15px;
+		}			
 			
 	</style>
 </head>
@@ -189,32 +198,31 @@
 	<font size="6" color="#e62e2e"><b>VOLUNTEERING STORIES</b></font><br><br>
 	</div>
 	
-	<table align="center" width="800" cellspacing="10">
+			<table align="center" cellspacing="0">
 				<tr>
-					<td cellspacing="30"><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="200"></td>
-					<td><b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
-					<p align="justify">
-					<i>
-					<br>"<?php echo $story['description'];?>"</i></p></td>
-				</tr>
-				
-				
-				<?php //echo $profile['firstname'] . ' ' . $profile['lastname'];?>
-	
+					<td align="right"><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="35%"></td>
+					<td width="35%" align="left">
+						<b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
+						<p class="descriptionVolunteeringStories">
+							<i><br>"<?php echo $story['description'];?>"</i>
+						</p>
+					</td>
+					<td width="30%" align="left"></td>
+
+				</tr>	
+			</table>
+									
+			<table align="center">
 				<tr>
-					<td colspan="2" align="center"><br>
+					<td><br>
 						<?php
 			echo anchor('homepage/login','CLICK HERE TO READ MORE VOLUNTEER STORIES',array('class'=>'normalButtonBlue'));
 		?>
 					</td>
 				</tr>
-	
-			</table>
-	
-	
+			</table>	
 	<br><br>
 	</div>
 
 </body>
-
-<br>
+<div>
