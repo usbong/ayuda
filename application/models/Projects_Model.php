@@ -28,39 +28,40 @@ class Projects_Model extends CI_Model
 	public function getProjectEvents(){
 		  $this->db->select('category.*, events.*, account.*');
 		  $this->db->from('events');
-		  $this->db->join('category', 'events.eventCategory = category.categoryName', 'inner');
-		  $this->db->join('account', 'events.userid = account.id', 'inner');
-		  if($this->input->post('id') != null)
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+		  if($this->input->post('eventCategory') != null)
+		  {
+			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
+		  }
+		  if($this->input->post('location') != null)
 			{
-			$this->db->where('events.eventCategory',$this->input->post('id'));
-			}
-		  if($this->input->post('loc') != null)
-			{
-				if($this->input->post('loc') != 'All')
+				if($this->input->post('location') != 'All')
 				{
-					$this->db->where('events.location',$this->input->post('loc'));
+					$this->db->where('events.location',$this->input->post('location'));
 				}
 			}
-			if($this->input->post('work') != null)
+			if($this->input->post('typeOfWork') != null)
 			{
-				if($this->input->post('work') != 'All')
+				if($this->input->post('typeOfWork') != 'All')
 				{
-					$this->db->where('events.typeOfWork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('typeOfWork'));
 				}
 			}
-			if($this->input->post('words') != null)
+			if($this->input->post('keywords') != null)
 			{
-					$this->db->like('events.eventName',$this->input->post('words'));
-					$this->db->or_like('events.fullname',$this->input->post('words'));
-			}
-		  $this->db->order_by('events.datestart', 'asc');
+					$this->db->like('events.eventName',$this->input->post('keywords'));
+					$this->db->or_like('events.otherComments',$this->input->post('keywords'));
+			}		  
+		  
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
 		  if($this->input->post('count') != null)
 		  {	
-		  $this->db->limit($this->input->post('count')+2);
+			$this->db->limit($this->input->post('count')+2);
 		  }
 		  else
 		  {
-		  $this->db->limit(2);
+			$this->db->limit(2);
 		  }
 		  $query = $this->db->get();
 		  return $query->result_array();
@@ -69,32 +70,32 @@ class Projects_Model extends CI_Model
 	public function getProjectEventsCount(){
 		  $this->db->select('category.*, events.*, account.*');
 		  $this->db->from('events');
-		  $this->db->join('category', 'events.eventCategory = category.categoryName', 'inner');
-		  $this->db->join('account', 'events.userid = account.id', 'inner');
-		  if($this->input->post('id') != null)
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+		  if($this->input->post('eventCategory') != null)
 		  {
-		  $this->db->where('events.eventCategory',$this->input->post('id'));
+			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
 		  }
-		 if($this->input->post('loc') != null)
+		 if($this->input->post('location') != null)
 		  {
-		  if($this->input->post('loc') != 'All')
+		  if($this->input->post('location') != 'All')
 				{
-					$this->db->where('events.location',$this->input->post('loc'));
+					$this->db->where('events.location',$this->input->post('location'));
 				}
 		  }
-		  if($this->input->post('work') != null)
+		  if($this->input->post('typeOfWork') != null)
 			{
-				if($this->input->post('work') != 'All')
+				if($this->input->post('typeOfWork') != 'All')
 				{
-					$this->db->where('events.typeOfWork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('typeOfWork'));
 				}
 			}
-			if($this->input->post('words') != null)
+			if($this->input->post('keywords') != null)
 			{
-					$this->db->like('events.eventName',$this->input->post('words'));
-					$this->db->or_like('events.fullname',$this->input->post('words'));
+					$this->db->like('events.eventName',$this->input->post('keywords'));
+					$this->db->or_like('events.otherComments',$this->input->post('keywords'));
 			}
-		  $this->db->order_by('events.datestart', 'asc');
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
 		  if($this->input->post('count') != null)
 		  {	
 		  $this->db->limit($this->input->post('count')+2);
@@ -110,32 +111,32 @@ class Projects_Model extends CI_Model
 	public function getProjectEventsRcount(){
 		  $this->db->select('category.*, events.*, account.*');
 		  $this->db->from('events');
-		  $this->db->join('category', 'events.eventCategory = category.categoryName', 'inner');
-		  $this->db->join('account', 'events.userid = account.id', 'inner');
-		  if($this->input->post('id') != null)
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+		  if($this->input->post('eventCategory') != null)
+		  {
+			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
+		  }
+		  if($this->input->post('location') != null)
 			{
-			$this->db->where('events.eventCategory',$this->input->post('id'));
-			}
-		  if($this->input->post('loc') != null)
-			{
-			if($this->input->post('loc') != 'All')
+			if($this->input->post('location') != 'All')
 				{
-					$this->db->where('events.location',$this->input->post('loc'));
+					$this->db->where('events.location',$this->input->post('location'));
 				}
 			}
-			if($this->input->post('work') != null)
+			if($this->input->post('typeOfWork') != null)
 			{
-				if($this->input->post('work') != 'All')
+				if($this->input->post('typeOfWork') != 'All')
 				{
-					$this->db->where('events.typeOfWork',$this->input->post('work'));
+					$this->db->where('events.typeOfWork',$this->input->post('typeOfWork'));
 				}
 			}
-			if($this->input->post('words') != null)
+			if($this->input->post('keywords') != null)
 			{
-					$this->db->like('events.eventName',$this->input->post('words'));
-					$this->db->or_like('events.fullname',$this->input->post('words'));
+					$this->db->like('events.eventName',$this->input->post('keywords'));
+					$this->db->or_like('events.otherComments',$this->input->post('keywords'));
 			}
-		  $this->db->order_by('events.datestart', 'asc');
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
 		  $query = $this->db->get();
 		  return $query->num_rows();
 	}	

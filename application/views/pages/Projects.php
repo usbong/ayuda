@@ -134,28 +134,33 @@ margin: 20px 25px 10px 25px;
 		<div  id="nav">
 		
 		
-		<form class="inline" action="">
-	
-		
+<!--		<form class="inline" action="">
+-->	
+		<?php echo validation_errors();
+			echo form_open('Pages/viewProjects');
+		?>
 		<div class="form-group">
 				<i><label for="exampleInputEmail1">SEARCH</label></i>
-				<input class="form-control keywords" type="text" style="font-style:italic" maxlength="30" placeholder="Keywords" style="background-color:#f2f2f2">
+				<?php echo form_input(array('name' => 'keywords', 'type'=>'text','class'=>'form-control','placeholder'=>'keywords', 'style' => 'font-style:italic; background-color:#f2f2f2', 'maxlength' => '30', 'value' => set_value('keywords'), 'autocomplete' => 'off'));?>
 		</div>
-		
-			<i><b>CHOOSE YOUR CATEGORY</b></i><br><br>
-			
+
+		<center>		
+			<i><b>CHOOSE YOUR CATEGORY</b></i><br>
 		<?php 
-		$ctr = 1;
-		foreach ($categoryArray as $categoryArray) {
-		echo '<a href = "#" class = "catclick" data-id = "'.$categoryArray['categoryName'].'"><img width = "60" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/></a>';
-		if(($ctr % 3) == 0)
-		{
-			echo '<br><br>';
-		}
-		$ctr++;
-		}
+			$ctr = 1;
+			foreach ($categoryArray as $categoryArray) {
+			echo '<label>';
+			echo '<input type="checkbox" name="categoryId" value="'.$categoryArray['id'].'" '.set_checkbox('eventCategory', $categoryArray['id']).'/>';
+			echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
+			echo '</label>';
+				if(($ctr % 3) == 0)
+				{
+					echo '<br>';
+				}
+				$ctr++;
+			}
 		?>
-		
+		</center>
 		
 		<div class="form-group">
 			
@@ -163,11 +168,9 @@ margin: 20px 25px 10px 25px;
 					<select name="" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">
 						<option value="None">None</option>
 <?php
-foreach($typeOfWorkList as $each2)
+foreach($typeOfWorkList as $eachTypeOfWorkList)
 {
-    ?>
-    <option value="<?php echo $each2->workname;?>"><?php echo $each2->workname; ?></option>
-    <?php
+	echo '<option value="'.$eachTypeOfWorkList->workname.'" '.set_select('typeOfWork', $eachTypeOfWorkList->workname).'>'.$eachTypeOfWorkList->workname.'</option>';
 }
 ?>
 </select>
@@ -177,18 +180,19 @@ foreach($typeOfWorkList as $each2)
 					<select name="" class="form-control loc" style="background-color:#f2f2f2; font-style:italic;">
 					<option value="None">None</option>
 <?php
-foreach($rowLoc as $each1)
+foreach($rowLoc as $eachLocationList)
 {
-    ?>
-    <option value="<?php echo $each1->name;?>"><?php echo $each1->name; ?></option>
-    <?php
+	echo '<option value="'.$eachLocationList->name.'" '.set_select('location', $eachLocationList->name).'>'.$eachLocationList->name.'</option>';
 }
 ?>
 </select></label>
 			
 		</div>
-		</form>
+<!--		</form> -->
+		<?php echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'SEARCH'));
+		form_close();?>
 		</div>
+
 <div class = "seemore">
 <?php 
 foreach ($query as $row) {
@@ -265,74 +269,4 @@ if($rcount > $limit)
 }
 ?>			
 <br><br>
-</body>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-    	$('.normalButtonBlue').on('click',function(e){
-    		e.preventDefault();
-    		$.ajax({
-          	type: 'POST',
-          	url: "<?php echo site_url('homepage/seemore');?>",
-          	data: {count:$('.normalButtonRed').attr('data-count'),id:$(this).attr('data-id')},
-          	success: function(data)
-          	{
-            $('.seemore').html(data);
-          	}
-        	})
-    		});
-
-    	$('.catclick').on('click',function(e){
-    		e.preventDefault();
-    		$.ajax({
-          	type: 'POST',
-          	url: "<?php echo site_url('homepage/clone1');?>",
-          	data: {id:$(this).attr('data-id')},
-          	success: function(data)
-          	{
-            $('.seemore').html(data);
-          	}
-        	})
-    		});
-
-    	$('.loc').on('change',function(e){
-    		e.preventDefault();
-    		$.ajax({
-          	type: 'POST',
-          	url: "<?php echo site_url('homepage/clone1');?>",
-          	data: {loc:$(this).val()},
-          	success: function(data)
-          	{
-            $('.seemore').html(data);
-          	}
-        	})
-    		});
-
-    	$('.work').on('change',function(e){
-    		e.preventDefault();
-    		$.ajax({
-          	type: 'POST',
-          	url: "<?php echo site_url('homepage/clone1');?>",
-          	data: {work:$(this).val()},
-          	success: function(data)
-          	{
-            $('.seemore').html(data);
-          	}
-        	})
-    		});
-
-    	$('.keywords').on('keyup',function(e){
-    		e.preventDefault();
-    		$.ajax({
-          	type: 'POST',
-          	url: "<?php echo site_url('homepage/clone1');?>",
-          	data: {wordss:$(this).val()},
-          	success: function(data)
-          	{
-            $('.seemore').html(data);
-          	}
-        	})
-    		});
-
-    });
-</script> 
+</body> 

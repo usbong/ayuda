@@ -11,6 +11,9 @@ class Form extends CI_Controller {
 	$this->load->view("view_form");
 	}
 */
+	//---------------------------------------------------------
+	// Dashboard Page
+	//---------------------------------------------------------	
 	// When user submits data on view page...
 	public function data_submitted() {
 		$data = array(
@@ -59,10 +62,7 @@ class Form extends CI_Controller {
 			$this->viewDashboard($username, FALSE);
 		}
 	}
-	
-	//---------------------------------------------------------
-	// Dashboard Page
-	//---------------------------------------------------------	
+
 	public function viewDashboard($username, $hasError)
 	{
 		if ($hasError==TRUE) {
