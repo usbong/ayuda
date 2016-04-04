@@ -1,11 +1,5 @@
-
-
+<html>
 <head>
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<link rel="stylesheet" href="css/boostrap.css">
-	<link rel="stylesheet" href="css/boostrap.min.css">
-	<link rel="stylesheet" href="css/boostrap-theme.css">
 	<style>
 		img {
 		opacity: 1.0;
@@ -56,11 +50,9 @@
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
 
-
 			.normalButtonBlue:hover {
 			background-color:#2c3a78;
 			}
-
 
 			.normalButtonBlue:active {
 			position:relative;
@@ -80,7 +72,30 @@
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
 		
+			div {
+				background-color:#ffffff;
+			}
+
+			.storiesSection {
+				width:75%;
+				border-radius:25px;
+				background-color:#f2f2f2;
+				padding: 20px 20px 20px 20px;
+			}
+			
+		h2 {
+				background-color:#ffffff;
+		}
 		
+		p.description
+		{
+			margin: 20px 20px 10px 20px;
+			padding-right: 20%;
+			padding-left: 20%;
+			text-align:center;
+			font-size:15px;
+		}
+
 		
 	</style>
 </head>
@@ -89,136 +104,143 @@
 	<br>
 	<br>
 	<br>
-	
-		<div class="col-md-2" >
+		<div align="center">
+				<h2><font color="#e62e2e" size="6"><b>WE LOVE HEARING ABOUT YOUR STORIES!</b></font></h2>
 		</div>
-		<div class="col-md-8">
-		<font color="red">
-		<h2 align="center"><b>WE LOVE HEARING ABOUT YOUR STORIES!</b></h2></font>
-		<h5><i> We definitely get excited every time we hear about a great experience volunteering or creating volunteer opportunities! At the heart
-of <b>Ayuda Pilipinas</b> is a passionate community of nation builders, fighting for a better Philippines one cause at a time. You can hear
-from a few of them here so you can psych yourself up for your next volunteer opportunity, or simply find a little joy in knowing there
-are amazing people like them in your midst!If you have a great volunteer story to tell, send it to us and you might be featured here! </i></h5>
-		</div>
-		<div class="col-md-2">
-		</div>		
-		<div class="col-md-12" align="center">
+		<p class="description">
+			<i> We definitely get excited every time we hear about a great experience volunteering or creating volunteer opportunities! At the heart
+			of <b>Ayuda Pilipinas</b> is a passionate community of nation builders, fighting for a better Philippines one cause at a time. You can hear
+			from a few of them here so you can psych yourself up for your next volunteer opportunity, or simply find a little joy in knowing there
+			are amazing people like them in your midst!If you have a great volunteer story to tell, send it to us and you might be featured here! </i>
+		</p>
 		<br>
-		<?php
-			echo anchor('homepage/loginview','CLICK HERE TO SUBMIT A STORY',array('class'=>'normalButtonRed'));
-		?>
-		<br><br><br><br>
+		<div align="center">
+			<?php
+				echo anchor('homepage/loginview','CLICK HERE TO SUBMIT A STORY',array('class'=>'normalButtonRed'));
+			?>
 		</div>
-	
-	
-<div class="col-md-12" align="center" style="margin-left:60px">
-	<div class="col-md-2"> </div>
-	
-	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
-	<table width="300">
-	<tr>
-	<td>
-		<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?><br>
-			<b>Age:</b>&nbsp;<br>
-			<b>Location:</b>&nbsp;<br>
-			<b>Organization Volunteered For:</b>&nbsp;<br>
-	
-	</td></tr><tr><td colspan="2"><br>
-		<h5><i><?php echo $story['description']; ?></h5></i><br>
-	<br></td></tr></table>
-	</div>
-	<div class="col-md-1"> </div>
-	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
-	
-	<table width="300">
-	<tr>
-	<td>
-		<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?><br>
-			<b>Age:</b>&nbsp;<br>
-			<b>Location:</b>&nbsp;<br>
-			<b>Organization Volunteered For:</b>&nbsp;<br>
-	
-	</td></tr><tr><td colspan="2"><br>
-		<h5><i><?php echo $story['description']; ?></h5></i><br>
-	<br></td></tr></table>
-	</div>
-	
-	<div class="col-md-1"> </div>
-	</div>	
-	
-	
-	<div class="col-md-12" align="center" >
-	<div class="col-md-2"> </div>
-	
-	<div class="col-md-4"><br>
-	
-	</div>
-	<div class="col-md-1"> </div>
-	<div class="col-md-4"><br>
-	
-	
-	</div>
-	
-	<div class="col-md-1"> </div>
-	</div>
+		<br><br>
 
-
-	<div class="col-md-12" align="center" style="margin-left:60px">
-	<div class="col-md-2"> </div>
-	
-	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
-	<table width="300">
-	<tr>
-	<td>
-		<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?><br>
-			<b>Age:</b>&nbsp;<br>
-			<b>Location:</b>&nbsp;<br>
-			<b>Organization Volunteered For:</b>&nbsp;<br>
-	
-	</td></tr><tr><td colspan="2"><br>
-		<h5><i><?php echo $story['description']; ?></h5></i><br>
-	<br></td></tr></table></div>
-	<div class="col-md-1"> </div>
-	<div class="col-md-3" style="background-color:#f2f2f2;border-radius:25px;"><br>
-	
-	<table width="300">
-	<tr>
-	<td>
-		<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?><br>
-			<b>Age:</b>&nbsp;<br>
-			<b>Location:</b>&nbsp;<br>
-			<b>Organization Volunteered For:</b>&nbsp;<br>
-	
-	</td></tr><tr><td colspan="2"><br>
-		<h5><i><?php echo $story['description']; ?></h5></i><br>
-	<br></td></tr></table>
-	</div>
-	
-	<div class="col-md-1"> </div>
-	</div>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-
-<br><br><br><br>
-<br><br><br><br>
-<br>
+		<div align="center">
+			<table width="80%">
+				<tr width="100%">
+					<td align="center" width="50%">
+						<div class="storiesSection">
+						<table width="100%">
+							<tr width="100%">
+								<td width="30%">
+									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+								</td>	
+								<td width="70%">
+									<table>
+									<i>
+									<tr><td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?></td></tr>
+									<tr><td><b>Age:</b>&nbsp;</tr>
+									<tr><td><b>Location:</b>&nbsp;</tr>
+									<tr><td><b>Organization Volunteered For:</b>&nbsp;</tr>		
+									</i>
+									</table>
+								</td>
+							</tr>
+							<tr width="100%">
+								<td colspan="2"><br>
+									<h5><i><?php echo $story['description']; ?></i></h5><br><br>
+								</td>
+							</tr>
+						</table>
+						</div>
+					</td>
+					
+					<td align="center" width="50%">
+						<div class="storiesSection">
+						<table width="100%">
+							<tr width="100%">
+								<td width="30%">
+									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+								</td>	
+								<td width="70%">
+									<table>
+									<i>
+									<tr><td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?></td></tr>
+									<tr><td><b>Age:</b>&nbsp;</tr>
+									<tr><td><b>Location:</b>&nbsp;</tr>
+									<tr><td><b>Organization Volunteered For:</b>&nbsp;</tr>		
+									</i>
+									</table>
+								</td>
+							</tr>
+							<tr width="100%">
+								<td colspan="2"><br>
+									<h5><i><?php echo $story['description']; ?></i></h5><br><br>
+								</td>
+							</tr>
+						</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br><br>
+		<div align="center">
+			<table width="80%">
+				<tr width="100%">
+					<td align="center" width="50%">
+						<div class="storiesSection">
+						<table width="100%">
+							<tr width="100%">
+								<td width="30%">
+									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+								</td>	
+								<td width="70%">
+									<table>
+									<i>
+									<tr><td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?></td></tr>
+									<tr><td><b>Age:</b>&nbsp;</tr>
+									<tr><td><b>Location:</b>&nbsp;</tr>
+									<tr><td><b>Organization Volunteered For:</b>&nbsp;</tr>		
+									</i>
+									</table>
+								</td>
+							</tr>
+							<tr width="100%">
+								<td colspan="2"><br>
+									<h5><i><?php echo $story['description']; ?></i></h5><br><br>
+								</td>
+							</tr>
+						</table>
+						</div>
+					</td>
+					
+					<td align="center" width="50%">
+						<div class="storiesSection">
+						<table width="100%">
+							<tr width="100%">
+								<td width="30%">
+									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+								</td>	
+								<td width="70%">
+									<table>
+									<i>
+									<tr><td><b>Name:</b>&nbsp;<?php echo $story['firstname'];?> <?php echo $story['lastname'];?></td></tr>
+									<tr><td><b>Age:</b>&nbsp;</tr>
+									<tr><td><b>Location:</b>&nbsp;</tr>
+									<tr><td><b>Organization Volunteered For:</b>&nbsp;</tr>		
+									</i>
+									</table>
+								</td>
+							</tr>
+							<tr width="100%">
+								<td colspan="2"><br>
+									<h5><i><?php echo $story['description']; ?></i></h5><br><br>
+								</td>
+							</tr>
+						</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
 </body>
-
-<br>
+</html>
+<div>

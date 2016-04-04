@@ -11,10 +11,10 @@
 				filter: alpha(opacity=100); /* For IE8 and earlier */
 				}
 			
-				div.footer{			
+				div.footerMain{			
 					background-color:#2C345B;
 					align: center;
-					width:1350px
+					width:1350px;
 				}
 				
 				p.description{
@@ -25,7 +25,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="footer" align="center">
+		<div class="footerMain" align="center">
 			<hr>
 			<table width="80%">
 				<tr>
