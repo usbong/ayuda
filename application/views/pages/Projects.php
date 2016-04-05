@@ -1,14 +1,10 @@
-
-
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
 
 	<style>
 	
-
 	
 			#nav {
-
 			
 			width:250px;
 			float:left;
@@ -33,7 +29,6 @@ margin: 20px 25px 10px 25px;
 			opacity: 1.0;
 			filter: alpha(opacity=40); /* For IE8 and earlier */
 				}
-
 			img:hover {
 			opacity: 0.4;
 			filter: alpha(opacity=100); /* For IE8 and earlier */
@@ -50,8 +45,6 @@ margin: 20px 25px 10px 25px;
 				margin: 20px 250px 10px 150px;
 				text-align:left;
 			}
-
-
 			.normalButtonRed {
 			background-color:#e62e2e;
 			display:inline-block;
@@ -64,16 +57,13 @@ margin: 20px 25px 10px 25px;
 			text-decoration:none;
 			text-shadow:0px 1px 0px #e62e2e;
 			}
-
 			.normalButtonRed:hover {
 			background-color:#f01d1d;
 			}
-
 			.normalButtonRed:active {
 			position:relative;
 			top:1px;
 			}
-
 			.normalButtonBlue {
 			background-color:#2c345b;
 			display:inline-block;
@@ -86,18 +76,13 @@ margin: 20px 25px 10px 25px;
 			text-decoration:none;
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
-
-
 			.normalButtonBlue:hover {
 			background-color:#2c3a78;
 			}
-
-
 			.normalButtonBlue:active {
 			position:relative;
 			top:1px;
 			}
-
 			.redShortButton {
 			background-color:#e62e2e;
 			display:inline-block;
@@ -110,7 +95,6 @@ margin: 20px 25px 10px 25px;
 			text-decoration:none;
 			text-shadow:0px 1px 0px #5b8a3c;
 			}
-
 			.contentdesc
 			{
 				    display: inline-block;
@@ -120,14 +104,14 @@ margin: 20px 25px 10px 25px;
 
 	<body>	
 	<br>
-	<br>
-	<br>
-	
-
+	<br>	
 	
 	<div align="center">
+			<?php if (isset($hasFoundNoProject) && $hasFoundNoProject==TRUE) { //after add event 
+					echo '<font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to find any project based on your preferences. Nevertheless, here are the most recent projects that you may be interested in.<br><br>';
+				}
+			?>
 	<font size="6" color="#e62e2e"><b>PROJECT LISTING</b></font><br><br>
-		
 	</div>
 	
 	

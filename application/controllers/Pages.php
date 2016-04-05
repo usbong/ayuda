@@ -90,9 +90,19 @@ class Pages extends CI_Controller {
 		$data['limit'] = 2;
 		$data['rowLoc'] = $this->Projects_Model->getLocationList();
 		$data['typeOfWorkList'] = $this->Projects_Model->getTypeOfWorkList();
-		$data['query'] = $this->Projects_Model->getProjectEvents();
 		$data['count'] = $this->Projects_Model->getProjectEventsCount();
-		$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
+		
+		if (empty($data['count'])) {
+			$data['query'] = $this->Projects_Model->getRecommendedProjectEvents();
+			$data['count'] = $this->Projects_Model->getRecommendedProjectEventsCount();
+			$data['rcount'] = $this->Projects_Model->getRecommendedProjectEventsRcount();
+			$data['hasFoundNoProject'] = TRUE;
+		}
+		else {
+			$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
+			$data['query'] = $this->Projects_Model->getProjectEvents();
+			$data['hasFoundNoProject'] = FALSE;
+		}		
 		$data['categoryArray'] = $this->Projects_Model->getCategoryArray();
 		$this->load->view('templates/general_template',$data);
 	}

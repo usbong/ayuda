@@ -140,5 +140,54 @@ class Projects_Model extends CI_Model
 		  $query = $this->db->get();
 		  return $query->num_rows();
 	}	
+	
+	public function getRecommendedProjectEvents(){
+		  $this->db->select('category.*, events.*, account.*');
+		  $this->db->from('events');
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+		  
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
+		  if($this->input->post('count') != null)
+		  {	
+			$this->db->limit($this->input->post('count')+2);
+		  }
+		  else
+		  {
+			$this->db->limit(2);
+		  }
+		  $query = $this->db->get();
+		  return $query->result_array();
+	}
+	
+	public function getRecommendedProjectEventsCount(){
+		  $this->db->select('category.*, events.*, account.*');
+		  $this->db->from('events');
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
+		  if($this->input->post('count') != null)
+		  {	
+		  $this->db->limit($this->input->post('count')+2);
+		  }
+		  else
+		  {
+		  $this->db->limit(2);
+		  }
+		  $query = $this->db->get();
+		  return $query->num_rows();
+	}
+	
+	public function getRecommendedProjectEventsRcount(){
+		  $this->db->select('category.*, events.*, account.*');
+		  $this->db->from('events');
+		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
+		  $this->db->join('account', 'events.userId = account.id', 'inner');
+
+		  $this->db->order_by('events.dateStart', 'desc'); //descending
+		  $query = $this->db->get();
+		  return $query->num_rows();
+	}	
 }
 ?>
