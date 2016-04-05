@@ -132,7 +132,7 @@ margin: 20px 25px 10px 25px;
 			$ctr = 1;
 			foreach ($categoryArray as $categoryArray) {
 			echo '<label>';
-			echo '<input type="checkbox" name="categoryId" value="'.$categoryArray['id'].'" '.set_checkbox('categoryId', $categoryArray['id']).'/>';
+			echo '<input type="checkbox" name="categoryId['.$categoryArray['id'].'] value="'.$categoryArray['id'].'" '.set_checkbox('categoryId', $categoryArray['id']).'/>';
 			echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
 			echo '</label>';
 				if(($ctr % 3) == 0)
@@ -181,7 +181,8 @@ foreach($rowLoc as $eachLocationList)
 
 <div class = "seemore">
 <?php 
-foreach ($query as $row) {
+foreach ($query as $currQueryArray) {
+	foreach ($currQueryArray as $row) {
 ?>
 		<div  id="selection" style="background-color:#f2f2f2;margin:10px 100px 30px 450px;padding: 20px 20px 20px 20px;border-radius: 25px;font-style:italic">
 		<img class = "image" src="data:image/jpeg;base64,<?php echo base64_encode( $row['icon']) ?>"/>
@@ -232,6 +233,9 @@ foreach ($query as $row) {
 
 				<div align="center" style="font-style:normal">
 							<?php
+							if (is_array($count)) {
+								$count = $count[0];
+							}
 								echo anchor('','CLICK HERE TO SIGNUP',array('class'=>'normalButtonRed','data-count'=>$count));
 						
 							?>
@@ -239,7 +243,12 @@ foreach ($query as $row) {
 			<br>
 		</div>		
 <?php 
+	}
 }
+if (is_array($rcount)) {
+	$rcount = $rcount[0];
+}
+
 if($rcount > $limit)
 {
 	?>

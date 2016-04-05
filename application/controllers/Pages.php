@@ -90,17 +90,50 @@ class Pages extends CI_Controller {
 		$data['limit'] = 2;
 		$data['rowLoc'] = $this->Projects_Model->getLocationList();
 		$data['typeOfWorkList'] = $this->Projects_Model->getTypeOfWorkList();
-		$data['count'] = $this->Projects_Model->getProjectEventsCount();
-		
-		if (empty($data['count'])) {
-			$data['query'] = $this->Projects_Model->getRecommendedProjectEvents();
-			$data['count'] = $this->Projects_Model->getRecommendedProjectEventsCount();
-			$data['rcount'] = $this->Projects_Model->getRecommendedProjectEventsRcount();
+		$checked_categoryIds = null;
+		if (!is_null($this->input->post('categoryId'))) {
+			$checked_categoryIds = 	array_keys($this->input->post('categoryId'));
+		}		
+		if (!is_null($checked_categoryIds)) {
+			$data['count'][] = $this->Projects_Model->getProjectEventsCount($checked_categoryIds[0]);
+		}
+		else {
+			$data['count'][] = $this->Projects_Model->getProjectEventsCount(null);
+		}
+	
+		if (empty($data['count'][0])) {
+			if($this->input->post('categoryId') != null)
+			{			
+//				$checked_categoryIds = array_keys($this->input->post('categoryId'));
+				foreach($checked_categoryIds as $one_categoryId) {
+//					array_push($data['query'],$this->Projects_Model->getRecommendedProjectEvents($one_categoryId));
+					$data['query'][] = $this->Projects_Model->getRecommendedProjectEvents($one_categoryId);
+					$data['count'][] = $this->Projects_Model->getRecommendedProjectEventsCount($one_categoryId);
+					$data['rcount'][] = $this->Projects_Model->getRecommendedProjectEventsRcount($one_categoryId);
+				}
+			}
+			else {
+				$data['query'][] = $this->Projects_Model->getRecommendedProjectEvents(null);
+				$data['count'][] = $this->Projects_Model->getRecommendedProjectEventsCount(null);
+				$data['rcount'][] = $this->Projects_Model->getRecommendedProjectEventsRcount(null);
+			}
+			unset($_POST);
 			$data['hasFoundNoProject'] = TRUE;
 		}
 		else {
-			$data['rcount'] = $this->Projects_Model->getProjectEventsRcount();
-			$data['query'] = $this->Projects_Model->getProjectEvents();
+			if($this->input->post('categoryId') != null)
+			{			
+				$checked_categoryIds = array_keys($this->input->post('categoryId'));
+				foreach($checked_categoryIds as $one_categoryId) {
+//					array_push($data['query'],$this->Projects_Model->getProjectEvents($one_categoryId));
+					$data['query'][] = $this->Projects_Model->getProjectEvents($one_categoryId);
+					$data['rcount'][] = $this->Projects_Model->getProjectEventsRcount($one_categoryId);
+				}
+			}
+			else {
+				$data['query'][] = $this->Projects_Model->getProjectEvents(null);
+				$data['rcount'][] = $this->Projects_Model->getProjectEventsRcount(null);
+			}
 			$data['hasFoundNoProject'] = FALSE;
 		}		
 		$data['categoryArray'] = $this->Projects_Model->getCategoryArray();
