@@ -37,7 +37,7 @@
 
 	window.addEventListener('resize', resizeToMinimum, false)
 </script>
-<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 	<style>
 		#head {
 			display:flex;
@@ -126,7 +126,6 @@
 }
 
 		</style>
-		
 <?php		
   $currTab="Home";
 ?>

@@ -1,5 +1,4 @@
-
-
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
 	<style>
@@ -88,6 +87,7 @@
 			padding-left: 20%;
 			text-align:center;
 			font-size:15px;
+			font-style: italic;
 		}
 			
 		p.descriptionVolunteeringStories
@@ -99,7 +99,7 @@
 	</style>
 </head>
 
-<body>			
+<body style="font-family: 'Lato', sans-serif;">
 		<br><br><br>
 	
 		<div align="center">
@@ -118,7 +118,7 @@
 			<div align="center">
 				<br><br><br>
 				<font size="6" color="#2c345b"><b>HOW DO YOU VOLUNTEER WITH US?</b></font><br>
-				<table align="center" width="900" height="400" cellpadding="50px">
+				<table align="center" width="900" height="400" cellpadding="50px" style="font-style:italic">
 					<tr>
 						<td><b>Ask yourself what specific causes you really care about.</b><br>
 				You can start by evaluating what causes mean the most to you,

@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:700italic' rel='stylesheet' type='text/css'>
 <style>
 html,
 body {
@@ -12,15 +13,17 @@ body {
 	min-width:600px;
 	width: auto !important;  /* Firefox will set width as auto */
 	width:600px;   
-   }
+	}
 #body {
 	overflow-x: hidden !important;
 	position:absolute;
+	font-family: 'Lato', sans-serif;
  }
 #footer {
 	min-width:600px;
 	width: auto !important;  /* Firefox will set width as auto */
 	width:600px;   
+	font-family: 'Lato', sans-serif;
 }
 </style>
 <div id="container">

@@ -1,4 +1,5 @@
 <html>
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<style>
 		img {
@@ -100,7 +101,7 @@
 	</style>
 </head>
 
-<body>
+<body style="font-family: 'Lato', sans-serif;">
 	<br>
 	<br>
 	<br>

@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<style>
 		img {
@@ -40,11 +41,11 @@
 	</style>
 </head>
 
-<body>
+<body style="font-family: 'Lato', sans-serif;">
 	<br>
 	<div style="background-color:#ffffff" align="center">
 		<div>
-			<b>CONTACT INFORMATION</b><br>
+			<font size="3"><b>CONTACT INFORMATION</b></font>
 			<p class="description">
 				<i>We are interested to know more about you and your experience with us, and the organizations that we have partnered with. We'd
 				love it if you give us suggestions on how to improve our service or how else you think you can be involved with our cause.</i>
@@ -74,7 +75,7 @@
 			</table>
 			<br><br>
 			
-			<b>CONTACT FORM</b><br>
+			<font size="3"><b>CONTACT FORM</b></font><br><br>
 			<i>Do you want to get in touch with us now? Leave us a quick message regarding your concern and we’ll get back to you within 3-5
 			working days!</i>
 			<br>

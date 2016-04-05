@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
 
@@ -89,6 +90,7 @@
 			padding-left: 20%;
 			text-align:center;
 			font-size:15px;
+			font-style:italic;
 		}
 
 		p.descriptionVolunteeringStories
@@ -100,14 +102,13 @@
 	</style>
 </head>
 
-<body>
+<body style="font-family: 'Lato', sans-serif;">
 	<br>
 	<br>
 	
 			<div align="center">
 				<h2><font color="#2c345b" size="6"><b>WHAT CAN WE DO FOR YOU, NONPROFIT?</b></font></h2></div>
-				<p class="description">Ayuda Pilipinas gives your organization access to thousands of young people with the intent of contributing to your cause through volunteerism. We can bring in touch with people who truly believe in the cause you have, and help them help you reach your organization's true potential. You can use our platform to promote your events, recruit volunteers and to engage with the Philippine volunteerism community nationwide!<br><br>
-				
+				<p class="description"><b>Ayuda Pilipinas</b> gives your organization access to thousands of young people with the intent of contributing to your cause through volunteerism. We can bring in touch with people who truly believe in the cause you have, and help them help you reach your organization's true potential. You can use our platform to promote your events, recruit volunteers and to engage with the Philippine volunteerism community nationwide!<br><br>				
 				</p>
 				<div align="center"><?php
 			echo anchor('homepage/loginview','CLICK HERE TO GET STARTED',array('class'=>'normalButtonBlue'));

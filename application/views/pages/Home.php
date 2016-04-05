@@ -1,12 +1,10 @@
-<head>
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 	<style>
-
 		.normalButtonRed {
 		background-color:#e62e2e;
 		display:inline-block;
 		cursor:pointer;
 		color:#ffffff;
-		font-family:Arial;
 		font-size:15px;
 		font-weight:bold;
 		padding:20px 33px;
@@ -28,7 +26,6 @@
 		display:inline-block;
 		cursor:pointer;
 		color:#ffffff;
-		font-family:Arial;
 		font-size:15px;
 		font-weight:bold;
 		padding:20px 33px;
@@ -52,7 +49,6 @@
 		display:inline-block;
 		cursor:pointer;
 		color:#ffffff;
-		font-family:Arial;
 		font-size:15px;
 		font-weight:bold;
 		padding:18px 10px;
@@ -83,11 +79,9 @@
 			}
 			
 	</style>
+<head>
 </head>
-
-<body>
-
-
+<body style="font-family: 'Lato', sans-serif;">
 	<br>
 	<br>
 	<br>

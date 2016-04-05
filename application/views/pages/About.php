@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<link href=" <?php  echo base_url('application/views/Icons and Logos_FB Icon (White).png');?>" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="design.css">
@@ -193,7 +194,7 @@
 			}		
 	</style>
 </head>
-<body>
+<body style="font-family: 'Lato', sans-serif;">
 	<div class="content">				
 		<br><br>
 		<font size="6" color="#e62e2e"><b>VOLUNTEER WITH US TODAY!</b></font><br>

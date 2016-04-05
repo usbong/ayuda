@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <head>
 	<link rel="stylesheet" type="text/css" href="design.css">
 
@@ -102,7 +103,7 @@ margin: 20px 25px 10px 25px;
 		</style>
 	</head>
 
-	<body>	
+<body style="font-family: 'Lato', sans-serif;">
 	<br>
 	<br>	
 	
