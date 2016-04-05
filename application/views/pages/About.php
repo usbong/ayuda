@@ -77,7 +77,6 @@
 			display:inline-block;
 			cursor:pointer;
 			color:#ffffff;
-			font-family:Arial;
 			font-size:15px;
 			font-weight:bold;
 			padding:20px 33px;
@@ -99,7 +98,6 @@
 			display:inline-block;
 			cursor:pointer;
 			color:#ffffff;
-			font-family:Arial;
 			font-size:15px;
 			font-weight:bold;
 			padding:20px 33px;
@@ -122,7 +120,6 @@
 			display:inline-block;
 			cursor:pointer;
 			color:#ffffff;
-			font-family:Arial;
 			font-size:15px;
 			font-weight:bold;
 			padding:18px 10px;
@@ -348,7 +345,7 @@
 		<div class="volunteerLabels">
 			<form class="inline">
 					<div class="form-group">
-						<label class = "selectInput" for="selectInput">LOCATION</label><br>
+						<label class = "selectInput" for="selectInput">SELECT YOUR PROVINCE</label><br>
 						<label>
 								<select name="" class="form-control-AboutPage" style="background-color:#f2f2f2">
 								<option selected value="All">All</option>
@@ -364,7 +361,7 @@
 						</label>
 					</div>	
 					<div class="form-group">
-						<label class = "selectInput" for="selectInput">SEARCH</label><br>
+						<label class = "selectInput" for="selectInput">SELECT YOUR CATEGORY</label><br>
 						<label><select class="form-control-AboutPage" style="background-color:#f2f2f2">
 							<option value="All">All</option>
 						<?php
