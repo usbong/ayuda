@@ -216,7 +216,7 @@
 					<a href = "<?php echo base_url()?>index.php/Pages/decrease_by_one_month_calendar_in_about_page">
 					<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Left_Red.png");?> width="50"></a>
 
-					<FONT FACE="Geneva, Arial" SIZE=6 COLOR="#2C345B" style="text-transform:uppercase"><?php echo date('F',strtotime($date)) . ' ' . $year;?></FONT>	
+					<FONT FACE="Geneva, Arial" SIZE=6 COLOR="#2C345B" style="text-transform:uppercase;vertical-align: middle;"><?php echo date('F',strtotime($date)) . ' ' . $year;?></FONT>	
 					<a href = "<?php echo base_url()?>index.php/Pages/increase_by_one_month_calendar_in_about_page">
 					<img src= <?php echo base_url("assets/images/Icons_and_Logos_Arrow_Right_Red.png");?> width="50"></a></th>
 					<th></th>
