@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 <title>
 	Dashboard
 </title>
@@ -122,7 +123,7 @@ text-align:center;
 	</style>
 </head>
 
-<body>	
+<body style="font-family: 'Lato', sans-serif;">
 		<br>
 		<div align="center" style="margin-right: 200px">
 			<?php if ($hasError==TRUE) { //after add event 
@@ -169,7 +170,7 @@ text-align:center;
 					}
 				?>
 				<br>
-						<b>YOUR UPCOMING VOLUNTEER OPPORTUNITIES</b>			
+						<font size="4"><b><?php if ($account['type']=='ngo') {echo 'UPCOMING VOLUNTEER OPPORTUNITIES HOSTED';} else {echo 'YOUR UPCOMING VOLUNTEER OPPORTUNITIES';}?></b></font>
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
 							<?php 
 							$counter=0;
@@ -252,7 +253,7 @@ text-align:center;
 	</div>
 -->				
 						<br><br>	
-						<b>YOUR PAST VOLUNTEER EXPERIENCES</b>					
+						<div style="margin-left: 400px;"><font size="4"><b><?php if ($account['type']=='ngo') {echo 'VOLUNTEER EXPERIENCES HOSTED';} else {echo 'YOUR PAST VOLUNTEER EXPERIENCES';}?></b></font></div>					
 						<div class="volunteerOpportunities" style="border-radius: 25px;">
 							<b>Session month year</b><br>
 								<img src="<?php echo base_url('assets/images/icon1.png'); ?>" width="80">	&nbsp;&nbsp;
@@ -266,7 +267,7 @@ text-align:center;
 						</div>	
 						
 						<br><br>	
-						<div style="margin-left: 620px;"><b>YOUR PERSONAL VOLUNTEER STATISTICS</b></div>
+						<div style="margin-left: 400px;"><font size="4"><b><?php if ($account['type']=='ngo') {echo 'VOLUNTEER STATISTICS';} else {echo 'YOUR PERSONAL VOLUNTEER STATISTICS';}?></b></font></div>
 						<div class="volunteerOpportunities" style="border-radius: 25px;"> 
 							<b>No. of people You've Helped:</b> 1,034<br>
 							<b>Top Personal Causes:</b> Sports, Animal Welfare, Community Building<br>
@@ -422,3 +423,4 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 			</div>
 		</div>
  </div>
+ <div>
