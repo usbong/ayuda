@@ -30,10 +30,12 @@ class Projects_Model extends CI_Model
 		  $this->db->from('events');
 		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
 		  $this->db->join('account', 'events.userId = account.id', 'inner');
-		  if($this->input->post('eventCategory') != null)
+		  
+		  if($this->input->post('categoryId') != null)
 		  {
-			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
+			$this->db->where('events.categoryId',$this->input->post('categoryId'));
 		  }
+
 		  if($this->input->post('location') != null)
 			{
 				if($this->input->post('location') != 'All')
@@ -72,10 +74,12 @@ class Projects_Model extends CI_Model
 		  $this->db->from('events');
 		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
 		  $this->db->join('account', 'events.userId = account.id', 'inner');
-		  if($this->input->post('eventCategory') != null)
+		  
+		  if($this->input->post('categoryId') != null)
 		  {
-			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
+			$this->db->where('events.categoryId',$this->input->post('categoryId'));
 		  }
+		  
 		 if($this->input->post('location') != null)
 		  {
 		  if($this->input->post('location') != 'All')
@@ -113,10 +117,12 @@ class Projects_Model extends CI_Model
 		  $this->db->from('events');
 		  $this->db->join('category', 'events.categoryId = category.id', 'inner');
 		  $this->db->join('account', 'events.userId = account.id', 'inner');
-		  if($this->input->post('eventCategory') != null)
+		  
+		  if($this->input->post('categoryId') != null)
 		  {
-			$this->db->where('events.categoryId',$this->input->post('eventCategory'));
+			$this->db->where('events.categoryId',$this->input->post('categoryId'));
 		  }
+
 		  if($this->input->post('location') != null)
 			{
 			if($this->input->post('location') != 'All')

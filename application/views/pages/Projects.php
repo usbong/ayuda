@@ -123,18 +123,16 @@ margin: 20px 25px 10px 25px;
 		<?php echo validation_errors();
 			echo form_open('Pages/viewProjects');
 		?>
-		<div class="form-group">
-				<i><label for="exampleInputEmail1">SEARCH</label></i>
-				<?php echo form_input(array('name' => 'keywords', 'type'=>'text','class'=>'form-control','placeholder'=>'keywords', 'style' => 'font-style:italic; background-color:#f2f2f2', 'maxlength' => '30', 'value' => set_value('keywords'), 'autocomplete' => 'off'));?>
-		</div>
-
+		<i><label for="exampleInputEmail1">SEARCH</label></i>
+		<?php echo form_input(array('name' => 'keywords', 'type'=>'text','class'=>'form-control','placeholder'=>'keywords', 'style' => 'font-style:italic; background-color:#f2f2f2', 'maxlength' => '30', 'value' => set_value('keywords'), 'autocomplete' => 'off'));?>
+		<br>
 		<center>		
 			<i><b>CHOOSE YOUR CATEGORY</b></i><br>
 		<?php 
 			$ctr = 1;
 			foreach ($categoryArray as $categoryArray) {
 			echo '<label>';
-			echo '<input type="checkbox" name="categoryId" value="'.$categoryArray['id'].'" '.set_checkbox('eventCategory', $categoryArray['id']).'/>';
+			echo '<input type="checkbox" name="categoryId" value="'.$categoryArray['id'].'" '.set_checkbox('categoryId', $categoryArray['id']).'/>';
 			echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
 			echo '</label>';
 				if(($ctr % 3) == 0)
@@ -145,8 +143,9 @@ margin: 20px 25px 10px 25px;
 			}
 		?>
 		</center>
-		
-		<div class="form-group">
+
+		<br>
+		<div>
 			
 			<label for="exampleInputEmail1"><i>SELECT YOUR TYPE OF WORK:</i></label>
 					<select name="" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">
@@ -159,7 +158,8 @@ foreach($typeOfWorkList as $eachTypeOfWorkList)
 ?>
 </select>
 		</div>
-		<div class="form-group">
+		<br>
+		<div>
 			<label for="exampleInputEmail1"><i>SELECT YOUR LOCATION:</i></label>					
 					<select name="" class="form-control loc" style="background-color:#f2f2f2; font-style:italic;">
 					<option value="None">None</option>
@@ -172,9 +172,11 @@ foreach($rowLoc as $eachLocationList)
 </select></label>
 			
 		</div>
+		<br>
 <!--		</form> -->
-		<?php echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'SEARCH'));
-		form_close();?>
+		<?php 
+		echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-danger btn-lg btn-block sbmt','value'=>'SEARCH'));
+		echo form_close();?>
 		</div>
 
 <div class = "seemore">

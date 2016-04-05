@@ -340,7 +340,7 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 //								echo form_fieldset('category');
 								foreach ($categoryArray as $categoryArray) {
 								echo '<label>';
-								echo '<input type="radio" name="categoryId" value="'.$categoryArray['id'].'" '.set_radio('eventCategory', $categoryArray['id']).'/>';
+								echo '<input type="radio" name="categoryId" value="'.$categoryArray['id'].'" '.set_radio('categoryId', $categoryArray['id']).'/>';
 								echo '<img id="'.$categoryArray['categoryName'].'"width = "50" src="data:image/jpeg;base64,'.base64_encode( $categoryArray['icon']) .'"/>';
 								echo '</label>';
 								if(($ctr % 3) == 0)
