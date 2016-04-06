@@ -6,7 +6,7 @@ class Volunteers_Model extends CI_Model
 	//---------------------------------------------------------
 	public function getVolunteerStories()
 	{
-		$this->db->join('account', 'stories.userid = account.id');
+		$this->db->join('account', 'account.id = stories.userid');
 		$this->db->where('typeOfStoryId','2'); //2 is for type: volunteer stories		
 		$query = $this->db->get('stories');
 		return $query->row_array();

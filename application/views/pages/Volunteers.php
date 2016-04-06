@@ -204,7 +204,7 @@
 					<td width="35%" align="left">
 						<b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
 						<p class="descriptionVolunteeringStories">
-							<i><br>"<?php echo $story['description'];?>"</i>
+							<i><br>"<?php echo $story['storyDesc'];?>"</i>
 						</p>
 					</td>
 					<td width="30%" align="left"></td>
