@@ -225,7 +225,7 @@ foreach ($query as $currQueryArray) {
 									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">							
 									</td>
 									<td width="28%">
-										&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>
+										<?php echo $row['venue']?>, <?php echo $row['location']?>
 									</td>
 								</tr>
 							</table>

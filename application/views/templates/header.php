@@ -116,7 +116,7 @@
 }
 
 .ayuda_tabs .row .col {
-  min-width: 197px;
+  min-width: 184px;
   margin: auto;
   overflow:hidden;
   float: left;
@@ -176,7 +176,7 @@
 			}
 		?>
 		<div class="ayuda_tabs">
-			<div class="row">
+			<div class="row" style="background-color: #e62e2e;">
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
 				<br><b><?php echo anchor('pages/view/Home', 'HOME'); 
 				?></b><br><br>
