@@ -230,10 +230,11 @@
 				</tr>
 				<tr>
 				<?php
-				while($endday > $ctr)
+				$ctr=0;				
+				while($ctr < $endday)
 				{
 					$ctr++;
-					if($startday == $ctr)
+					if($ctr <= $startday)
 					{
 						echo '<td></td>';
 					}
@@ -243,7 +244,7 @@
 					}
 				}
 
-				while($endday >= $daysctr)
+				while($daysctr <= $endday)
 				{
 					$image = false;
 					$img = '';
@@ -259,7 +260,7 @@
 					}
 					if(!$image)
 					{
-					echo '<td><div class = "day">'.$daysctr.'</div><div class = "contday"></div></td>';	
+						echo '<td><div class = "day">'.$daysctr.'</div><div class = "contday"></div></td>';	
 					}
 					else
 					{
@@ -400,19 +401,19 @@
 			<table>
 			<tr>
 				<td><i><b>Event Name:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['eventName']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['eventName']; }?></i></td>
 			</tr>
 			<tr>
 				<td><i><b>Organizer:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($organizer_of_selected_event)) { echo $organizer_of_selected_event['fullname']; }?></i></td>
+				<td><i><?php if (isset($organizer_of_selected_event)) { echo $organizer_of_selected_event['fullname']; }?></i></td>
 			</tr>							
 			<tr>
 				<td><i><b>Venue:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['venue']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['venue']; }?></i></td>
 			</tr>							
 			<tr>
 				<td><i><b>Date:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { 
+				<td><i><?php if (isset($selected_event)) { 
 						if ($selected_event['dateStart']!=$selected_event['dateEnd']) {
 							echo date("F j, Y",strtotime($selected_event['dateStart'])).'&nbsp;-&nbsp;'.date("F j, Y",strtotime($selected_event['dateEnd']));
 						}
@@ -423,7 +424,7 @@
 			</tr>							
 			<tr>
 				<td><i><b>Time:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { 
+				<td><i><?php if (isset($selected_event)) { 
 						if ($selected_event['timeStart']!=$selected_event['timeEnd']) {
 							echo substr($selected_event['timeStart'],0,5); ?> - <?php echo substr($selected_event['timeEnd'],0,5);
 						}
@@ -434,19 +435,19 @@
 			</tr>							
 			<tr>
 				<td><i><b>Type of Work:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['typeOfWork']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['typeOfWork']; }?></i></td>
 			</tr>							
 			<tr>
 				<td><i><b>Minimum Requirements:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['minReq']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['minReq']; }?></i></td>
 			</tr>							
 			<tr>
 				<td><i><b>Preferred Skills:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['preferredSkills']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['preferredSkills']; }?></i></td>
 			</tr>							
 			<tr>
 				<td><i><b>Other Comments:</b></i></td>
-				<td><i>&nbsp;<?php if (isset($selected_event)) { echo $selected_event['otherComments']; }?></i></td>
+				<td><i><?php if (isset($selected_event)) { echo $selected_event['otherComments']; }?></i></td>
 			</tr>							
 			</table>
 			<br>

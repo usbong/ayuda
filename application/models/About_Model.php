@@ -31,14 +31,14 @@ class About_Model extends CI_Model
 		{
 			$this->db->select('category.*, events.*');
             $this->db->from('category');
-            $this->db->join('events', 'events.eventCategory = category.categoryName', 'inner');
+            $this->db->join('events', 'events.categoryId = category.id', 'inner');
              if($this->input->post('loc') != 'All')
 				{
 				$this->db->where('events.location',$this->input->post('loc'));
 				}
              if($this->input->post('cat') != 'All')
                 {
-              	$this->db->where('events.eventCategory',$this->input->post('cat'));
+              	$this->db->where('events.categoryId',$this->input->post('cat'));
                 }
              if($this->input->post('work') != 'All')
                 {
@@ -50,7 +50,7 @@ class About_Model extends CI_Model
 		{
 			$query = $this->db->select('category.*, events.*')
               ->from('category')
-              ->join('events', 'events.eventCategory = category.categoryName', 'inner')
+              ->join('events', 'events.categoryId = category.id', 'inner')
               ->get();
 		}
 		return $query->result_array();
