@@ -264,7 +264,7 @@ Our team will then verify the submitted application subject to approval within a
 					<td width="64">&nbsp;</td>
 					<td align="center"><br><br><b>FREE</td>
 					<td width="64">&nbsp;</td>					
-					<td align="center"><br><br><b>Monthly (Php200)<br>Anually (Php2,000)</td>
+					<td align="center"><br><br><b>Monthly (Php200)<br>Annually (Php2,000)</td>
 				</tr>
 		
 			</table>
@@ -278,7 +278,11 @@ Our team will then verify the submitted application subject to approval within a
 	
 			<table align="center" cellspacing="0">
 				<tr>
-					<td align="right"><img src=" <?php  echo base_url('assets/images/circle1.png');?>" width="35%"></td>
+					<td align="right">
+					<?php
+						echo '<img src="data:image/jpeg;base64,'.base64_encode( $story['profilePic']).'" width="35%"/>';
+					?>
+					</td>
 					<td width="35%" align="left">
 						<b><?php echo $story['firstname'];?> <?php echo $story['lastname'];?></b><br>
 						<p class="descriptionVolunteeringStories">

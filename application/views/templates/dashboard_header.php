@@ -116,7 +116,7 @@
 }
 
 .ayuda_tabs .row .col {
-  min-width: 197px;
+  min-width: 184px;
   margin: auto;
   overflow:hidden;
   float: left;
@@ -176,22 +176,22 @@
 		</div>			
 		
 		<div class="ayuda_tabs">
-			<div class="row">
+			<div class="row" style="background-color: #e62e2e;">
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[0]; ?>;" align="center">
 				<br><b><?php echo anchor('pages/view/Home', 'HOME'); 
 				?></b><br><br>
 			  </div>
 
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[1]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/About', 'ABOUT'); 
+				<br><b><?php echo anchor('pages/view/About', 'PROJECT SCHEDULE'); 
 				?></b><br><br>
 			  </div>
 
-			  <div class="col" style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Projects', 'PROJECT LISTING'); 
 				?></b><br><br>
 			  </div>
-
+			  
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[3]; ?>;" align="center">
 				<br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
 				?></b><br><br>
@@ -206,13 +206,13 @@
 				<br><b><?php echo anchor('pages/view/Stories', 'STORIES'); 
 				?></b><br><br>
 			  </div>
-
-			  <div class="col" style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+			  
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
 				?></b><br><br>
 			  </div>
 			</div>
-		</div>		
+		</div>			
 </head>
 <body>
 </body>
