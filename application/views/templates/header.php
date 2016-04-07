@@ -21,22 +21,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script>
-	function resizeToMinimum(){
-	  var minimum    = [640, 480];
-	  var current    = [window.outerWidth, window.outerHeight];
-	  var restricted = [];
-	  var i          = 2;
 
-	  while(i-- > 0){
-		restricted[i] = mimimum[i] > current[i] ? minimum[i] : current[i];
-	  }
-
-	  window.resizeTo(current[0], current[1]);
-	}
-
-	window.addEventListener('resize', resizeToMinimum, false)
-</script>
 <link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 	<style>
 		#head {
