@@ -14,7 +14,7 @@
 				div.footerMain{			
 					background-color:#2C345B;
 					align: center;
-					width:1350px;
+					width:100%;
 				}
 				
 				p.description{
@@ -24,7 +24,7 @@
 			
 		</style>
 	</head>
-	<body>
+	<body width="100%">
 		<div class="footerMain" align="center">
 			<hr>
 			<table width="80%">
@@ -51,11 +51,11 @@
 									?></b>
 								</td>
 								<td align="left" style="padding-right:30px">
-									<b><?php echo anchor('pages/view/About', 'ABOUT'); 
+									<b><?php echo anchor('pages/view/About', 'PROJECT SCHEDULE'); 
 									?></b>
 								</td>
 								<td align="left" style="padding-right:30px">
-									<b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+									<b><?php echo anchor('pages/view/Projects', 'PROJECT LISTING'); 
 									?></b>
 								</td>
 								<td align="left" style="padding-right:30px">
@@ -71,7 +71,7 @@
 									?></b>
 								</td>
 								<td align="left" style="padding-right:30px">
-									<b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+									<b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
 									?></b>
 								</td>
 							</tr>

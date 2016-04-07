@@ -121,8 +121,8 @@
   overflow:hidden;
   float: left;
   align: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 		</style>
@@ -136,7 +136,7 @@
 	<!--<![endif]-->
 	
 		
-		<div align="right">
+		<div width="100%" align="right">
 			<font size="3" face="Arial" style="font-style:italic">
 			   <a class='sign-up-login' id="modal-launcher" data-toggle="modal" data-target="#login-modal">Login</a> / <a id='modal-launcher' class='sign-up-login' data-toggle="modal" data-target="#login-modal">Register</a>					  
 			</font>
@@ -152,7 +152,7 @@
 			}
 			else if (strpos($url,'About') != false) {
 				$menu_tab_colors[1] = '#c12925';
-				$currTab = "About";
+				$currTab = "Project Schedule";
 			}
 			else if (strpos($url,'Contact') != false) {
 				$menu_tab_colors[2] = '#c12925';
@@ -172,7 +172,7 @@
 			}
 			else if (strpos($url,'Projects') != false) {
 				$menu_tab_colors[6] = '#c12925';
-				$currTab = "Projects";
+				$currTab = "Project Listing";
 			}
 		?>
 		<div class="ayuda_tabs">
@@ -183,15 +183,15 @@
 			  </div>
 
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[1]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/About', 'ABOUT'); 
+				<br><b><?php echo anchor('pages/view/About', 'PROJECT SCHEDULE'); 
 				?></b><br><br>
 			  </div>
 
-			  <div class="col" style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Projects', 'PROJECT LISTING'); 
 				?></b><br><br>
 			  </div>
-
+			  
 			  <div class="col" style="background-color: <?php echo $menu_tab_colors[3]; ?>;" align="center">
 				<br><b><?php echo anchor('pages/view/Volunteers', 'VOLUNTEERS'); 
 				?></b><br><br>
@@ -206,9 +206,9 @@
 				<br><b><?php echo anchor('pages/view/Stories', 'STORIES'); 
 				?></b><br><br>
 			  </div>
-
-			  <div class="col" style="background-color: <?php echo $menu_tab_colors[6]; ?>;" align="center">
-				<br><b><?php echo anchor('pages/view/Projects', 'PROJECTS'); 
+			  
+			  <div class="col" style="background-color: <?php echo $menu_tab_colors[2]; ?>;" align="center">
+				<br><b><?php echo anchor('pages/view/Contact', 'CONTACT'); 
 				?></b><br><br>
 			  </div>
 			</div>

@@ -76,6 +76,7 @@
 			{
 			background-color:#F2F2F2;
 			text-align: center;
+			width:100%;
 			}
 			
 	</style>
@@ -99,7 +100,7 @@
 	
 	<br><br>
 	
-		<div class="content">
+	<div class="content">
 			
 			<br><br><br>
 			
