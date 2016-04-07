@@ -89,10 +89,10 @@
 	<table width="60%" cellspacing="0" align="center">
 	<tr>
 		<td width="20%">
-			<img src="<?php echo base_url('assets/images/venDiagram.png'); ?>" width="300" height="200">
+			<img src="<?php echo base_url('assets/images/venDiagram.png'); ?>" width="240" height="160">
 		</td>
 	    <td width="60%">
-			<i><b>Ayuda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br></i>
+			<i><b>Ayuda Pilipinas</b> is the Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br></i>
 		</td>
     </tr>
 	</table>
@@ -101,7 +101,7 @@
 	
 		<div class="content">
 			
-			<br><br>
+			<br><br><br>
 			
 			<font color="black" size="6">
 				<b>HOW CAN WE HELP YOU?</b>	
@@ -150,7 +150,7 @@
 					</td>
 				</tr>
 			</table>
-			<br><br>
+			<br><br><br><br>
 	</div>
 	
 	
