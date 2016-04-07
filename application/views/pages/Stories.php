@@ -130,7 +130,7 @@
 						<table width="100%">
 							<tr width="100%">
 								<td width="30%">
-									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+									<img src="<?php echo base_url('assets/images/Testimonials_Cheljohn Munieza.png'); ?>" width="100">
 								</td>	
 								<td width="70%">
 									<table>
@@ -145,7 +145,7 @@
 							</tr>
 							<tr width="100%">
 								<td colspan="2"><br>
-									<h5><i>Dako gid ang pasalamat ko na nakakadto ako ako sa Ayuda na event. Sadya gid kag madamu akong nakilala na pareho gid ang amun mga cause na ginatulungan! I’m incredibly thankful that I was able to go to an Ayuda event. It was so fun and I met a lot of great people who had the exact same causes they wanted to help as me!</i></h5><br><br>
+									<h5><i>Dako gid ang pasalamat ko na nakakadto ako ako sa Ayuda na event. Sadya gid kag madamu akong nakilala na pareho gid ang amun mga cause na ginatulungan! (I'm incredibly thankful that I was able to go to an Ayuda event. It was so fun and I met a lot of great people who had the exact same causes they wanted to help as me!)</i></h5><br><br>
 								</td>
 							</tr>
 						</table>
@@ -157,7 +157,7 @@
 						<table width="100%">
 							<tr width="100%">
 								<td width="30%">
-									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+									<img src="<?php echo base_url('assets/images/Testimonials_AlexaSadorra.png'); ?>" width="100">
 								</td>	
 								<td width="70%">
 									<table>
@@ -172,7 +172,7 @@
 							</tr>
 							<tr width="100%">
 								<td colspan="2"><br>
-									<h5><i>I never thought that I could meet so many young people who cared about Animal Welfare as much as I do in my own city! I think I’ve found the right kind of friends through Ayuda and I’m excited to meet more in the future!</i></h5><br><br>
+									<h5><i>I never thought that I could meet so many young people who cared about Animal Welfare as much as I do in my own city! I think I've found the right kind of friends through Ayuda and I'm excited to meet more in the future!</i></h5><br><br>
 								<br><br>
 								</td>
 							</tr>
@@ -191,14 +191,14 @@
 						<table width="100%">
 							<tr width="100%">
 								<td width="30%">
-									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+									<img src="<?php echo base_url('assets/images/Testimonials_MikeBaino.png'); ?>" width="100">
 								</td>	
 								<td width="70%">
 									<table>
 									<i>
 									<tr><td><b>Name:</b>&nbsp;Mike Baino</td></tr>
 									<tr><td><b>Age:</b>&nbsp;17</tr>
-									<tr><td><b>Location:</b>&nbsp;agayan de Oro</tr>
+									<tr><td><b>Location:</b>&nbsp;Cagayan de Oro</tr>
 									<tr><td><b>Organization Volunteered For:</b>&nbsp;Ephpheta Foundation for the Blind</tr>		
 									</i>
 									</table>
@@ -206,7 +206,7 @@
 							</tr>
 							<tr width="100%">
 								<td colspan="2"><br>
-									<h5><i>Gusto jud ko mag boluntar pero wala pa ko kakita ug usa ka cause na geh ganahan jd nako. Maayo nalang na tungod na Ayuda, nakitan nako ang lahi-lahi na cause na duol sa ako mao dali na dayon maka pili. Di ko kahulat kung unsay sunod na panghitabo sa akoang syodad! I’ve always wanted to volunteer but I’ve never had a particular cause that I cared about more than any other. It was great that Ayuda let me see my options for different causes near me so it was easier to make a decision where to volunteer. I can’t wait for the next local event in my city!</i></h5><br><br>
+									<h5><i>Gusto jud ko mag boluntar pero wala pa ko kakita ug usa ka cause na geh ganahan jd nako. Maayo nalang na tungod na Ayuda, nakitan nako ang lahi-lahi na cause na duol sa ako mao dali na dayon maka pili. Di ko kahulat kung unsay sunod na panghitabo sa akoang syodad! (I've always wanted to volunteer but I’ve never had a particular cause that I cared about more than any other. It was great that Ayuda let me see my options for different causes near me so it was easier to make a decision where to volunteer. I can't wait for the next local event in my city!)</i></h5><br><br>
 								</td>
 							</tr>
 						</table>
@@ -218,7 +218,7 @@
 						<table width="100%">
 							<tr width="100%">
 								<td width="30%">
-									<img src="<?php echo base_url('assets/images/circle-black.png'); ?>" width="100">
+									<img src="<?php echo base_url('assets/images/Testimonials_GabrielleLayug.png'); ?>" width="100">
 								</td>	
 								<td width="70%">
 									<table>
@@ -226,7 +226,7 @@
 									<tr><td><b>Name:</b>&nbsp;Gabriel Layug</td></tr>
 									<tr><td><b>Age:</b>&nbsp;20</tr>
 									<tr><td><b>Location:</b>&nbsp;Quezon City</tr>
-									<tr><td><b>Organization Volunteered For:Adarna Foundation</b>&nbsp;</tr>		
+									<tr><td><b>Organization Volunteered For: Adarna Foundation</b>&nbsp;</tr>		
 									</i>
 									</table>
 								</td>
