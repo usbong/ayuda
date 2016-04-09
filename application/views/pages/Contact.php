@@ -45,7 +45,7 @@
 	<br>
 	<div style="background-color:#ffffff" align="center">
 		<div>
-			<font size="3"><b>CONTACT INFORMATION</b></font>
+			<h2><font color="#2c345b" size="6"><b>CONTACT INFORMATION</b></font></h2>
 			<p class="description">
 				<i>We are interested to know more about you and your experience with us, and the organizations that we have partnered with. We'd
 				love it if you give us suggestions on how to improve our service or how else you think you can be involved with our cause.</i>
@@ -74,11 +74,11 @@
 				</tr>
 			</table>
 			<br><br>
-			
-			<font size="3"><b>CONTACT FORM</b></font><br><br>
+			<h2><font color="#2c345b" size="6"><b>CONTACT FORM</b></font></h2>			
+			<p class="description">
 			<i>Do you want to get in touch with us now? Leave us a quick message regarding your concern and we’ll get back to you within 3-5
-			working days!</i>
-			<br>
+			working days!</i></p>
+			
 			<br>
 			<p class="description">
 				<center>

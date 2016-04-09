@@ -219,7 +219,7 @@ text-align:center;
 								<?php $counter++;}?>
 
 							<div align="center">
-							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITY</font></button>
+							<button id='modal-launcher' class="normalButtonBlue" data-toggle="modal" data-target="#login-modal"><font size="2">CLICK HERE TO SEE MORE VOLUNTEER OPPORTUNITIES</font></button>
 							<br>
 							</div>
 						</div>			
@@ -314,7 +314,6 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 <?php } ?>						
 </body> 
 </html>
-	
 	<div class="modal inmodal fade" id="add-event-modal" tabindex="-1" role="dialog"  aria-hidden="true">
 		<div class="modal-dialog  modal-md">
 			<div class="modal-content">
@@ -423,4 +422,4 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 			</div>
 		</div>
  </div>
- <div>
+<div><div>

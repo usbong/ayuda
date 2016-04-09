@@ -171,7 +171,7 @@
 		?>
 		
 		<div align="right">
-				<i><b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <a href="/ayuda/index.php/pages/view/"<?php echo $currTab ?>><font color="#2c345b">Sign Out</font></a></b></i>
+				<i><b>Hi, <?php echo $account['firstname'];?>! | <?php echo $this->session->set_userdata('username',$account['username']);?> <a href="/ayuda/index.php/pages/view/Dashboard"><font color="red">Dashboard</font></a> | <a href="dashboard"><font color="#2c345b">Settings</font></a> | <a href="<?php echo base_url().'index.php/pages/view/Home'; ?>"><font color="#2c345b">Sign Out</font></a></b></i>
 			<br>
 		</div>			
 		

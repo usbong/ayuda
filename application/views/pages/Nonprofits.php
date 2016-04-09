@@ -118,7 +118,7 @@
 				<br><br>
 			
 	<table align="center" style="width: 100%;">
-	<tr><td bgcolor="f2f2f2">
+	<tr><td bgcolor="f2f2f2"><br><br>
 			<div align="center">
 				<h2><font color="#e62e2e" size="6"><b>HOW DO YOU PARTNER WITH US</b></font></h2></div>
 	

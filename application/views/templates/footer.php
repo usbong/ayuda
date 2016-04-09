@@ -1,4 +1,5 @@
 <html>
+<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 	<head>
 		<style>
 				img {
@@ -24,12 +25,12 @@
 			
 		</style>
 	</head>
-	<body style="background-color:#2C345B;">
+	<body style="font-family: 'Lato', sans-serif;background-color:#2C345B;font-size:10px;">
 			<div class="footerMain" align="center">
 				<table width="80%">
 					<tr>
-						<td>
-							<font color="#FFFFFF"><i><b>Ayunda Pilipinas</b> is Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
+						<td style="padding-right:20px">
+							<font color="#FFFFFF"><i><b>Ayuda Pilipinas</b> is the Philippines premier volunteering matching website. We bring people closer to the cause they care about, we bring organization the helping hands they need to create better communities and improve lives from all over the country.<br>
 							825 A SM Blue Residences.</i>
 						</td>
 						<td width="180"><br>
