@@ -3,14 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pages extends CI_Controller {
 
+	public function viewWithError($page) {
+		$this->processView($page);
+	}
+	
 	public function view($page)
 	{
+		$this->session->set_userdata('hasError', FALSE);	
+		$this->processView($page);	
+	}
+
+	public function processView($page) {
 		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
-		
+				
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
 		if ($data['title'] == 'Volunteers') {

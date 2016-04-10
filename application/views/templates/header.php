@@ -119,11 +119,9 @@
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
 	
 	<?php									
-/*	
 			if (($this->session->userdata('hasError')!=null) && ($this->session->userdata('hasError')==TRUE)) { //after register new account 
 				echo '<br><font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to register the new account. Please make sure the password and the confirm password are the same.<br><br>';
 			}
-*/
 	?>
 </div>	
 	<!--<![endif]-->		
@@ -165,6 +163,7 @@
 				$menu_tab_colors[6] = '#c12925';
 				$currTab = "Project Listing";
 			}
+			
 		?>
 		<div class="ayuda_tabs">
 			<div class="row" style="background-color: #e62e2e;">
@@ -253,31 +252,37 @@
 						<?php			
 						echo validation_errors();
 						echo form_open('Form/add_new_user_submitted');
+						echo $this->session->set_userdata('currTab',$currTab);
 						echo '<i>';
 						echo '<div class="row">';
 						echo'<div class="form-group col-md-6">';
 						echo '<label class="control-label">First Name:</label>';
-						echo form_input(array('name' => 'firstName', 'type'=>'text','class'=>'form-control','placeholder'=>'First Name','value' => set_value('firstName'), 'autocomplete' => 'off'));
+						echo form_input(array('name' => 'firstName', 'type'=>'text','class'=>'form-control','placeholder'=>'First Name','value' => set_value('firstName'), 'autocomplete' => 'off'));						
+						echo $this->session->set_userdata('firstName',$this->input->post('firstName'));
 						echo'</div>'; 
 						echo'<div class="form-group col-md-6">';
 						 echo '<label class="control-label">Last Name:</label>';
 						echo form_input(array('name' => 'lastName', 'type'=>'text','class'=>'form-control','placeholder'=>'Last Name','value' => set_value('lastName'), 'autocomplete' => 'off'));
+						echo $this->session->set_userdata('lastName',$this->input->post('lastName'));
 						echo'</div>'; 
 						echo'</div>'; 
 						 echo '<div class="row">';
 						echo'<div class="form-group col-md-12">';
 						echo '<label class="control-label">Email:</label>';
 						echo form_input(array('name' => 'email', 'type'=>'text','class'=>'form-control','placeholder'=>'email','value' => set_value('email'), 'autocomplete' => 'off'));
+						echo $this->session->set_userdata('email',$this->input->post('email'));
 						echo'</div>';
 						echo'</div>';
 						echo '<div class="row" style="padding:0px">';
 						echo'<div class="form-group col-md-6">';
 						 echo '<label class="control-label">Password:</label>';
 						echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password','value' => set_value('password'), 'autocomplete' => 'off'));
+						echo $this->session->set_userdata('password',$this->input->post('password'));
 						echo'</div>';
 						 echo'<div class="form-group col-md-6">';
 						 echo '<label class="control-label">Confirm password:</label>';
 						echo form_input(array('name' => 'confirmPassword', 'type'=>'password','class'=>'form-control','placeholder'=>'Confirm Password','value' => set_value('passwordConfirm'), 'autocomplete' => 'off'));
+						echo $this->session->set_userdata('confirmPassword',$this->input->post('confirmPassword'));
 						echo'</div>';
 						echo'</div>';
 						echo'<div class="checkbox">'; 
