@@ -22,6 +22,68 @@ class Form extends CI_Controller {
 
 		$this->viewDashboard($data['username'], FALSE);
 	}
+	
+	// When user submits add new user data on view page...
+	public function add_new_user_submitted() {
+		$data = array(
+			'confirmPassword' => $this->input->post('confirmPassword'),
+			'firstName' => $this->input->post('firstName'),
+			'lastName' => $this->input->post('lastName'),
+			'username' => $this->input->post('firstName'), //firstName is also the username
+			'email' => $this->input->post('email'),
+			'password' => $this->input->post('password'),
+			'dateJoined' => date('yyyy-mm-dd')			
+		);
+		
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		$this->form_validation->set_message('required', 'Please fill out all the fields.');
+
+		$this->form_validation->set_rules('firstName', 'firstName', 'required');
+		$this->form_validation->set_rules('lastName', 'lastName', 'required');		
+		$this->form_validation->set_rules('username', 'username', 'required');
+		$this->form_validation->set_rules('password', 'password', 'required|matches[confirmPassword]');
+		$this->form_validation->set_rules('confirmPassword', 'Password Confirmation', 'required');
+		$this->form_validation->set_rules('email', 'email', 'required');
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+		echo "false!";
+			$this->session->set_userdata('hasError', TRUE);	  
+		}
+		else
+		{
+				echo "true!";
+
+			unset($_POST);
+			$this->session->set_userdata('hasError', FALSE);			
+			array_splice($data, 0, 1); //remove confirmPassword
+			$this->db->insert('account',$data);
+		}
+		
+		switch ($currTab) {
+			case "Ahout":	
+				redirect("Pages/view/About");
+				break;
+			case "Contact":
+				redirect("Pages/view/Contact");
+				break;
+			case "Volunteers":
+				redirect("Pages/view/Volunteers");
+				break;
+			case "Nonprofits":
+				redirect("Pages/view/Nonprofits");
+				break;
+			case "Stories":
+				redirect("Pages/view/Stories");
+				break;
+			case "Projects":
+				redirect("Pages/view/Projects");
+				break;
+			default: //Home
+				redirect("Pages/view/Home");
+		}
+	}
 
 	// When user submits add event data on view page...
 	public function add_event_submitted() {
