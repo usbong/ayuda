@@ -134,9 +134,8 @@ text-align:center;
 		</div>
 			<div align="right" style="margin-right: 80px">
 				<i>Your linked accounts:</i>&nbsp;
-				<a id='modal-launcher' data-toggle="modal" data-target="#modalFacebook"><img src=" <?php echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40"></a>
-				<a id='modal-launcher' data-toggle="modal" data-target="#modalTwitter"><img src=" <?php echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40"></a>
-				<a id='modal-launcher' data-toggle="modal" data-target="#modalEmail"><img src=" <?php echo base_url('assets/images/Icons and Logos_Email Icon (Blue).png');?>" width="40"></a>
+				<a target="_blank" href="https://www.facebook.com/"><img src=" <?php echo base_url('assets/images/Icons and Logos_FB Icon (Blue).png');?>" width="40"></a>
+				<a target="_blank" href="https://www.twitter.com/"><img src=" <?php echo base_url('assets/images/Icons and Logos_Twitter Icon (Blue).png');?>" width="40"></a>
 			</div>
 
 				<div  id="nav">
@@ -209,7 +208,7 @@ text-align:center;
 									<td width="4%"><img src=" <?php  echo base_url('assets/images/Icons and Logos_Personal Dash (Location).png');?>" width="40">							
 									</td>
 									<td width="28%">
-										&nbsp;<?php echo $row['venue']?>, <?php echo $row['location']?>
+										<?php echo $row['venue']?>, <?php echo $row['location']?>
 									</td>
 								</tr>
 							</table>
