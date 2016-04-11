@@ -43,7 +43,8 @@ class Form extends CI_Controller {
 			'username' => $this->input->post('firstName'), //firstName is also the username
 			'email' => $this->input->post('email'),
 			'password' => $this->input->post('password'),
-			'dateJoined' => date('yyyy-mm-dd')			
+			'dateJoined' => date('Y-m-d'),		
+			'type' => $this->input->post('type')		
 		);
 		
 		$this->load->helper(array('form', 'url'));
@@ -92,6 +93,11 @@ class Form extends CI_Controller {
 //			unset($_POST);
 			$this->session->set_userdata('hasError', FALSE);			
 			array_splice($data, 0, 1); //remove confirmPassword
+			
+			if (!isset($data['type'])) {
+				$data['type'] = 'user';
+			}
+			
 			$this->db->insert('account',$data);
 			$this->viewDashboard($data['username'], FALSE);
 		}		
