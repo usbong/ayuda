@@ -9,7 +9,8 @@ class Pages extends CI_Controller {
 	
 	public function view($page)
 	{
-		$this->session->set_userdata('hasError', FALSE);	
+		$this->session->set_userdata('hasError', FALSE);	  
+		$this->session->set_userdata('errorType', 'none');	
 		$this->processView($page);	
 	}
 

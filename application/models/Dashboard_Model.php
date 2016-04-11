@@ -15,6 +15,16 @@ class Dashboard_Model extends CI_Model
 		return $query->row_array();
 	}		
 */
+
+	public function checkAccount($username, $password) {
+		$this->db->select('account.*');
+		$this->db->from('account');		
+		$array = array('account.username' => $username, 'account.password' => $password);
+		$this->db->where($array); 
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	
 	public function getLocationList()
 	{
 		$query = $this->db->get('location');

@@ -17,10 +17,21 @@ class Form extends CI_Controller {
 	// When user submits data on view page...
 	public function data_submitted() {
 		$data = array(
-		'username' => $this->input->post('username')
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')
 		);
+		
+		$this->load->model('Dashboard_Model');
+		$data['account'] = $this->Dashboard_Model->checkAccount($data['username'], $data['password']);
 
-		$this->viewDashboard($data['username'], FALSE);
+		if (isset($data['account'])) {
+			$this->viewDashboard($data['username'], FALSE);
+		}
+		else {
+			$this->session->set_userdata('hasError', TRUE);	  
+			$this->session->set_userdata('errorType', 'login_error');	  
+			redirect("Pages/viewWithError/Home");
+		}
 	}
 	
 	// When user submits add new user data on view page...
@@ -48,7 +59,8 @@ class Form extends CI_Controller {
 		if (($this->form_validation->run() == FALSE) || ($data['password']!=$data['confirmPassword']))
 		{
 			$this->session->set_userdata('hasError', TRUE);	  
-
+			$this->session->set_userdata('errorType', 'register_error');	  
+			
 			$currTab = $this->session->userdata('currTab');
 			
 			//$this->viewDashboard($data['username'], TRUE);

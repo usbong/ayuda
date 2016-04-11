@@ -119,9 +119,16 @@
 	<img src="<?php echo base_url('assets/images/Ayuda Logo.png'); ?>" width="200" height="180">
 	
 	<?php									
-			if (($this->session->userdata('hasError')!=null) && ($this->session->userdata('hasError')==TRUE)) { //after register new account 
-				echo '<br><font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to register the new account. Please make sure the password and the confirm password are the same.<br><br>';
+		if (($this->session->userdata('hasError')!=null) && ($this->session->userdata('hasError')==TRUE)) { //after register new account 
+			if ($this->session->userdata('errorType')!='none') {
+				if ($this->session->userdata('errorType')=='register_error') { //after register new account 
+					echo '<br><font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to register the new account. Please correctly fill up all the fields.<br><br>';
+				}
+				else if ($this->session->userdata('errorType')=='login_error') { //after login
+					echo '<br><font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to log you in. Please make sure that the username and the password are correct.<br><br>';					
+				}
 			}
+		}
 	?>
 </div>	
 	<!--<![endif]-->		
@@ -219,6 +226,7 @@
 	        		<div class="form-group col-md-6">
 					<b><i><center>ARE YOU A MEMBER?</center></i><span align="center" style="font-size:3em; margin-left:33%;">LOG IN</span></b>
 						<?php
+							echo validation_errors();
 							echo form_open('Form/data_submitted');
 							echo '<i>';
 							echo'<div class="form-group">';
@@ -229,6 +237,7 @@
 							echo'<div class="form-group">';
 							echo '<label class="control-label" for="email">Password:</label>';
 							echo form_input(array('name' => 'password', 'type'=>'password','class'=>'form-control','placeholder'=>'Password'));
+							echo $this->session->set_userdata('password',$this->input->post('password'));
 							echo'</div>';
 							echo'<div class="form-group col-md-3"></div>';
 							echo'<div class="checkbox">'; 
@@ -239,7 +248,6 @@
 							echo '<div class="row"><br><center><i>Forgot your password?</i><br><b>OR</b><br><br></center></div>';
 							echo form_submit(array('name' => 'submit', 'type'=>'submit','class'=>'btn btn-primary btn-lg btn-block FBsbmt','value'=>'LOGIN WITH FACEBOOK'));
 							echo form_close();
-							echo validation_errors();
 						?>
 						</center>
 					</div>							
