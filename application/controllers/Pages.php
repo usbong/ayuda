@@ -274,6 +274,7 @@ class Pages extends CI_Controller {
 		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$data['locationList'] = $this->Dashboard_Model->getLocationList();
+		$data['ngoAccountList'] = $this->Dashboard_Model->getNgoAccountList();
 		$this->load->view('templates/dashboard_template',$data);
 	}
 }

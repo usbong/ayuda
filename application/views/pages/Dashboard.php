@@ -130,7 +130,7 @@ text-align:center;
 					echo '<font color="green"><b>Ayuda-3Q: </b></font>I&#39;m sorry. I was unable to add the event. Please make sure to fill out all the <font color="red">required</font> fields.<br><br>';
 				}
 			?>
-			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b><?php if ($account['type']=='ngo') {echo 'WELCOME, ';} else {echo 'HI, ';} echo $account['firstname'];?>!</b></font>
+			<font size="6" color="#e62e2e" style='text-transform: uppercase;'><b><?php if (($account['type']=='ngo') || ($account['type']=='admin')){echo 'WELCOME, ';} else {echo 'HI, ';} echo $account['firstname'];?>!</b></font>
 		</div>
 			<div align="right" style="margin-right: 80px">
 				<i>Your linked accounts:</i>&nbsp;
@@ -151,7 +151,7 @@ text-align:center;
 				</div>
 				
 				<br>		
-				<?php if ($account['type']=='ngo') {
+				<?php if (($account['type']=='ngo') || ($account['type']=='admin')) {
 						echo '<table class="no-spacing" cellspacing="0">';
 						echo '<tr>';
 						echo '<td><a class="add-event" id="modal-launcher" data-toggle="modal" data-target="#add-event-modal"><img src="';echo base_url("assets/images/addEventIcon.png");echo '" width="150"></a></a></td>';
@@ -319,9 +319,15 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 				<div class="modal-body add-event-modal">	  
 					<div class="clearfix"></div>
 					<div id='social-icons-container'>
-						<div class="form-group">
-						<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>
+						<div class="form-group">						
 							<?php
+								if ($account['type']=='admin') {
+									echo '<h6 align="center"><font size="5"><b>ADD EVENT (ADMIN)</b></font></h6>';
+								}
+								else {
+									echo '<h6 align="center"><font size="5"><b>ADD EVENT</b></font></h6>';
+								}							
+							
 								$attributes = array('id' => 'addEventForm');
 								echo validation_errors();
 								echo form_open('Form/add_event_submitted',$attributes);
@@ -332,6 +338,16 @@ var ctx = new Chart(document.getElementById("myChart").getContext("2d")).Line(da
 								echo '<table>';
 								echo '<tr>';
 								echo '<td style="padding-right:10px"><center>';
+								if ($account['type']=='admin') {
+									echo '<label>Select NGO:</label>';
+									echo '<select name="ngoAccountId" class="form-control work" style="background-color:#f2f2f2; font-style:italic;">';
+									echo '<option value="None">None</option>';
+									foreach($ngoAccountList as $eachNgoAccountList)
+									{
+										echo '<option value="'.$eachNgoAccountList->id.'" '.set_select('id', $eachNgoAccountList->id).'>'.$eachNgoAccountList->firstname.'</option>'; //display firstname, but send account id during submit
+									}
+									echo '</select>';
+								}							
 								echo '<label class="control-label" for="email">Select Volunteer Opportunity Category:<font color="red">*</font></label>';
 //								echo form_error('categoryId');
 								echo '<br>';

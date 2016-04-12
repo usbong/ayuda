@@ -106,9 +106,8 @@ class Form extends CI_Controller {
 	// When user submits add event data on view page...
 	public function add_event_submitted() {
 		$username = $this->session->userdata('account')['username'];
-	
-		$data = array(
-			'userId' => $this->session->userdata('account')['id'],
+		
+		$data = array(		
 			'eventName' => $this->input->post('eventName'),
 			'dateStart' => $this->input->post('dateStart'),
 			'dateEnd' => $this->input->post('dateEnd'),
@@ -120,8 +119,15 @@ class Form extends CI_Controller {
 			'preferredSkills' => $this->input->post('preferredSkills'),
 //			'eventCategory' => $this->input->post('eventCategory'),
 			'categoryId' => $this->input->post('categoryId'),
-			'typeOfWork' => $this->input->post('typeOfWork')
+			'typeOfWork' => $this->input->post('typeOfWork'),
 		);
+	
+		if ($this->session->userdata('account')['type']=='admin') {
+			$data['userId'] = $this->input->post('ngoAccountId');
+		}
+		else {
+			$data['userId'] = $this->input->post('account')['id'];
+		}
 		
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
@@ -163,6 +169,7 @@ class Form extends CI_Controller {
 		$data['categoryArray'] = $this->Dashboard_Model->getCategoryArray();
 		$data['typeOfWorkList'] = $this->Dashboard_Model->getTypeOfWorkList();
 		$data['locationList'] = $this->Dashboard_Model->getLocationList();
+		$data['ngoAccountList'] = $this->Dashboard_Model->getNgoAccountList();
 
 		$this->load->view('templates/dashboard_template',$data);
 	}

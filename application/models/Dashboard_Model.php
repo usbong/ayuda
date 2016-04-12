@@ -24,6 +24,16 @@ class Dashboard_Model extends CI_Model
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+
+	public function getNgoAccountList()
+	{
+		$this->db->select('account.*');
+		$this->db->from('account');		
+		$array = array('account.type' => 'ngo');
+		$this->db->where($array); 
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 	public function getLocationList()
 	{
