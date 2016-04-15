@@ -6,7 +6,7 @@ Ayuda Pilipinas is the Philippines's premier volunteering matching website. We b
 <b>Acknowledgment:</b> Ronnel Pangyarihan
 
 # App Ownership
-App Ownership belongs to Quina Baterna, who approved and subcontracted the development of Ayuda by Usbong Social Systems, Inc. (Usbong). 
+App Ownership belongs to Quina Baterna, who approved and subcontracted the development of Ayuda to Usbong Social Systems, Inc. (Usbong). 
 
 # Open Source Software License
 Copyright 2016 Usbong Social Systems, Inc.
